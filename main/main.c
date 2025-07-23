@@ -8,6 +8,7 @@
 SemaphoreHandle_t xReadWriteSemaphore;//读写nvs信号量
 QueueHandle_t networkToUartQueue; // 网络到UART的队列
 QueueHandle_t dataAnalysisQueue; // 数据分析队列
+QueueHandle_t gpioQueue; // GPIO队列
 Config_t wifiConfigInfo = 
     {
         .mode = WIFI_STA,  //WIFI工作模式
@@ -30,6 +31,7 @@ void app_main(void)
     xReadWriteSemaphore = xSemaphoreCreateBinary();//nvs读写信号量
     networkToUartQueue = xQueueCreate(networkToUartQueueLen, networkToUartQueueItemSize); // 创建队列
     dataAnalysisQueue = xQueueCreate(dataAnalysisQueueLen, dataAnalysisQueueItemSize); // 创建数据分析队列
+    gpioQueue = xQueueCreate(gpioQueueLen, gpioQueueItemSize); // 创建GPIO队列
     //NVS初始化（WIFI底层驱动有用到NVS，所以这里要初始化）
     mynvs_init();
     mynvs_get_config(&wifiConfigInfo); //从NVS中读取WIFI配置 
@@ -47,10 +49,63 @@ void app_main(void)
     if(err != pdPASS) 
     {
         ESP_LOGE("app_main", "Failed to create uart_thread");
-    }   
+    }  
+    err = xTaskCreatePinnedToCore(gpio_thread, "gpio_thread", 2048, NULL, 18, NULL, 1); //创建GPIO线程
+    if(err != pdPASS) 
+    {
+        ESP_LOGE("app_main", "Failed to create gpio_thread");
+    }
     while(1)
     {
         vTaskDelay(pdMS_TO_TICKS(500));
+    }
+}
+void gpio_thread(void *arg)
+{
+    uint8_t gpio_num = 0;
+    uint8_t level = 0;
+    uint8_t first_level = 0;
+    while(1)
+    {
+        if(xQueueReceive(gpioQueue, &gpio_num, portMAX_DELAY) == pdTRUE) //从GPIO队列中接收GPIO数据
+        {
+            vTaskDelay(pdMS_TO_TICKS(10)); // 延时10毫秒，避免过快处理
+            level = gpio_get_level(gpio_num); // 获取GPIO电平状态
+
+            ESP_LOGI("GPIO", "GPIO %d level: %d", gpio_num, level);
+            switch(gpio_num) 
+            {
+                case GPIO_NUM_12:
+                    if(level == 1) 
+                    {
+                        ESP_LOGI("GPIO", "GPIO 12 is HIGH");
+                        // 执行相应操作
+                    } 
+                    else 
+                    {
+                        ESP_LOGI("GPIO", "GPIO 12 is LOW");
+                        // 执行相应操作
+                    }
+                    break;
+                case GPIO_NUM_15:
+                    first_level = gpio_get_level(GPIO_NUM_12); // 获取GPIO_NUM_12的初始电平状态
+                    if(first_level == 1)
+                        break; // 如果GPIO_NUM_12为高电平，则不处理GPIO_NUM_15
+                    if(level == 1) 
+                    {
+                        ESP_LOGI("GPIO", "GPIO 15 is HIGH");
+                        // 执行相应操作
+                    } 
+                    else 
+                    {
+                        ESP_LOGI("GPIO", "GPIO 15 is LOW");
+                        // 执行相应操作
+                    }
+                    break;
+                default:
+                    ESP_LOGW("GPIO", "Unhandled GPIO: %d", gpio_num);
+            }
+        }
     }
 }
 /**
