@@ -3,6 +3,7 @@ set(SOURCES
     "../src/mywifi.c"
     "../src/mynvs.c"
     "../src/uart.c"
+    "../src/io_control.c"
 )
 
 idf_component_register(

@@ -4,6 +4,7 @@
 #include "uart.h"
 #include "driver/uart.h"
 #include "driver/gpio.h"
+#include "io_control.h"
 SemaphoreHandle_t xReadWriteSemaphore;//读写nvs信号量
 QueueHandle_t networkToUartQueue; // 网络到UART的队列
 QueueHandle_t dataAnalysisQueue; // 数据分析队列
@@ -36,9 +37,17 @@ void app_main(void)
     //wifi工作模式初始化
     wifi_init(wifiConfigInfo);
     uart_init(); //UART初始化
-    xTaskCreate(analysis_data_thread, "analysis_data_thread", 2048, NULL, 14, NULL); //创建数据分析线程
-    xTaskCreatePinnedToCore(uart_thread, "uart_thread", 2048, NULL, 13, NULL, 1); //创建接收线程
-    
+    io_control_init(); //IO控制初始化
+    BaseType_t err = xTaskCreate(analysis_data_thread, "analysis_data_thread", 2048, NULL, 14, NULL); //创建数据分析线程
+    if(err != pdPASS) 
+    {
+        ESP_LOGE("app_main", "Failed to create analysis_data_thread");
+    }   
+    err = xTaskCreatePinnedToCore(uart_thread, "uart_thread", 2048, NULL, 13, NULL, 1); //创建接收线程
+    if(err != pdPASS) 
+    {
+        ESP_LOGE("app_main", "Failed to create uart_thread");
+    }   
     while(1)
     {
         vTaskDelay(pdMS_TO_TICKS(500));
