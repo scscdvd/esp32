@@ -27,7 +27,7 @@ Config_t wifiConfigInfo =
  */
 void app_main(void)
 {
-    
+    // esp_log_level_set("*", ESP_LOG_NONE);  // 关闭所有模块的日志
     xReadWriteSemaphore = xSemaphoreCreateBinary();//nvs读写信号量
     networkToUartQueue = xQueueCreate(networkToUartQueueLen, networkToUartQueueItemSize); // 创建队列
     dataAnalysisQueue = xQueueCreate(dataAnalysisQueueLen, dataAnalysisQueueItemSize); // 创建数据分析队列
@@ -60,6 +60,11 @@ void app_main(void)
         vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
+/**
+ * @brief GPIO线程
+ * @param arg   用户传递的参数
+ * @return 无
+ */
 void gpio_thread(void *arg)
 {
     uint8_t gpio_num = 0;
@@ -107,6 +112,7 @@ void gpio_thread(void *arg)
             }
         }
     }
+    vTaskDelete(NULL); // 删除当前任务
 }
 /**
  * @brief 数据分析线程

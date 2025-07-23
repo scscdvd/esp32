@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "main",
-    "project_version":    "96edd0e-dirty",
+    "project_version":    "fa40783-dirty",
     "project_path":       "E:/esp32/wifi",
     "idf_path":           "E:/esp32/v5.2.5/esp-idf",
     "build_dir":          "E:/esp32/wifi/build",
