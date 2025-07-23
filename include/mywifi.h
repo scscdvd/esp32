@@ -40,6 +40,7 @@ typedef enum
     TCP_CLIENT,     //TCP客户端
 } network_mode;
 
+extern mqtt mqttclient; 
 //WIFI初始化
 esp_err_t wifi_init(Config_t config);
 int network_tcp_init(network_mode mode,unsigned short port);

@@ -3,14 +3,20 @@
 #include "mqtt_client.h"
 
 static const char *TAG = "wifi";
-static mqtt mqttclient =
+mqtt mqttclient =
 {
     .deviceID = DEVICE_ID,
     .accessKey = ACCESS_KEY,
     .port = MQTT_PORT,
     .productID = PRODUCT_ID
 }; // MQTT客户端句柄
-
+/** 事件回调函数
+ * @param arg   用户传递的参数
+ * @param event_base    事件类别
+ * @param event_id      事件ID
+ * @param event_data    事件携带的数据
+ * @return 无
+*/
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)
 {
     esp_mqtt_event_handle_t event = event_data;
@@ -130,7 +136,11 @@ static void sta_event_handler(void* arg, esp_event_base_t event_base,int32_t eve
         }
     }
 }
-
+/** 静态IP设置函数
+ * @param config   要配置的IP信息
+ * @param netif    对应的网络接口
+ * @return 无
+*/
 static void static_ip_set(Config_t config, esp_netif_t *netif)
 {
     esp_netif_ip_info_t ip_info;
@@ -144,7 +154,10 @@ static void static_ip_set(Config_t config, esp_netif_t *netif)
     esp_netif_set_ip_info(netif, &ip_info);
 }
 
-//WIFI STA初始化
+/** WIFI初始化函数
+ * @param config   WIFI配置参数
+ * @return ESP_OK表示成功，其他表示失败
+*/
 esp_err_t wifi_init(Config_t config)
 {   
     wifi_config_t wifi_config;  //WIFI配置结构体
@@ -214,7 +227,10 @@ esp_err_t wifi_init(Config_t config)
     ESP_LOGI(TAG, "wifi_init finished.");
     return ESP_OK;
 }
-
+/** AP模式下的tcp服务器线程
+ * @param arg   用户传递的参数，包含设备端口号等配置信息
+ * @return 无
+*/
 void ap_tcpserver_thread(void *arg)
 {
     unsigned short port = ((Config_t*)arg)->device_port;  //获取监听端口号
@@ -264,6 +280,10 @@ void ap_tcpserver_thread(void *arg)
 
     }
 }
+/** AP模式下的接收线程
+ * @param arg   用户传递的参数，包含客户端套接字
+ * @return 无
+*/
 void ap_recv_thread(void *arg)
 {
     int client_fd = *(int*)arg;  //获取客户端套接字
@@ -296,6 +316,11 @@ void ap_recv_thread(void *arg)
     close(client_fd);  //关闭客户端套接字
     vTaskDelete(NULL);  // 删除当前任务
 }
+/** 网络TCP初始化函数
+ * @param mode   网络模式
+ * @param port   监听端口
+ * @return 成功返回套接字描述符，失败返回-1
+*/
 int network_tcp_init(network_mode mode,unsigned short port)
 {
     int sockfd;
@@ -318,6 +343,9 @@ int network_tcp_init(network_mode mode,unsigned short port)
     listen(sockfd, 5);  // 设置监听队列长度为5
     return sockfd;  // 返回套接字描述符
 }
+/**
+ * @brief 获取STA模式下的本地IP地址
+ */
 void sta_getlocal_IP(void)
 {
     esp_netif_ip_info_t ip_info;
@@ -340,6 +368,9 @@ void sta_getlocal_IP(void)
         ESP_LOGE(TAG, "Failed to get netif handle for STA");
     }
 }
+/**
+ * @brief 获取AP模式下的本地IP地址
+ */
 void ap_getlocal_IP(void)
 {
     esp_netif_ip_info_t ip_info;
@@ -356,7 +387,9 @@ void ap_getlocal_IP(void)
         ESP_LOGE(TAG, "Failed to get netif handle for AP");
     }
 }
-
+/**
+ * @brief 启动MQTT客户端
+ */
 void mqtt_start(void)
 {
     if(wifiConfigInfo.mode == WIFI_AP) // 如果是AP模式
@@ -386,6 +419,9 @@ void mqtt_start(void)
 
     esp_mqtt_client_start(mqttclient.client);  // 启动MQTT客户端
 }
+/**
+ * @brief 停止MQTT客户端
+ */
 void mqtt_stop(void)
 {
     if(mqttclient.client != NULL) // 如果mqtt客户端已存在

@@ -18,7 +18,12 @@ void mynvs_init(void)
     }
     ESP_ERROR_CHECK(ret);
 }
-
+/**
+ * @brief 设置WIFI配置到NVS
+ * 该函数用于将WIFI配置保存到NVS中。
+ * @param config   要保存的WIFI配置
+ * @return ESP_OK表示成功，其他表示失败
+ */
 esp_err_t mynvs_set_config(Config_t config)
 {
     nvs_handle_t handle;
@@ -64,7 +69,12 @@ exit:
     xSemaphoreGive(xReadWriteSemaphore);
     return err;
 }
-
+/**
+ * @brief 从NVS获取WIFI配置
+ * 该函数用于从NVS中读取WIFI配置。
+ * @param config   用于存储读取的WIFI配置
+ * @return ESP_OK表示成功，其他表示失败
+ */
 esp_err_t mynvs_get_config(Config_t *config)
 {
     nvs_handle_t handle;

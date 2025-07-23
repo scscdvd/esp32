@@ -19,6 +19,10 @@ Config_t wifiConfigInfo =
         .max_connection = 1,       //最大连接数
         .dhcpEnable = 1            //是否使用DHCP
     };//wifi配置结构体
+/**
+ * @brief 应用程序入口函数
+ * @return 无
+ */
 void app_main(void)
 {
     
@@ -40,6 +44,11 @@ void app_main(void)
         vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
+/**
+ * @brief 数据分析线程
+ * @param arg   用户传递的参数
+ * @return 无
+ */
 void analysis_data_thread(void *arg)
 {
     uint8_t dataBuffer[1024] = { 0 };
@@ -52,7 +61,7 @@ void analysis_data_thread(void *arg)
             // 处理接收到的数据
             ESP_LOGI("DataAnalysis", "Received data: %s", dataBuffer);
             /*数据解析*/
-            
+
             xQueueSend(networkToUartQueue, dataBuffer, 0); //将数据发送到UART队列
         }
         else 
@@ -63,6 +72,11 @@ void analysis_data_thread(void *arg)
     }
     vTaskDelete(NULL); // 删除当前任务
 }
+/**
+ * @brief UART线程
+ * @param arg   用户传递的参数
+ * @return 无
+ */
 void uart_thread(void *arg)
 {
     uint8_t uartData[1024] = { 0 };
