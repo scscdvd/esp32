@@ -5,10 +5,13 @@
 static const char *TAG = "wifi";
 mqtt mqttclient =
 {
-    .deviceID = DEVICE_ID,
-    .accessKey = ACCESS_KEY,
+    .uri = MQTT_BROKER, // MQTT Broker URI
     .port = MQTT_PORT,
-    .productID = PRODUCT_ID
+    .clientID = MQTT_CLIENT_ID, // 设备ID
+    .username = MQTT_USERNAME, // 用户名
+    .password = MQTT_PASSWORD, // 密码
+    .subscribeTopic = MQTT_SUBSCRIBE_TOPIC, // 订阅主题
+    .publishTopic = MQTT_PUBLISH_TOPIC // 发布主题
 }; // MQTT客户端句柄
 /** 事件回调函数
  * @param arg   用户传递的参数
@@ -24,7 +27,6 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     switch (event_id) 
     {
         case MQTT_EVENT_CONNECTED:
-            snprintf(mqttclient.subscribeTopic, sizeof(mqttclient.subscribeTopic), "$sys/%s/%s/cmd/request/+", mqttclient.productID, mqttclient.deviceID); // 设置订阅主题
             esp_mqtt_client_subscribe(mqttclient.client, mqttclient.subscribeTopic, 0);
             ESP_LOGI(TAG, "MQTT_EVENT_CONNECTED");
             break;
@@ -38,9 +40,8 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
                      event->topic_len, event->topic,
                      event->data_len, event->data);
             memset(buffer, 0, sizeof(buffer)); // 清空接收缓冲区
-            strncpy(buffer,event->data_len,event->data); // 复制数据到缓冲区
+            strncpy(buffer,event->data,event->data_len); // 复制数据到缓冲区
             xQueueSend(dataAnalysisQueue, buffer, 0);//发送到解析数据线程
-            snprintf(mqttclient.publishTopic, sizeof(mqttclient.publishTopic), "$sys/%s/%s/dp/post/json", mqttclient.productID, mqttclient.deviceID); // 构建发布主题
             esp_mqtt_client_publish(mqttclient.client, mqttclient.publishTopic, "{\"id\":10}", 0, 0, 0);
             break;
         default:
@@ -147,9 +148,9 @@ static void static_ip_set(Config_t config, esp_netif_t *netif)
     // 停止 DHCP server
     esp_netif_dhcps_stop(netif);
     // 设置静态 IP 地址
-    ip4addr_aton(config.deviceIP, &ip_info.ip);      // IP
-    ip4addr_aton(config.deviceNetMask, &ip_info.netmask); // 子网掩码
-    ip4addr_aton(config.deviceGateway, &ip_info.gw);      // 网关
+    inet_pton(AF_INET, config.deviceIP, &ip_info.ip);      // IP
+    inet_pton(AF_INET, config.deviceNetMask, &ip_info.netmask); // 子网掩码
+    inet_pton(AF_INET, config.deviceGateway, &ip_info.gw);      // 网关
     // 设置 IP 信息
     esp_netif_set_ip_info(netif, &ip_info);
 }
@@ -353,15 +354,15 @@ void sta_getlocal_IP(void)
     if (netif) 
     {
         esp_netif_get_ip_info(netif, &ip_info);
-        ESP_LOGI(TAG, "Local IP: %s", ip4addr_ntoa(&ip_info.ip));
         memset(wifiConfigInfo.deviceIP, 0, sizeof(wifiConfigInfo.deviceIP)); // 清空IP地址字符串
         memset(wifiConfigInfo.deviceNetMask, 0, sizeof(wifiConfigInfo.deviceNetMask)); // 清空子网掩码字符串
         memset(wifiConfigInfo.deviceGateway, 0, sizeof(wifiConfigInfo.deviceGateway)); // 清空网关字符串
         // 将IP地址、子网掩码和网关转换为字符串并保存
-        strcpy(wifiConfigInfo.deviceIP, ip4addr_ntoa(&ip_info.ip));
-        strcpy(wifiConfigInfo.deviceNetMask, ip4addr_ntoa(&ip_info.netmask));
-        strcpy(wifiConfigInfo.deviceGateway, ip4addr_ntoa(&ip_info.gw));
-        
+        inet_ntop(AF_INET,&ip_info.ip,wifiConfigInfo.deviceIP,sizeof(wifiConfigInfo.deviceIP));
+        inet_ntop(AF_INET,&ip_info.netmask,wifiConfigInfo.deviceNetMask,sizeof(wifiConfigInfo.deviceNetMask));
+        inet_ntop(AF_INET,&ip_info.gw,wifiConfigInfo.deviceGateway,sizeof(wifiConfigInfo.deviceGateway));
+        ESP_LOGI("sta_getlocal_IP","IP:%s,netmask:%s,gateway:%s\n", 
+            wifiConfigInfo.deviceIP,wifiConfigInfo.deviceNetMask,wifiConfigInfo.deviceGateway);
     } 
     else 
     {
@@ -378,13 +379,13 @@ void ap_getlocal_IP(void)
     if (netif) 
     {
         esp_netif_get_ip_info(netif, &ip_info);
-        ESP_LOGI(TAG, "Local IP: %s", ip4addr_ntoa(&ip_info.ip));
         memset(wifiConfigInfo.deviceIP, 0, sizeof(wifiConfigInfo.deviceIP)); // 清空IP地址字符串
-        strcpy(wifiConfigInfo.deviceIP, ip4addr_ntoa(&ip_info.ip));
+        inet_ntop(AF_INET,&ip_info.ip,wifiConfigInfo.deviceIP,sizeof(wifiConfigInfo.deviceIP));
+        ESP_LOGI("ap_getlocal_IP", "Local IP: %s", wifiConfigInfo.deviceIP);
     } 
     else 
     {
-        ESP_LOGE(TAG, "Failed to get netif handle for AP");
+        ESP_LOGE("ap_getlocal_IP", "Failed to get netif handle for AP");
     }
 }
 /**
@@ -392,25 +393,26 @@ void ap_getlocal_IP(void)
  */
 void mqtt_start(void)
 {
-    if(wifiConfigInfo.mode == WIFI_AP) // 如果是AP模式
-    {
-        ESP_LOGI(TAG, "MQTT started in AP mode");
+    // if(wifiConfigInfo.mode == WIFI_AP) // 如果是AP模式
+    // {
+    //     ESP_LOGI(TAG, "MQTT started in AP mode");
         
-        sprintf(mqttclient.uri, "mqtt://%s:%d", MQTT_BROKER, mqttclient.port); // 构建MQTT Broker URI
-    }
-    else if(wifiConfigInfo.mode == WIFI_STA) // 如果是STA模式
-    {
-        ESP_LOGI(TAG, "MQTT started in STA mode");
-        sprintf(mqttclient.uri, "mqtt://%s:%d", MQTT_BROKER, mqttclient.port); // 构建MQTT Broker URI
-    }
+    //     sprintf(mqttclient.uri, "%s:%d", MQTT_BROKER, mqttclient.port); // 构建MQTT Broker URI
+    // }
+    // else if(wifiConfigInfo.mode == WIFI_STA) // 如果是STA模式
+    // {
+    //     ESP_LOGI(TAG, "MQTT started in STA mode");
+    //     sprintf(mqttclient.uri, "%s:%d", MQTT_BROKER, mqttclient.port); // 构建MQTT Broker URI
+    // }
     esp_mqtt_client_config_t mqtt_cfg = 
     {
         .broker.address.uri = mqttclient.uri , // MQTT Broker URI
+        .broker.address.port = mqttclient.port, // MQTT端口
         .credentials = 
         {
-            .username = mqttclient.productID,
-            .client_id = mqttclient.deviceID,
-            .authentication.password = mqttclient.accessKey,
+            .username = mqttclient.username, // 用户名
+            .client_id = mqttclient.clientID,
+            .authentication.password = mqttclient.password // 密码
         }
     };
     mqttclient.client = esp_mqtt_client_init(&mqtt_cfg);

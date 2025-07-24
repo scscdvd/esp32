@@ -21,17 +21,21 @@
 #include "esp_netif.h"
 #include "mqtt_client.h"
 #include "mywifi.h"
+#include <arpa/inet.h>  
 
 #define MQTTEnabled 1 //MQTT功能开关
 
-#define MQTT_BROKER "YK7G04458i.mqtls.acc.cmcconenet.cn"
+#define MQTT_BROKER "mqtt://broker-cn.emqx.io" // 替换为实际的MQTT Broker地址
 #define MQTT_PORT 1883  // 或8883 for SSL
 
-#define PRODUCT_ID "YK7G04458i"
-#define DEVICE_ID "test"  // 请替换为你的实际设备ID
-#define ACCESS_KEY "czuVVc+3NenXRcmrtYHFs/dP2y9z8/03m90rdVfHSWc="  // access_key
+#define MQTT_USERNAME "esp32_v1"
+#define MQTT_CLIENT_ID "mqttx_bb521919"  // 请替换为你的实际设备ID
+#define MQTT_PASSWORD "123456789"  
 
+#define MQTT_PUBLISH_TOPIC "topic/pub" // 发布主题
+#define MQTT_SUBSCRIBE_TOPIC "topic/sub" // 订阅主题
 
+/*消息队列*/
 #define networkToUartQueueLen 4 //网络到UART的队列长度
 #define networkToUartQueueItemSize 1024 //网络到UART的队列项大小
 

@@ -26,12 +26,12 @@ typedef struct
     /* data */
     esp_mqtt_client_handle_t client;
     char uri[128]; // MQTT Broker URI
-    char deviceID[64]; // 设备ID
-    char accessKey[128]; // 访问密钥
     unsigned short port; // MQTT端口
+    char clientID[64]; // 设备ID
+    char username[64]; // 用户名
+    char password[64]; // 密码
     char publishTopic[256]; // 发布主题
     char subscribeTopic[256]; // 订阅主题
-    char productID[64]; // 产品ID
 } mqtt;
 
 typedef enum 
