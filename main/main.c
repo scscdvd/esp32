@@ -9,10 +9,11 @@ SemaphoreHandle_t xReadWriteSemaphore;//读写nvs信号量
 QueueHandle_t networkToUartQueue; // 网络到UART的队列
 QueueHandle_t dataAnalysisQueue; // 数据分析队列
 QueueHandle_t gpioQueue; // GPIO队列
+
 Config_t wifiConfigInfo = 
     {
         .mode = WIFI_STA,  //WIFI工作模式
-        .ssid = "ESP32_WIFI",     //WIFI SSID
+        .ssid = "fang",     //WIFI SSID
         .password = "12345678",   //WIFI密码
         .deviceIP = "192.168.1.100", //设备IP地址
         .deviceNetMask = "255.255.255.0", //设备子网掩码
@@ -27,6 +28,7 @@ Config_t wifiConfigInfo =
  */
 void app_main(void)
 {
+
     // esp_log_level_set("*", ESP_LOG_NONE);  // 关闭所有模块的日志
     xReadWriteSemaphore = xSemaphoreCreateBinary();//nvs读写信号量
     networkToUartQueue = xQueueCreate(networkToUartQueueLen, networkToUartQueueItemSize); // 创建队列
@@ -40,6 +42,7 @@ void app_main(void)
     wifi_init(wifiConfigInfo);
     uart_init(); //UART初始化
     io_control_init(); //IO控制初始化
+    printf("WIFI mode: %d\n", wifiConfigInfo.mode);
     BaseType_t err = xTaskCreate(analysis_data_thread, "analysis_data_thread", 2048, NULL, 14, NULL); //创建数据分析线程
     if(err != pdPASS) 
     {
@@ -55,6 +58,8 @@ void app_main(void)
     {
         ESP_LOGE("app_main", "Failed to create gpio_thread");
     }
+    vTaskStartScheduler(); // 启动调度器
+
     while(1)
     {
         vTaskDelay(pdMS_TO_TICKS(500));

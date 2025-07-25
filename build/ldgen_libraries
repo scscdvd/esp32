@@ -60,5 +60,7 @@ E:/esp32/wifi/build/esp-idf/mqtt/libmqtt.a
 E:/esp32/wifi/build/esp-idf/nvs_sec_provider/libnvs_sec_provider.a
 E:/esp32/wifi/build/esp-idf/perfmon/libperfmon.a
 E:/esp32/wifi/build/esp-idf/spiffs/libspiffs.a
+E:/esp32/wifi/build/esp-idf/touch_element/libtouch_element.a
+E:/esp32/wifi/build/esp-idf/usb/libusb.a
 E:/esp32/wifi/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 E:/esp32/wifi/build/esp-idf/main/libmain.a
