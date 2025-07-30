@@ -1,0 +1,28 @@
+[1/955] Generating D:/esp/wifi/build/esp-idf/esp_system/ld/memory.ld linker script...
+[2/955] Generating D:/esp/wifi/build/esp-idf/esp_system/ld/sections.ld.in linker script...
+[3/955] Generating ../../partition_table/partition-table.bin
+FAILED: partition_table/partition-table.bin D:/esp/wifi/build/partition_table/partition-table.bin 
+C:\Windows\system32\cmd.exe /C "cd /D D:\esp\wifi\build\esp-idf\partition_table && D:\.espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe D:/esp/v5.2.5/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --flash-size 16MB -- D:/esp/wifi/partitions.csv D:/esp/wifi/build/partition_table/partition-table.bin && D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe -E echo "Partition table binary generated. Contents:" && D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe -E echo ******************************************************************************* && D:\.espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe D:/esp/v5.2.5/esp-idf/components/partition_table/gen_esp32part.py -q --offset 0x8000 --flash-size 16MB -- D:/esp/wifi/build/partition_table/partition-table.bin && D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe -E echo *******************************************************************************"
+Partition app0 invalid: Offset 0x11000 is not aligned to 0x10000
+[4/955] C:\Windows\system32\cmd.exe /C "cd /D D:\esp\wifi\build\esp-idf\partition_table && D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe -E echo "Partition table CSV D:/esp/wifi/partitions.csv does not exist." && D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe -E echo "Either change partition table in menuconfig or create this input file." && D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe -E remove D:/esp/wifi/build/esp-idf/partition_table/4lNgm.cmake && D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe -E env "FAIL_MESSAGE=Failing the build (see errors on lines above)" D:/.espressif/tools/cmake/3.30.2/bin/cmake.exe -P D:/esp/v5.2.5/esp-idf/tools/cmake/scripts/fail.cmake"
+FAILED: esp-idf/partition_table/CMakeFiles/partition-table D:/esp/wifi/build/esp-idf/partition_table/CMakeFiles/partition-table 
+C:\Windows\system32\cmd.exe /C "cd /D D:\esp\wifi\build\esp-idf\partition_table && D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe -E echo "Partition table CSV D:/esp/wifi/partitions.csv does not exist." && D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe -E echo "Either change partition table in menuconfig or create this input file." && D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe -E remove D:/esp/wifi/build/esp-idf/partition_table/4lNgm.cmake && D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe -E env "FAIL_MESSAGE=Failing the build (see errors on lines above)" D:/.espressif/tools/cmake/3.30.2/bin/cmake.exe -P D:/esp/v5.2.5/esp-idf/tools/cmake/scripts/fail.cmake"
+Partition table CSV D:/esp/wifi/partitions.csv does not exist.
+Either change partition table in menuconfig or create this input file.
+CMake Error at D:/esp/v5.2.5/esp-idf/tools/cmake/scripts/fail.cmake:3 (message):
+  Failing the build (see errors on lines above)
+
+
+[5/955] Building C object esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_header.c.obj
+[6/955] Building C object esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_utils.c.obj
+[7/955] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj
+[8/955] Building C object esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/src/esp_https_ota.c.obj
+[9/955] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj
+[10/955] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj
+[11/955] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj
+[12/955] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj
+[13/955] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj
+[14/955] Building C object esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/lib/http_auth.c.obj
+[15/955] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj
+[16/955] Building C object esp-idf/esp_http_client/CMakeFiles/__idf_esp_http_client.dir/esp_http_client.c.obj
+ninja: build stopped: subcommand failed.

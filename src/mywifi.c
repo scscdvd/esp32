@@ -1,7 +1,7 @@
 #include "mywifi.h"
 #include "main.h"
 #include "mqtt_client.h"
-
+#include "aliot_ota.h"
 static const char *TAG = "wifi";
 mqtt mqttclient =
 {
@@ -42,7 +42,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
             memset(buffer, 0, sizeof(buffer)); // 清空接收缓冲区
             strncpy(buffer,event->data,event->data_len); // 复制数据到缓冲区
             xQueueSend(dataAnalysisQueue, buffer, 0);//发送到解析数据线程
-            esp_mqtt_client_publish(mqttclient.client, mqttclient.publishTopic, "{\"id\":10}", 0, 0, 0);
+            // esp_mqtt_client_publish(mqttclient.client, mqttclient.publishTopic, "{\"id\":10}", 0, 0, 0);
             break;
         default:
             break;
@@ -66,22 +66,13 @@ static void ap_event_handler(void* arg, esp_event_base_t event_base,int32_t even
                 /*保存自己的IP地址*/
                 ap_getlocal_IP(); //获取AP模式下的本地IP地址
                 ESP_LOGI(TAG, "AP local IP: %s", wifiConfigInfo.deviceIP);
-                #if !MQTTEnabled
-                xTaskCreate(ap_tcpserver_thread, "ap_tcpserver_thread", 4096, arg, 16, NULL); //创建TCP服务器线程
-                #endif
+                xTaskCreate(ap_tcpserver_thread, "ap_tcpserver_thread", 2048, arg, 12, NULL); //创建TCP服务器线程
                 break;
             case WIFI_EVENT_AP_STACONNECTED:  //有客户端连接到AP时触发此事件
                 ESP_LOGI(TAG, "Client connected to AP");
-                #if MQTTEnabled
-                mqtt_start(); //启动mqtt客户端
-                #endif
                 break;
             case WIFI_EVENT_AP_STADISCONNECTED:   //有客户端从AP断开连接时触发此事件
                 ESP_LOGI(TAG, "Client disconnected from AP");
-                #if MQTTEnabled
-                esp_mqtt_client_unregister_event(mqttclient.client, MQTT_EVENT_ANY, mqtt_event_handler); // 注销事件处理函数
-                mqtt_stop(); // 停止MQTT客户端
-                #endif
                 break;
             default:
                 break;
@@ -98,6 +89,7 @@ static void ap_event_handler(void* arg, esp_event_base_t event_base,int32_t even
 */
 static void sta_event_handler(void* arg, esp_event_base_t event_base,int32_t event_id, void* event_data)
 {   
+    static bool flag = 0;
     if(event_base == WIFI_EVENT)
     {
         switch (event_id)
@@ -107,13 +99,17 @@ static void sta_event_handler(void* arg, esp_event_base_t event_base,int32_t eve
                 break;
             case WIFI_EVENT_STA_CONNECTED:  //WIFI连上路由器后，触发此事件
                 ESP_LOGI(TAG, "connected to AP");
-                
+                flag = 1;
                 break;
             case WIFI_EVENT_STA_DISCONNECTED:   //WIFI从路由器断开连接后触发此事件
-                #if MQTTEnabled
-                esp_mqtt_client_unregister_event(mqttclient.client, MQTT_EVENT_ANY, mqtt_event_handler); // 注销事件处理函数
-                mqtt_stop(); // 停止MQTT客户端
-                #endif
+                if(flag)
+                {
+                    esp_mqtt_client_unregister_event(mqttclient.client, MQTT_EVENT_ANY, mqtt_event_handler); // 注销事件处理函数
+                    esp_mqtt_client_unregister_event(aliot_mqtt.client, MQTT_EVENT_ANY, aliot_mqtt_event_handler);
+                    mqtt_stop(); // 停止MQTT客户端
+                    aliot_mqtt_stop();
+                    flag = 0;
+                }
                 esp_wifi_connect();             //继续重连
                 ESP_LOGI(TAG,"connect to the AP fail,retry now");
                 break;
@@ -130,9 +126,8 @@ static void sta_event_handler(void* arg, esp_event_base_t event_base,int32_t eve
                 /*保存自己的IP地址*/
                 sta_getlocal_IP(); //获取STA模式下的本地IP地址
                 ESP_LOGI(TAG, "STA local IP: %s", wifiConfigInfo.deviceIP);
-                #if MQTTEnabled
                 mqtt_start();//启动mqtt客户端
-                #endif
+                start_aliot_mqtt();//连接阿里云
                 break;
         }
     }
@@ -145,14 +140,15 @@ static void sta_event_handler(void* arg, esp_event_base_t event_base,int32_t eve
 static void static_ip_set(Config_t config, esp_netif_t *netif)
 {
     esp_netif_ip_info_t ip_info;
-    // 停止 DHCP server
-    esp_netif_dhcps_stop(netif);
+
     // 设置静态 IP 地址
     inet_pton(AF_INET, config.deviceIP, &ip_info.ip);      // IP
     inet_pton(AF_INET, config.deviceNetMask, &ip_info.netmask); // 子网掩码
     inet_pton(AF_INET, config.deviceGateway, &ip_info.gw);      // 网关
     // 设置 IP 信息
     esp_netif_set_ip_info(netif, &ip_info);
+    ESP_LOGI(TAG, "Static IP set: %s, Netmask: %s, Gateway: %s",
+             config.deviceIP, config.deviceNetMask, config.deviceGateway);
 }
 
 /** WIFI初始化函数
@@ -176,6 +172,8 @@ esp_err_t wifi_init(Config_t config)
         netif = esp_netif_create_default_wifi_sta();    //使用默认配置创建STA对象
         if(config.dhcpEnable == 0) //如果不使用DHCP
         {
+                // 停止 DHCP server
+            esp_netif_dhcpc_stop(netif);
             ESP_LOGI(TAG, "DHCP is disabled, setting static IP");
             static_ip_set(config, netif);  //设置静态IP地址
         }
@@ -200,6 +198,8 @@ esp_err_t wifi_init(Config_t config)
         netif = esp_netif_create_default_wifi_ap();
         if(config.dhcpEnable == 0) //如果不使用DHCP
         {
+                // 停止 DHCP server
+            esp_netif_dhcps_stop(netif);
             ESP_LOGI(TAG, "DHCP is disabled, setting static IP");
             static_ip_set(config, netif);  //设置静态IP地址
         }
@@ -267,16 +267,15 @@ void ap_tcpserver_thread(void *arg)
                 ESP_LOGE(TAG, "accept failed");
                 continue;
             }
+            ESP_LOGI(TAG, "New connection: socket fd=%d", client_fd);
             /*连接上客户端之后开始接收数据*/
-            BaseType_t err = xTaskCreate(ap_recv_thread, "ap_recv_thread", 2048, (void *)client_fd, 17, NULL); //创建接收线程
+            BaseType_t err = xTaskCreate(ap_recv_thread, "ap_recv_thread", 4096, (void *)&client_fd, 11, NULL); //创建接收线程
             if(err != pdPASS) 
             {
                 ESP_LOGE(TAG, "Failed to create receive task");
                 close(client_fd);  //关闭客户端套接字
                 continue;
             }
-            ESP_LOGI(TAG, "New connection: socket fd=%d", client_fd);
-
         }
 
     }
@@ -287,6 +286,7 @@ void ap_tcpserver_thread(void *arg)
 */
 void ap_recv_thread(void *arg)
 {
+    ESP_LOGI("ap_recv_thread","ap_recv_thread start");
     int client_fd = *(int*)arg;  //获取客户端套接字
     char buffer[1024] = { 0 };  //接收缓冲区
     int bytes_received = 0;  //接收到的字节数
@@ -304,6 +304,7 @@ void ap_recv_thread(void *arg)
             ESP_LOGI(TAG, "Client disconnected");
             break;  //客户端断开连接
         }
+        bytes_received = bytes_received > sizeof(buffer) - 1 ? sizeof(buffer) - 1 : bytes_received; // 确保不会溢出
         buffer[bytes_received] = '\0';  //确保字符串结束
         /*接收到数据之后需要解析数据*/
         BaseType_t err = xQueueSend(dataAnalysisQueue, buffer, 0); //将接收到的数据发送到解析数据队列
@@ -393,17 +394,6 @@ void ap_getlocal_IP(void)
  */
 void mqtt_start(void)
 {
-    // if(wifiConfigInfo.mode == WIFI_AP) // 如果是AP模式
-    // {
-    //     ESP_LOGI(TAG, "MQTT started in AP mode");
-        
-    //     sprintf(mqttclient.uri, "%s:%d", MQTT_BROKER, mqttclient.port); // 构建MQTT Broker URI
-    // }
-    // else if(wifiConfigInfo.mode == WIFI_STA) // 如果是STA模式
-    // {
-    //     ESP_LOGI(TAG, "MQTT started in STA mode");
-    //     sprintf(mqttclient.uri, "%s:%d", MQTT_BROKER, mqttclient.port); // 构建MQTT Broker URI
-    // }
     esp_mqtt_client_config_t mqtt_cfg = 
     {
         .broker.address.uri = mqttclient.uri , // MQTT Broker URI
@@ -413,7 +403,9 @@ void mqtt_start(void)
             .username = mqttclient.username, // 用户名
             .client_id = mqttclient.clientID,
             .authentication.password = mqttclient.password // 密码
-        }
+        },
+        .session.keepalive = 150,//保活
+        .session.disable_keepalive = false,
     };
     mqttclient.client = esp_mqtt_client_init(&mqtt_cfg);
     /*注册回调函数*/

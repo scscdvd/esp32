@@ -4,7 +4,11 @@ set(SOURCES
     "../src/mynvs.c"
     "../src/uart.c"
     "../src/io_control.c"
-)
+    "../src/WS2812.c"
+    "../src/data_analysis.c"
+    "../src/aliot_ota.c"
+    "../src/aliot_dm.c"
+    )
 
 idf_component_register(
     SRCS ${SOURCES}

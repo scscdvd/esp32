@@ -5,8 +5,7 @@
 #include "esp_log.h"
 
 
-#define GPIO_OUTPUT_PIN  ((1ULL<<GPIO_NUM_14) | (1ULL<<GPIO_NUM_13)) // 定义GPIO输出引脚
-#define GPIO_INPUT_PIN   ((1ULL<<GPIO_NUM_12) | (1ULL<<GPIO_NUM_15)) // 定义GPIO输入引脚
+
 /**
  * @brief GPIO中断处理函数
  * @param arg   用户传递的参数
@@ -15,7 +14,6 @@
 static void IRAM_ATTR gpio_isr_handler(void* arg)
 {
     uint8_t gpio_num = (uint8_t)(uintptr_t)arg; // 获取GPIO编号
-    ESP_LOGI("GPIO_ISR", "GPIO %d triggered", gpio_num); // 打印触发的GPIO编号
     xQueueSendFromISR(gpioQueue, &gpio_num, 0);
 }
 /*
@@ -30,7 +28,7 @@ void io_control_init(void)
      {
         .pin_bit_mask = GPIO_OUTPUT_PIN, // 设置GPIO引脚
         .mode = GPIO_MODE_INPUT_OUTPUT, // 设置为输出模式
-        .pull_up_en = GPIO_PULLUP_DISABLE, // 禁用上拉电阻
+        .pull_up_en = GPIO_PULLUP_ENABLE, // 启用上拉电阻
         .pull_down_en = GPIO_PULLDOWN_DISABLE, // 禁用下拉电阻
         .intr_type = GPIO_INTR_DISABLE, // 禁用中断
      };
@@ -38,7 +36,7 @@ void io_control_init(void)
      {
         .pin_bit_mask = GPIO_INPUT_PIN, // 设置GPIO引脚
         .mode = GPIO_MODE_INPUT, // 设置为输入模式
-        .pull_up_en = GPIO_PULLUP_DISABLE, // 禁用上拉电阻
+        .pull_up_en = GPIO_PULLUP_ENABLE, // 启用上拉电阻
         .pull_down_en = GPIO_PULLDOWN_DISABLE, // 禁用下拉电阻
         .intr_type = GPIO_INTR_ANYEDGE, // 启用中断
      };
@@ -51,6 +49,5 @@ void io_control_init(void)
 
     gpio_set_level(GPIO_NUM_14, 0);
     gpio_set_level(GPIO_NUM_13, 0);
+    ESP_LOGI("IOControl", "IO control initialized successfully");
 }
-
-

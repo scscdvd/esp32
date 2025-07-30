@@ -27,7 +27,7 @@ typedef struct
     esp_mqtt_client_handle_t client;
     char uri[128]; // MQTT Broker URI
     unsigned short port; // MQTT端口
-    char clientID[64]; // 设备ID
+    char clientID[128]; // 设备ID
     char username[64]; // 用户名
     char password[64]; // 密码
     char publishTopic[256]; // 发布主题

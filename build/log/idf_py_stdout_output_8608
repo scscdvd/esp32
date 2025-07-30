@@ -1,0 +1,110 @@
+[1/12] Performing build step for 'bootloader'
+[1/1] C:\Windows\system32\cmd.exe /C "cd /D D:\esp\wifi\build\bootloader\esp-idf\esptool_py && D:\.espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe D:/esp/v5.2.5/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 D:/esp/wifi/build/bootloader/bootloader.bin"
+Bootloader binary size 0x5480 bytes. 0x2b80 bytes (34%) free.
+[2/12] No install step for 'bootloader'
+[3/12] Completed 'bootloader'
+[4/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+In file included from D:/esp/wifi/main/main.c:8:
+D:/esp/wifi/include/aliot_ota.h:20:20: warning: 'aliyun_root_cert_pem' defined but not used [-Wunused-variable]
+   20 | static const char *aliyun_root_cert_pem;
+      |                    ^~~~~~~~~~~~~~~~~~~~
+[5/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/__/src/mywifi.c.obj
+In file included from D:/esp/wifi/src/mywifi.c:4:
+D:/esp/wifi/include/aliot_ota.h:20:20: warning: 'aliyun_root_cert_pem' defined but not used [-Wunused-variable]
+   20 | static const char *aliyun_root_cert_pem;
+      |                    ^~~~~~~~~~~~~~~~~~~~
+[6/12] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/__/src/aliot_ota.c.obj
+D:/esp/wifi/src/aliot_ota.c: In function 'start_aliot_mqtt':
+D:/esp/wifi/src/aliot_ota.c:208:36: warning: unused variable 'sign_result' [-Wunused-variable]
+  208 |     char sign_source[256] = { 0 }, sign_result[65] = { 0 };
+      |                                    ^~~~~~~~~~~
+[7/12] Linking C static library esp-idf\main\libmain.a
+[8/12] Generating ld/sections.ld
+[9/12] Linking CXX executable main.elf
+[10/12] Generating binary image from built executable
+esptool.py v4.9.0
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated D:/esp/wifi/build/main.bin
+[11/12] C:\Windows\system32\cmd.exe /C "cd /D D:\esp\wifi\build\esp-idf\esptool_py && D:\.espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe D:/esp/v5.2.5/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/esp/wifi/build/partition_table/partition-table.bin D:/esp/wifi/build/main.bin"
+main.bin binary size 0x106b00 bytes. Smallest app partition is 0x140000 bytes. 0x39500 bytes (18%) free.
+[11/12] C:\Windows\system32\cmd.exe /C "cd /D D:\esp\v5.2.5\esp-idf\components\esptool_py && D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/esp/v5.2.5/esp-idf -D SERIAL_TOOL=D:/.espressif/python_env/idf5.2_py3.11_env/Scripts/python.exe;;D:/esp/v5.2.5/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=D:/esp/wifi/build -P D:/esp/v5.2.5/esp-idf/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32s3 -p COM8 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 16MB 0x0 bootloader/bootloader.bin 0x10000 main.bin 0x8000 partition_table/partition-table.bin 0xe000 ota_data_initial.bin
+esptool.py v4.9.0
+Serial port COM8
+Connecting....
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: 10:51:db:85:93:20
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x00116fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x0000e000 to 0x0000ffff...
+SHA digest in image updated
+Compressed 21632 bytes to 13314...
+Writing at 0x00000000... (100 %)
+Wrote 21632 bytes (13314 compressed) at 0x00000000 in 0.9 seconds (effective 195.4 kbit/s)...
+Hash of data verified.
+Compressed 1075968 bytes to 666181...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001d2d3... (4 %)
+Writing at 0x0002a572... (7 %)
+Writing at 0x0002f75c... (9 %)
+Writing at 0x00034815... (12 %)
+Writing at 0x00039ee6... (14 %)
+Writing at 0x00041ee5... (17 %)
+Writing at 0x0004d41f... (19 %)
+Writing at 0x000534b1... (21 %)
+Writing at 0x00059870... (24 %)
+Writing at 0x0005f90c... (26 %)
+Writing at 0x00065fa5... (29 %)
+Writing at 0x0006c513... (31 %)
+Writing at 0x00072236... (34 %)
+Writing at 0x00077c1d... (36 %)
+Writing at 0x0007d91c... (39 %)
+Writing at 0x000837d6... (41 %)
+Writing at 0x0008967f... (43 %)
+Writing at 0x0008ffc4... (46 %)
+Writing at 0x0009590e... (48 %)
+Writing at 0x0009b765... (51 %)
+Writing at 0x000a1d9b... (53 %)
+Writing at 0x000a7c80... (56 %)
+Writing at 0x000ad085... (58 %)
+Writing at 0x000b1fab... (60 %)
+Writing at 0x000b70fc... (63 %)
+Writing at 0x000bc17e... (65 %)
+Writing at 0x000c151b... (68 %)
+Writing at 0x000c6935... (70 %)
+Writing at 0x000cc548... (73 %)
+Writing at 0x000d1de0... (75 %)
+Writing at 0x000d796b... (78 %)
+Writing at 0x000dd656... (80 %)
+Writing at 0x000e2d6f... (82 %)
+Writing at 0x000e83bb... (85 %)
+Writing at 0x000ef67b... (87 %)
+Writing at 0x000fa9c4... (90 %)
+Writing at 0x00100ac4... (92 %)
+Writing at 0x00106e4a... (95 %)
+Writing at 0x0010d1a6... (97 %)
+Writing at 0x00112c62... (100 %)
+Wrote 1075968 bytes (666181 compressed) at 0x00010000 in 15.2 seconds (effective 565.0 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 129...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (129 compressed) at 0x00008000 in 0.1 seconds (effective 256.5 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 31...
+Writing at 0x0000e000... (100 %)
+Wrote 8192 bytes (31 compressed) at 0x0000e000 in 0.2 seconds (effective 361.4 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

@@ -1,0 +1,57 @@
+功能：串口收发收据，mqtt收发数据，io输入输出，WS2812灯颜色过渡，tcp服务器收发数据，数据分析处理，nvs数据获取，保存等。
+AP模式下，ESP32作为一个热点，其他设备可以连接到这个热点进行数据交互。
+通信方式为TCP通信，IP使用静态IP地址。
+STA模式下，ESP32连接到一个现有的WiFi网络，其他设备可以通过这个网络与ESP32进行通信。
+通信方式采用mqtt通信，IP使用DHCP动态分配。
+但是具体是dhcp还是static是自己通过JSON数据来配置的。
+实现了双mqtt连接，一个用于与其他设备进行通信，另一个阿里云平台则负责进行ota升级
+
+版本：1.0.0
+说明：此文件为ESP32的主程序文件，包含了串口通信、数据处理和GPIO操作等功能的实现。
+
+
+配置网络参数串口配置GPIO_NUM_4,GPIO_NUM_5
+//设置wifi参数
+{
+    "config":"set",
+    "mode":0,//0-Station 1-SoftAP
+    "ssid":"CMCC-C67C",
+    "password":"3.141592653",
+    "deviceIP":"192.168.1.100",
+    "deviceNetMask":"255.255.255.0",
+    "deviceGateway":"192.168.1.1"
+    "device_port":9547,
+    "max_connection":1,
+    "dhcpEnable":1
+}
+回复
+成功ACK:OK 失败：NO
+{
+    "config":"set",
+    "ACK":"OK"
+}
+
+/*获取wifi参数*/
+{
+    "config":"get"
+}
+/*获取参数成功*/
+{
+    "config":"get",
+    "mode":0,//0-Station 1-SoftAP
+    "ssid":"CMCC-C67C",
+    "password":"3.141592653",
+    "deviceIP":"192.168.1.100",
+    "deviceNetMask":"255.255.255.0",
+    "deviceGateway":"192.168.1.1"
+    "device_port":9547,
+    "max_connection":1,
+    "dhcpEnable":1
+}
+失败
+{
+    "config":"set",
+    "ACK":"NO"
+}
+
+注意：不要在回调函数中做太多、太复杂的事
