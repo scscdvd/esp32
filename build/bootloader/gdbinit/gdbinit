@@ -1,2 +1,2 @@
-source D:/esp/wifi/build/bootloader/gdbinit/symbols
-source D:/esp/wifi/build/bootloader/gdbinit/connect
+source D:/esp/project/build/bootloader/gdbinit/symbols
+source D:/esp/project/build/bootloader/gdbinit/connect

@@ -2,6 +2,7 @@
 #include "mynvs.h"
 #include "driver/uart.h"
 #include "esp_system.h"
+#include "ILI9488_lvgl.h"
 bool is_valid_json(const char *data)
 {
     if (data == NULL || strlen(data) == 0)
@@ -123,6 +124,7 @@ bool Param_setgetconfig(char *data)
         {
             uart_write_bytes(UART_NUM_1, (const char *)"{\"config\":\"set\",\"ACK\":\"OK\"}", strlen((const char *)"{\"config\":\"set\",\"ACK\":\"OK\"}")); // 发送数据到UART设备
             cJSON_Delete(Json);
+            lvgl_free();
             esp_restart();
         }
             

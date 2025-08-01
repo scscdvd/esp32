@@ -8,6 +8,8 @@ set(SOURCES
     "../src/data_analysis.c"
     "../src/aliot_ota.c"
     "../src/aliot_dm.c"
+    "../src/ILI9488_lvgl.c"
+    "../src/esp_lcd_ili9488.c"
     )
 
 idf_component_register(

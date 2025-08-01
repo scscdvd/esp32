@@ -1,2 +1,2 @@
-source D:/esp/wifi/build/gdbinit/symbols
-source D:/esp/wifi/build/gdbinit/connect
+source D:/esp/project/build/gdbinit/symbols
+source D:/esp/project/build/gdbinit/connect

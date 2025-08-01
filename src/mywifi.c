@@ -42,7 +42,6 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
             memset(buffer, 0, sizeof(buffer)); // 清空接收缓冲区
             strncpy(buffer,event->data,event->data_len); // 复制数据到缓冲区
             xQueueSend(dataAnalysisQueue, buffer, 0);//发送到解析数据线程
-            // esp_mqtt_client_publish(mqttclient.client, mqttclient.publishTopic, "{\"id\":10}", 0, 0, 0);
             break;
         default:
             break;
@@ -99,7 +98,6 @@ static void sta_event_handler(void* arg, esp_event_base_t event_base,int32_t eve
                 break;
             case WIFI_EVENT_STA_CONNECTED:  //WIFI连上路由器后，触发此事件
                 ESP_LOGI(TAG, "connected to AP");
-                flag = 1;
                 break;
             case WIFI_EVENT_STA_DISCONNECTED:   //WIFI从路由器断开连接后触发此事件
                 if(flag)
@@ -128,6 +126,7 @@ static void sta_event_handler(void* arg, esp_event_base_t event_base,int32_t eve
                 ESP_LOGI(TAG, "STA local IP: %s", wifiConfigInfo.deviceIP);
                 mqtt_start();//启动mqtt客户端
                 start_aliot_mqtt();//连接阿里云
+                flag = 1;
                 break;
         }
     }

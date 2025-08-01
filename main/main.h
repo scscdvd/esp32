@@ -42,16 +42,16 @@
 #define dataAnalysisQueueLen 4 //数据分析队列长度
 #define dataAnalysisQueueItemSize 1024 //数据分析队列项大小
 
-#define gpioQueueLen 4 //GPIO队列长度
-#define gpioQueueItemSize 1 //GPIO队列项大小
 
 extern SemaphoreHandle_t xReadWriteSemaphore; // 读写NVS信号量
 extern QueueHandle_t uartQueue; // UART接收队列
 extern QueueHandle_t dataAnalysisQueue; // 数据分析队列
 extern QueueHandle_t gpioQueue; // GPIO队列
+extern TaskHandle_t gpio_task_handle;
 
 void uart_thread(void *arg);
 void analysis_data_thread(void *arg);
 void gpio_thread(void *arg);
 void heartLed_thread(void *arg);
+void lvgl_thread(void *arg);
 #endif

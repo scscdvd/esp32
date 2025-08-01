@@ -87,14 +87,14 @@ esp_err_t mynvs_get_config(Config_t *config)
         xSemaphoreGive(xReadWriteSemaphore);
         return err;
     }
-    
-    err = nvs_get_u16(handle, "mode", &config->mode);
+    uint16_t tmp;
+    err = nvs_get_u16(handle, "mode", &tmp);
     if(err != ESP_OK) 
     {
         ESP_LOGE("NVS", "Failed to get NVS mode: %s", esp_err_to_name(err));
         goto exit;
     }
-    
+    config->mode = tmp;
     size_t ssid_len = sizeof(config->ssid);
     err = nvs_get_str(handle, "ssid", (char*)config->ssid, &ssid_len);
     if(err != ESP_OK) 
@@ -163,4 +163,109 @@ exit:
     nvs_close(handle);
     xSemaphoreGive(xReadWriteSemaphore);
     return err;
+}
+
+esp_err_t nvs_save_lcd_calibration_param(long int min_x,long int max_x,long int min_y,long int max_y)
+{
+    nvs_handle_t handle;
+    xSemaphoreTake(xReadWriteSemaphore, portMAX_DELAY);
+    esp_err_t err = nvs_open("calibration_param", NVS_READWRITE, &handle);
+    if(err != ESP_OK) 
+    {
+        ESP_LOGE("NVS", "Failed to open NVS partition: %s", esp_err_to_name(err));
+        xSemaphoreGive(xReadWriteSemaphore);
+        return err;
+    }
+    err = nvs_set_i32(handle,"min_x",min_x);
+    if(err != ESP_OK) 
+    {
+        ESP_LOGE("NVS", "Failed to save NVS min_x: %s", esp_err_to_name(err));
+        goto err;
+    }
+    err = nvs_set_i32(handle,"max_x",max_x);
+    if(err != ESP_OK) 
+    {
+        ESP_LOGE("NVS", "Failed to save NVS max_x: %s", esp_err_to_name(err));
+        goto err;
+    }
+    err = nvs_set_i32(handle,"min_y",min_y);
+    if(err != ESP_OK) 
+    {
+        ESP_LOGE("NVS", "Failed to save NVS min_y: %s", esp_err_to_name(err));
+        goto err;
+    }
+    
+    err = nvs_set_i32(handle,"max_y",max_y);
+    if(err != ESP_OK) 
+    {
+        ESP_LOGE("NVS", "Failed to save NVS max_y: %s", esp_err_to_name(err));
+        goto err;
+    }
+    err = nvs_set_u8(handle,"isSave",1);//校准参数设置成功
+    if(err != ESP_OK) 
+    {
+        ESP_LOGE("NVS", "Failed to save NVS isSave: %s", esp_err_to_name(err));
+        goto err;
+    }
+    nvs_commit(handle);
+    nvs_close(handle);
+    xSemaphoreGive(xReadWriteSemaphore);
+    return ESP_OK;
+err:
+    nvs_close(handle);
+    xSemaphoreGive(xReadWriteSemaphore);
+    return ESP_FAIL;
+}
+
+uint8_t nvs_get_lcd_calibration_param(long int *min_x,long int *max_x,long int *min_y,long int *max_y)
+{
+    uint8_t isSave = 0;
+    nvs_handle_t handle;
+    xSemaphoreTake(xReadWriteSemaphore, portMAX_DELAY);
+    esp_err_t err = nvs_open("calibration_param", NVS_READONLY, &handle);
+    if(err != ESP_OK) 
+    {
+        ESP_LOGE("NVS", "Failed to open NVS partition: %s", esp_err_to_name(err));
+        xSemaphoreGive(xReadWriteSemaphore);
+        return isSave;
+    }
+    
+    err = nvs_get_i32(handle,"min_x",min_x);
+    if(err != ESP_OK) 
+    {
+        ESP_LOGE("NVS", "Failed to get NVS min_x: %s", esp_err_to_name(err));
+        goto err;
+    }
+    err = nvs_get_i32(handle,"max_x",max_x);
+    if(err != ESP_OK) 
+    {
+        ESP_LOGE("NVS", "Failed to get NVS max_x: %s", esp_err_to_name(err));
+        goto err;
+    }
+    err = nvs_get_i32(handle,"min_y",min_y);
+    if(err != ESP_OK) 
+    {
+        ESP_LOGE("NVS", "Failed to get NVS min_y: %s", esp_err_to_name(err));
+        goto err;
+    }
+    err = nvs_get_i32(handle,"max_y",max_y);
+    if(err != ESP_OK) 
+    {
+        ESP_LOGE("NVS", "Failed to get NVS max_y: %s", esp_err_to_name(err));
+        goto err;
+    }
+    err = nvs_get_u8(handle,"isSave",&isSave);//校准参数设置成功
+    if(err != ESP_OK) 
+    {
+        ESP_LOGE("NVS", "Failed to get NVS isSave: %s", esp_err_to_name(err));
+        goto err;
+    }
+    nvs_commit(handle);
+    nvs_close(handle);
+    xSemaphoreGive(xReadWriteSemaphore);
+    return isSave;
+err:
+    nvs_close(handle);
+    xSemaphoreGive(xReadWriteSemaphore);
+    return isSave;//失败返回0
 }

@@ -14,12 +14,12 @@ typedef struct
     wifiMode_t mode;  //WIFI工作模式
     uint8_t ssid[32];     //WIFI SSID
     uint8_t password[64]; //WIFI密码
-    uint8_t max_connection; //最大连接数
+    uint16_t max_connection; //最大连接数
     unsigned short device_port; //设备端口
     char deviceIP[32]; //设备IP地址
     char deviceNetMask[32]; //设备子网掩码
     char deviceGateway[32]; //设备网关
-    uint8_t dhcpEnable; //是否使用DHCP
+    uint16_t dhcpEnable; //是否使用DHCP
 } Config_t;
 typedef struct
 {

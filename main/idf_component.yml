@@ -1,2 +1,5 @@
 dependencies:
-  espressif/led_strip: "*"
+  espressif/led_strip: '*'
+  lvgl/lvgl: '>=9.1.0'
+  espressif/esp_lvgl_port: '>=2.0.0'
+  espressif/esp_lcd_touch: ">=1.1.0"

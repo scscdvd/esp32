@@ -9,6 +9,7 @@
 #include "esp_ota_ops.h"
 #include "esp_crt_bundle.h"
 #include "aliot_dm.h"
+#include "ILI9488_lvgl.h"
 
 #define ALIOT_URI "iot-06z00aqatwxu3xb.mqtt.iothub.aliyuncs.com"
 #define ALIOT_PORT 8883
@@ -60,6 +61,11 @@ void aliot_ota_cancel_rollback(void)
             esp_ota_mark_app_valid_cancel_rollback();
         }
     }
+}
+void check_memory() {
+    ESP_LOGI("MEM", "Free Heap: %d", esp_get_free_heap_size());
+    ESP_LOGI("MEM", "DMA Free: %d", heap_caps_get_free_size(MALLOC_CAP_DMA));
+    ESP_LOGI("MEM", "PSRAM Free: %d", heap_caps_get_free_size(MALLOC_CAP_SPIRAM));
 }
 /*阿里云回调函数*/
 void aliot_mqtt_event_handler(void* arg,esp_event_base_t event_base,int32_t event_id,void* event_data)
@@ -181,6 +187,7 @@ void https_ota_task(void* arg)
         if(s_ota_finish_f)
             s_ota_finish_f(0);
         vTaskDelay(1000 / portTICK_PERIOD_MS);
+        lvgl_free();
         esp_restart();
     }
     else
@@ -211,7 +218,7 @@ static void calc_hmac_sha256(const char* key, const char* msg, char* out_hex)
 
 void start_aliot_mqtt(void)
 {
-    char sign_source[256] = { 0 }, sign_result[65] = { 0 };
+    char sign_source[256] = { 0 };
     const char *timestamp = "2524608000000"; // 固定值
     snprintf(aliot_mqtt.clientID, sizeof(aliot_mqtt.clientID),
              "%s|securemode=3,signmethod=hmacsha256,timestamp=%s|",
