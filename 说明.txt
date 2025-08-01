@@ -14,12 +14,12 @@ STA模式下，ESP32连接到一个现有的WiFi网络，其他设备可以通�
 //设置wifi参数
 {
     "config":"set",
-    "mode":0,//0-Station 1-SoftAP
+    "mode":0,
     "ssid":"CMCC-C67C",
     "password":"3.141592653",
     "deviceIP":"192.168.1.100",
     "deviceNetMask":"255.255.255.0",
-    "deviceGateway":"192.168.1.1"
+    "deviceGateway":"192.168.1.1",
     "device_port":9547,
     "max_connection":1,
     "dhcpEnable":1

@@ -43,8 +43,8 @@ static void print_config(const Config_t config)
 void app_main(void)
 {
     printf("Starting application...\n");
-    ESP_LOGI("app_main","this is aliot version %s,just for test!",get_app_version());
-    // esp_log_level_set("*", ESP_LOG_NONE);  // 关闭所有模块的日志i
+    ESP_LOGI("app_main","application version %s",get_app_version());
+    esp_log_level_set("*", ESP_LOG_NONE);  // 关闭所有模块的日志i
     xReadWriteSemaphore = xSemaphoreCreateBinary();//nvs读写信号量
     if(xReadWriteSemaphore == NULL)
         return;
