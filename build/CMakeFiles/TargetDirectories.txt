@@ -897,3 +897,10 @@ D:/esp/project/build/esp-idf/main/CMakeFiles/list_install_components.dir
 D:/esp/project/build/esp-idf/main/CMakeFiles/install.dir
 D:/esp/project/build/esp-idf/main/CMakeFiles/install/local.dir
 D:/esp/project/build/esp-idf/main/CMakeFiles/install/strip.dir
+D:/esp/project/build/esp-idf/ui/CMakeFiles/__idf_ui.dir
+D:/esp/project/build/esp-idf/ui/CMakeFiles/edit_cache.dir
+D:/esp/project/build/esp-idf/ui/CMakeFiles/rebuild_cache.dir
+D:/esp/project/build/esp-idf/ui/CMakeFiles/list_install_components.dir
+D:/esp/project/build/esp-idf/ui/CMakeFiles/install.dir
+D:/esp/project/build/esp-idf/ui/CMakeFiles/install/local.dir
+D:/esp/project/build/esp-idf/ui/CMakeFiles/install/strip.dir

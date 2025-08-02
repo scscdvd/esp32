@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include "sdkconfig.h"
 #include "mynvs.h"
+#include "ui_home.h"
 static const char* TAG = "ili9488";
 
 #define LCD_H_RES   320
@@ -24,7 +25,7 @@ static const char* TAG = "ili9488";
 #define LCD_PIXEL_CLK_HZ    (40 * 1000 * 1000)
 #define LCD_CMD_BITS        8
 #define LCD_PARAM_BITS      8
-#define LCD_COLOR_SPACE     ESP_LCD_COLOR_SPACE_BGR
+#define LCD_COLOR_SPACE     ESP_LCD_COLOR_SPACE_RGB
 #define LCD_BITS_PER_PIXEL  18
 #define LCD_MAX_TRANSFER_SIZE 32768
 #define LCD_QUEUE_LEN 10

@@ -1,0 +1,570 @@
+Command: D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe d:\esp\v5.5\esp-idf\tools/idf_monitor.py -p COM8 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\esp\project\build\main.elf D:\esp\project\build\bootloader\bootloader.elf --force-color -m 'D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'd:\esp\v5.5\esp-idf\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x2b (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x159c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f48
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Aug  1 2025 16:58:39[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 app0             OTA app          00 10 00010000 00200000[0m
+[0;32mI (76) boot:  3 app1             OTA app          00 11 00210000 00200000[0m
+[0;32mI (82) boot:  4 spiffs           Unknown data     01 82 00410000 00bf0000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=41c50h (269392) map[0m
+[0;32mI (147) esp_image: segment 1: paddr=00051c78 vaddr=3fc9f200 size=05378h ( 21368) load[0m
+[0;32mI (151) esp_image: segment 2: paddr=00056ff8 vaddr=40374000 size=09020h ( 36896) load[0m
+[0;32mI (160) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=f4694h (1001108) map[0m
+[0;32mI (337) esp_image: segment 4: paddr=001546bc vaddr=4037d020 size=120fch ( 73980) load[0m
+[0;32mI (353) esp_image: segment 5: paddr=001667c0 vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (364) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (364) boot: Disabling RNG early entropy source...[0m
+[0;32mI (374) cpu_start: Multicore app[0m
+[0;32mI (383) cpu_start: Pro cpu start user code[0m
+[0;32mI (383) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (383) app_init: Application information:[0m
+[0;32mI (386) app_init: Project name:     main[0m
+[0;32mI (391) app_init: App version:      1.0.0[0m
+[0;32mI (396) app_init: Compile time:     Aug  1 2025 16:57:34[0m
+[0;32mI (402) app_init: ELF file SHA256:  b2ea8259e...[0m
+[0;32mI (407) app_init: ESP-IDF:          v5.5[0m
+[0;32mI (411) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (416) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (421) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (426) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (433) heap_init: At 3FCB0FB8 len 00038758 (225 KiB): RAM[0m
+[0;32mI (439) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (445) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (452) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (459) spi_flash: detected chip: generic[0m
+[0;32mI (462) spi_flash: flash io: dio[0m
+[0;32mI (467) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (474) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (482) main_task: Started on CPU0[0m
+[0;32mI (512) main_task: Calling app_main()[0m
+Starting application...
+[0;32mI (512) app_main: application version 1.0.0[0m
+[0;32mI (532) NVS: NVS initialized successfully[0m
+[0;32mI (542) app_main: WiFi config loaded successfully from NVS[0m
+[0;32mI (542) CONFIG: mode           : 0[0m
+[0;32mI (542) CONFIG: ssid           : fang[0m
+[0;32mI (542) CONFIG: password       : 12345678[0m
+[0;32mI (552) CONFIG: deviceIP       : 192.168.1.100[0m
+[0;32mI (552) CONFIG: deviceNetMask  : 255.255.255.0[0m
+[0;32mI (562) CONFIG: deviceGateway  : 192.168.1.1[0m
+[0;32mI (562) CONFIG: device_port    : 9547[0m
+[0;32mI (572) CONFIG: max_connection : 1[0m
+[0;32mI (572) CONFIG: dhcpEnable     : 1[0m
+[0;32mI (582) pp: pp rom version: e7ae62f[0m
+[0;32mI (582) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (602) wifi:wifi driver task: 3fcee234, prio:23, stack:6656, core=0[0m
+[0;32mI (612) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (612) wifi:wifi certification version: v7.0[0m
+[0;32mI (612) wifi:config NVS flash: enabled[0m
+[0;32mI (612) wifi:config nano formatting: disabled[0m
+[0;32mI (612) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (622) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (622) wifi:Init management short buffer num: 32[0m
+[0;32mI (632) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (632) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (632) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (642) wifi:Init static rx buffer num: 10[0m
+[0;32mI (642) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (652) wifi_init: rx ba win: 6[0m
+[0;32mI (652) wifi_init: accept mbox: 6[0m
+[0;32mI (652) wifi_init: tcpip mbox: 32[0m
+[0;32mI (662) wifi_init: udp mbox: 6[0m
+[0;32mI (662) wifi_init: tcp mbox: 6[0m
+[0;32mI (672) wifi_init: tcp tx win: 5760[0m
+[0;32mI (672) wifi_init: tcp rx win: 5760[0m
+[0;32mI (672) wifi_init: tcp mss: 1440[0m
+[0;32mI (682) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (682) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (712) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (752) wifi:mode : sta (10:51:db:85:93:20)[0m
+[0;32mI (752) wifi:enable tsf[0m
+[0;32mI (752) wifi: wifi_init finished.[0m
+[0;32mI (752) uart: queue free spaces: 10[0m
+[0;32mI (752) UART: UART initialized successfully[0m
+[0;32mI (762) IOControl: IO control initialized successfully[0m
+[0;32mI (762) WS2812: Red LED should be on[0m
+[0;32mI (772) DataAnalysis: Data analysis thread started[0m
+[0;32mI (772) app_main: analysis_data_thread created successfully[0m
+[0;32mI (782) app_main: uart_thread created successfully[0m
+[0;32mI (782) UART: UART thread started[0m
+[0;32mI (782) GPIO: GPIO thread started[0m
+[0;32mI (782) app_main: gpio_thread created successfully[0m
+[0;32mI (802) app_main: heartLed_thread created successfully[0m
+[0;32mI (802) HeartLed: Heart LED thread started[0m
+[0;32mI (862) UART: Received data from UART[0m
+[0;32mI (892) app_main: lvgl_thread created successfully[0m
+[0;32mI (892) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (902) uart: 不是Json数据[0m
+[0;32mI (892) ili9488: lvgl_thread start[0m
+[0;32mI (992) UART: Received data from UART[0m
+[0;32mI (992) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (992) uart: 不是Json数据[0m
+[0;32mI (992) ili9488: Initializing SPI bus[0m
+[0;32mI (1002) ili9488: Initializing LVGL[0m
+[0;32mI (1002) wifi:new:<11,2>, old:<1,0>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1012) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1012) ili9488: Initializing touch[0m
+[0;32mI (1022) ili9488: Configuring for RGB color order[0m
+[0;32mI (1022) wifi:[0;32mI (1022) ili9488: new ili9488 panel @0x3fcd3224[0m[0m
+state: auth -> init (0x1c0)
+[0;32mI (1032) ili9488: Setting GPIO:8 to 0[0m
+[0;32mI (1042) ili9488: Setting GPIO:8 to 1[0m
+[0;32mI (1042) wifi:new:<11,0>, old:<11,2>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1052) ili9488: Initializing ILI9488[0m
+[0;32mI (1052) wifi: connect to the AP fail,retry now[0m
+[0;32mI (1082) UART: Received data from UART[0m
+[0;32mI (1082) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (1082) uart: 不是Json数据[0m
+[0;32mI (1192) UART: Received data from UART[0m
+[0;32mI (1192) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (1192) uart: 不是Json数据[0m
+[0;32mI (1252) ili9488: Initialization complete[0m
+[0;32mI (1292) UART: Received data from UART[0m
+[0;32mI (1292) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (1292) uart: 不是Json数据[0m
+[0;31mE (1352) NVS: Failed to open NVS partition: ESP_ERR_NVS_NOT_FOUND[0m
+[0;32mI (1352) ili9488: Starting touch calibration[0m
+[0;32mI (1402) UART: Received data from UART[0m
+[0;32mI (1402) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (1402) uart: 不是Json数据[0m
+[0;32mI (1522) UART: Received data from UART[0m
+[0;32mI (1522) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (1522) uart: 不是Json数据[0m
+[0;32mI (1622) UART: Received data from UART[0m
+[0;32mI (1622) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (1622) uart: 不是Json数据[0m
+[0;32mI (1732) UART: Received data from UART[0m
+[0;32mI (1732) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (1732) uart: 不是Json数据[0m
+[0;32mI (1842) UART: Received data from UART[0m
+[0;32mI (1842) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (1842) uart: 不是Json数据[0m
+[0;32mI (1962) UART: Received data from UART[0m
+[0;32mI (1962) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (1962) uart: 不是Json数据[0m
+[0;32mI (2062) UART: Received data from UART[0m
+[0;32mI (2062) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (2062) uart: 不是Json数据[0m
+[0;32mI (2172) UART: Received data from UART[0m
+[0;32mI (2172) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (2172) uart: 不是Json数据[0m
+[0;32mI (2272) UART: Received data from UART[0m
+[0;32mI (2272) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (2272) uart: 不是Json数据[0m
+[0;32mI (2382) UART: Received data from UART[0m
+[0;32mI (2382) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (2382) uart: 不是Json数据[0m
+[0;32mI (2502) UART: Received data from UART[0m
+[0;32mI (2502) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (2502) uart: 不是Json数据[0m
+[0;32mI (2612) UART: Received data from UART[0m
+[0;32mI (2612) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (2612) uart: 不是Json数据[0m
+[0;32mI (2712) UART: Received data from UART[0m
+[0;32mI (2712) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (2712) uart: 不是Json数据[0m
+[0;32mI (2822) UART: Received data from UART[0m
+[0;32mI (2822) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (2822) uart: 不是Json数据[0m
+[0;32mI (2942) UART: Received data from UART[0m
+[0;32mI (2942) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (2942) uart: 不是Json数据[0m
+[0;32mI (3052) UART: Received data from UART[0m
+[0;32mI (3052) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (3052) uart: 不是Json数据[0m
+[0;32mI (3152) UART: Received data from UART[0m
+[0;32mI (3152) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (3152) uart: 不是Json数据[0m
+[0;32mI (3262) UART: Received data from UART[0m
+[0;32mI (3262) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (3262) uart: 不是Json数据[0m
+[0;32mI (3372) UART: Received data from UART[0m
+[0;32mI (3372) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (3372) uart: 不是Json数据[0m
+[0;32mI (3462) wifi: connect to the AP fail,retry now[0m
+[0;32mI (3472) wifi:new:<11,2>, old:<11,0>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3472) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3482) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3492) UART: Received data from UART[0m
+[0;32mI (3492) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (3492) uart: 不是Json数据[0m
+[0;32mI (3532) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3592) wifi:connected with fang, aid = 3, channel 11, 40D, bssid = 4a:4d:db:59:db:3f[0m
+[0;32mI (3592) wifi:security: WPA2-PSK, phy: bgn, rssi: -9[0m
+[0;32mI (3592) UART: Received data from UART[0m
+[0;32mI (3592) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (3602) wifi:[0;32mI (3602) uart: 不是Json数据[0m[0m
+pm start, type: 1
+
+[0;32mI (3602) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3612) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (3622) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (3632) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (3642) wifi: connected to AP[0m
+[0;32mI (3672) wifi:<ba-add>idx:0 (ifx:0, 4a:4d:db:59:db:3f), tid:0, ssn:1, winSize:64[0m
+[0;32mI (3702) UART: Received data from UART[0m
+[0;32mI (3702) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (3702) uart: 不是Json数据[0m
+[0;32mI (3812) UART: Received data from UART[0m
+[0;32mI (3812) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (3812) uart: 不是Json数据[0m
+[0;32mI (3912) UART: Received data from UART[0m
+[0;32mI (3912) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (3912) uart: 不是Json数据[0m
+[0;32mI (4032) UART: Received data from UART[0m
+[0;32mI (4032) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (4032) uart: 不是Json数据[0m
+[0;32mI (4142) UART: Received data from UART[0m
+[0;32mI (4142) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (4142) uart: 不是Json数据[0m
+[0;32mI (4252) UART: Received data from UART[0m
+[0;32mI (4252) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (4252) uart: 不是Json数据[0m
+[0;32mI (4352) UART: Received data from UART[0m
+[0;32mI (4352) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (4352) uart: 不是Json数据[0m
+[0;32mI (4472) UART: Received data from UART[0m
+[0;32mI (4472) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (4472) uart: 不是Json数据[0m
+[0;32mI (4582) UART: Received data from UART[0m
+[0;32mI (4582) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (4582) uart: 不是Json数据[0m
+[0;32mI (4682) esp_netif_handlers: sta ip: 192.168.83.116, mask: 255.255.255.0, gw: 192.168.83.133[0m
+[0;32mI (4682) wifi: get ip address[0m
+[0;32mI (4682) sta_getlocal_IP: IP:192.168.83.116,netmask:255.255.255.0,gateway:192.168.83.133
+[0m
+[0;32mI (4692) UART: Received data from UART[0m
+[0;32mI (4692) wifi: STA local IP: 192.168.83.116[0m
+[0;32mI (4692) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (4702) aliot: mqtt client start[0m
+[0;32mI (4702) uart: 不是Json数据[0m
+[0;32mI (4792) UART: Received data from UART[0m
+[0;32mI (4792) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (4792) uart: 不是Json数据[0m
+[0;32mI (4902) UART: Received data from UART[0m
+[0;32mI (4902) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (4902) uart: 不是Json数据[0m
+[0;32mI (4952) wifi:<ba-add>idx:1 (ifx:0, 4a:4d:db:59:db:3f), tid:3, ssn:0, winSize:64[0m
+[0;32mI (5022) UART: Received data from UART[0m
+[0;32mI (5022) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (5022) uart: 不是Json数据[0m
+[0;32mI (5122) UART: Received data from UART[0m
+[0;32mI (5122) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (5122) uart: 不是Json数据[0m
+[0;32mI (5482) UART: Received data from UART[0m
+[0;32mI (5482) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (5482) uart: 不是Json数据[0m
+[0;32mI (5482) UART: Received data from UART[0m
+[0;32mI (5492) wifi: MQTT_EVENT_CONNECTED[0m
+[0;32mI (5492) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (5492) uart: 不是Json数据[0m
+[0;32mI (5492) UART: Received data from UART[0m
+[0;32mI (5502) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (5502) uart: 不是Json数据[0m
+[0;32mI (5562) UART: Received data from UART[0m
+[0;32mI (5562) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (5562) uart: 不是Json数据[0m
+[0;32mI (5672) UART: Received data from UART[0m
+[0;32mI (5672) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (5672) uart: 不是Json数据[0m
+[0;32mI (5782) UART: Received data from UART[0m
+[0;32mI (5782) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (5782) uart: 不是Json数据[0m
+[0;32mI (5882) UART: Received data from UART[0m
+[0;32mI (5882) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (5892) uart: 不是Json数据[0m
+[0;32mI (5982) aliot: ALIOT_MQTT_EVENT_CONNECTED[0m
+[0;32mI (5982) aliot: subtopic:/ota/device/upgrade/k0c11gkzMGP/mqtt[0m
+[0;32mI (5982) ver: {"id":"0","params":{"version":"1.0.0"}}[0m
+[0;32mI (6002) UART: Received data from UART[0m
+[0;32mI (6012) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (6012) uart: 不是Json数据[0m
+[0;32mI (6112) UART: Received data from UART[0m
+[0;32mI (6112) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (6112) uart: 不是Json数据[0m
+[0;32mI (6222) UART: Received data from UART[0m
+[0;32mI (6222) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (6222) uart: 不是Json数据[0m
+[0;32mI (6322) UART: Received data from UART[0m
+[0;32mI (6322) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (6322) uart: 不是Json数据[0m
+[0;32mI (6432) UART: Received data from UART[0m
+[0;32mI (6432) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (6432) uart: 不是Json数据[0m
+[0;32mI (6552) UART: Received data from UART[0m
+[0;32mI (6552) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (6552) uart: 不是Json数据[0m
+[0;32mI (6662) UART: Received data from UART[0m
+[0;32mI (6662) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (6662) uart: 不是Json数据[0m
+[0;32mI (6772) UART: Received data from UART[0m
+[0;32mI (6772) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (6772) uart: 不是Json数据[0m
+[0;32mI (6872) UART: Received data from UART[0m
+[0;32mI (6872) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (6882) uart: 不是Json数据[0m
+[0;32mI (6982) UART: Received data from UART[0m
+[0;32mI (6982) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (6982) uart: 不是Json数据[0m
+[0;32mI (7092) UART: Received data from UART[0m
+[0;32mI (7092) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (7092) uart: 不是Json数据[0m
+[0;32mI (7212) UART: Received data from UART[0m
+[0;32mI (7212) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (7212) uart: 不是Json数据[0m
+[0;32mI (7312) UART: Received data from UART[0m
+[0;32mI (7312) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (7312) uart: 不是Json数据[0m
+[0;32mI (7422) UART: Received data from UART[0m
+[0;32mI (7422) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (7422) uart: 不是Json数据[0m
+[0;32mI (7532) UART: Received data from UART[0m
+[0;32mI (7532) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (7532) uart: 不是Json数据[0m
+[0;32mI (7632) UART: Received data from UART[0m
+[0;32mI (7632) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (7632) uart: 不是Json数据[0m
+[0;32mI (7742) UART: Received data from UART[0m
+[0;32mI (7742) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (7742) uart: 不是Json数据[0m
+[0;32mI (7862) UART: Received data from UART[0m
+[0;32mI (7862) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (7862) uart: 不是Json数据[0m
+[0;32mI (7972) UART: Received data from UART[0m
+[0;32mI (7972) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (7972) uart: 不是Json数据[0m
+[0;32mI (8082) UART: Received data from UART[0m
+[0;32mI (8082) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (8082) uart: 不是Json数据[0m
+[0;32mI (8182) UART: Received data from UART[0m
+[0;32mI (8182) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (8182) uart: 不是Json数据[0m
+[0;32mI (8292) UART: Received data from UART[0m
+[0;32mI (8292) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (8292) uart: 不是Json数据[0m
+[0;32mI (8412) UART: Received data from UART[0m
+[0;32mI (8412) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (8412) uart: 不是Json数据[0m
+[0;32mI (8522) UART: Received data from UART[0m
+[0;32mI (8522) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (8522) uart: 不是Json数据[0m
+[0;32mI (8632) UART: Received data from UART[0m
+[0;32mI (8632) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (8632) uart: 不是Json数据[0m
+[0;32mI (8732) UART: Received data from UART[0m
+[0;32mI (8732) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (8732) uart: 不是Json数据[0m
+[0;32mI (8842) UART: Received data from UART[0m
+[0;32mI (8842) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (8842) uart: 不是Json数据[0m
+[0;32mI (8942) UART: Received data from UART[0m
+[0;32mI (8942) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (8942) uart: 不是Json数据[0m
+[0;32mI (9072) UART: Received data from UART[0m
+[0;32mI (9072) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (9072) uart: 不是Json数据[0m
+[0;32mI (9172) UART: Received data from UART[0m
+[0;32mI (9172) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (9172) uart: 不是Json数据[0m
+[0;32mI (9282) UART: Received data from UART[0m
+[0;32mI (9282) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (9282) uart: 不是Json数据[0m
+[0;32mI (9382) UART: Received data from UART[0m
+[0;32mI (9382) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (9382) uart: 不是Json数据[0m
+[0;32mI (9492) UART: Received data from UART[0m
+[0;32mI (9492) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (9492) uart: 不是Json数据[0m
+[0;32mI (9612) UART: Received data from UART[0m
+[0;32mI (9612) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (9612) uart: 不是Json数据[0m
+[0;32mI (9722) UART: Received data from UART[0m
+[0;32mI (9722) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (9722) uart: 不是Json数据[0m
+[0;32mI (9832) UART: Received data from UART[0m
+[0;32mI (9832) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (9832) uart: 不是Json数据[0m
+[0;32mI (9932) UART: Received data from UART[0m
+[0;32mI (9932) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (9932) uart: 不是Json数据[0m
+[0;32mI (10042) UART: Received data from UART[0m
+[0;32mI (10042) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (10042) uart: 不是Json数据[0m
+[0;32mI (10162) UART: Received data from UART[0m
+[0;32mI (10162) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (10162) uart: 不是Json数据[0m
+[0;32mI (10272) UART: Received data from UART[0m
+[0;32mI (10272) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (10272) uart: 不是Json数据[0m
+[0;32mI (10372) UART: Received data from UART[0m
+[0;32mI (10372) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (10372) uart: 不是Json数据[0m
+[0;32mI (10482) UART: Received data from UART[0m
+[0;32mI (10482) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (10482) uart: 不是Json数据[0m
+[0;32mI (10602) UART: Received data from UART[0m
+[0;32mI (10602) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (10602) uart: 不是Json数据[0m
+[0;32mI (10702) UART: Received data from UART[0m
+[0;32mI (10702) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (10702) uart: 不是Json数据[0m
+[0;32mI (10812) UART: Received data from UART[0m
+[0;32mI (10812) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (10812) uart: 不是Json数据[0m
+[0;32mI (10922) UART: Received data from UART[0m
+[0;32mI (10922) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (10922) uart: 不是Json数据[0m
+[0;32mI (11022) UART: Received data from UART[0m
+[0;32mI (11022) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (11022) uart: 不是Json数据[0m
+[0;32mI (11152) UART: Received data from UART[0m
+[0;32mI (11152) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (11152) uart: 不是Json数据[0m
+[0;32mI (11252) UART: Received data from UART[0m
+[0;32mI (11252) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (11252) uart: 不是Json数据[0m
+[0;32mI (11362) UART: Received data from UART[0m
+[0;32mI (11362) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (11362) uart: 不是Json数据[0m
+[0;32mI (11472) UART: Received data from UART[0m
+[0;32mI (11472) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (11472) uart: 不是Json数据[0m
+[0;32mI (11572) UART: Received data from UART[0m
+[0;32mI (11572) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (11572) uart: 不是Json数据[0m
+[0;32mI (11682) UART: Received data from UART[0m
+[0;32mI (11682) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (11682) uart: 不是Json数据[0m
+[0;32mI (11802) UART: Received data from UART[0m
+[0;32mI (11802) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (11802) uart: 不是Json数据[0m
+[0;32mI (11912) UART: Received data from UART[0m
+[0;32mI (11912) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (11912) uart: 不是Json数据[0m
+[0;32mI (12012) UART: Received data from UART[0m
+[0;32mI (12012) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (12012) uart: 不是Json数据[0m
+[0;32mI (12122) UART: Received data from UART[0m
+[0;32mI (12122) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (12122) uart: 不是Json数据[0m
+[0;32mI (12232) UART: Received data from UART[0m
+[0;32mI (12232) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (12232) uart: 不是Json数据[0m
+[0;32mI (12352) UART: Received data from UART[0m
+[0;32mI (12352) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (12352) uart: 不是Json数据[0m
+[0;32mI (12452) UART: Received data from UART[0m
+[0;32mI (12452) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (12452) uart: 不是Json数据[0m
+[0;32mI (12562) UART: Received data from UART[0m
+[0;32mI (12562) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (12562) uart: 不是Json数据[0m
+[0;32mI (12662) UART: Received data from UART[0m
+[0;32mI (12672) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (12672) uart: 不是Json数据[0m
+[0;32mI (12792) UART: Received data from UART[0m
+[0;32mI (12792) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (12792) uart: 不是Json数据[0m
+[0;32mI (12892) UART: Received data from UART[0m
+[0;32mI (12892) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (12892) uart: 不是Json数据[0m
+[0;32mI (12992) UART: Received data from UART[0m
+[0;32mI (12992) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (12992) uart: 不是Json数据[0m
+[0;32mI (13112) UART: Received data from UART[0m
+[0;32mI (13112) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (13112) uart: 不是Json数据[0m
+[0;32mI (13212) UART: Received data from UART[0m
+[0;32mI (13212) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (13212) uart: 不是Json数据[0m
+[0;32mI (13322) UART: Received data from UART[0m
+[0;32mI (13322) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (13322) uart: 不是Json数据[0m
+[0;32mI (13442) UART: Received data from UART[0m
+[0;32mI (13442) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (13442) uart: 不是Json数据[0m
+[0;32mI (13552) UART: Received data from UART[0m
+[0;32mI (13552) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (13552) uart: 不是Json数据[0m
+[0;32mI (13662) UART: Received data from UART[0m
+[0;32mI (13662) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (13662) uart: 不是Json数据[0m
+[0;32mI (13762) UART: Received data from UART[0m
+[0;32mI (13762) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (13762) uart: 不是Json数据[0m
+[0;32mI (13872) UART: Received data from UART[0m
+[0;32mI (13872) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (13872) uart: 不是Json数据[0m
+[0;32mI (13982) UART: Received data from UART[0m
+[0;32mI (13982) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (13982) uart: 不是Json数据[0m
+[0;32mI (14092) UART: Received data from UART[0m
+[0;32mI (14092) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (14092) uart: 不是Json数据[0m
+[0;32mI (14202) UART: Received data from UART[0m
+[0;32mI (14202) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (14202) uart: 不是Json数据[0m
+[0;32mI (14312) UART: Received data from UART[0m
+[0;32mI (14312) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (14312) uart: 不是Json数据[0m
+[0;32mI (14412) UART: Received data from UART[0m
+[0;32mI (14412) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (14412) uart: 不是Json数据[0m
+[0;32mI (14552) UART: Received data from UART[0m
+[0;32mI (14552) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (14552) uart: 不是Json数据[0m
+[0;32mI (14642) UART: Received data from UART[0m
+[0;32mI (14642) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (14642) uart: 不是Json数据[0m
+[0;32mI (14752) UART: Received data from UART[0m
+[0;32mI (14752) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (14752) uart: 不是Json数据[0m
+[0;32mI (14852) UART: Received data from UART[0m
+[0;32mI (14852) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (14852) uart: 不是Json数据[0m
+[0;32mI (14962) UART: Received data from UART[0m
+[0;32mI (14962) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (14962) uart: 不是Json数据[0m
+[0;32mI (15072) UART: Received data from UART[0m
+[0;32mI (15072) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (15072) uart: 不是Json数据[0m
+[0;32mI (15182) UART: Received data from UART[0m
+[0;32mI (15182) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (15182) uart: 不是Json数据[0m
+[0;32mI (15292) UART: Received data from UART[0m
+[0;32mI (15292) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (15292) uart: 不是Json数据[0m
+[0;32mI (15402) UART: Received data from UART[0m
+[0;32mI (15402) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (15402) uart: 不是Json数据[0m
+[0;32mI (15512) UART: Received data from UART[0m
+[0;32mI (15512) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (15512) uart: 不是Json数据[0m
+[0;32mI (15612) UART: Received data from UART[0m
+[0;32mI (15622) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (15622) uart: 不是Json数据[0m
+[0;32mI (15732) UART: Received data from UART[0m
+[0;32mI (15732) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (15732) uart: 不是Json数据[0m
+[0;32mI (15842) UART: Received data from UART[0m
+[0;32mI (15842) UART: len : 6, Data: {[W]1}[0m
+[0;32mI (15842) uart: 不是Json数据[0m

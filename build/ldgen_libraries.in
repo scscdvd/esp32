@@ -169,3 +169,4 @@ $<TARGET_FILE:idf::main>
 $<TARGET_FILE:__idf_espressif__esp_lcd_touch>
 $<TARGET_FILE:__idf_espressif__esp_lvgl_port>
 $<TARGET_FILE:__idf_espressif__led_strip>
+$<TARGET_FILE:idf::ui>
