@@ -10,6 +10,7 @@ set(SOURCES
     "../src/aliot_dm.c"
     "../src/ILI9488_lvgl.c"
     "../src/esp_lcd_ili9488.c"
+    "../src/weather.c"
     )
 
 idf_component_register(
@@ -17,3 +18,4 @@ idf_component_register(
     INCLUDE_DIRS "."
                  "../include"
 )
+

@@ -285,7 +285,7 @@ static void lvgl_port_disp_size_update_callback(lv_event_t *e)
 {
     assert(e);
     // lvgl_port_display_ctx_t *disp_ctx = (lvgl_port_display_ctx_t *)e->user_data;
-    lvgl_port_display_ctx_t *disp_ctx = (lvgl_port_display_ctx_t *)lv_event_get_user_data(e);
+    lvgl_port_display_ctx_t *disp_ctx = lv_event_get_user_data(e);
     assert(disp_ctx != NULL);
     esp_lcd_panel_handle_t control_handle = (disp_ctx->control_handle ? disp_ctx->control_handle : disp_ctx->panel_handle);
 

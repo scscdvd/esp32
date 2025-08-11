@@ -1,0 +1,139 @@
+Command: ninja flash
+[1/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/images/ui_img_back_png.c.obj
+[2/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/screens/ui_setting.c.obj
+[3/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/screens/ui_brightness.c.obj
+[4/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/screens/ui_home.c.obj
+[5/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/screens/ui_home1.c.obj
+[6/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/ui.c.obj
+[7/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/screens/ui_systemInfo.c.obj
+[8/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/images/ui_img_connect_wifi_png.c.obj
+[9/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/images/ui_img_brightness_png.c.obj
+[10/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/ui_helpers.c.obj
+[11/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/images/ui_img_home_png.c.obj
+[12/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/images/ui_img_systeminfo_png.c.obj
+[13/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/images/ui_img_setting_png.c.obj
+[14/26] Performing build step for 'bootloader'
+[1/1] C:\Windows\system32\cmd.exe /C "cd /D D:\esp\project\build\bootloader\esp-idf\esptool_py && D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/esp/v5.5/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 D:/esp/project/build/bootloader/bootloader.bin"
+Bootloader binary size 0x5260 bytes. 0x2da0 bytes (36%) free.
+[15/26] No install step for 'bootloader'
+[16/26] Completed 'bootloader'
+[17/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/images/ui_img_bizhi_png.c.obj
+[18/26] Building C object esp-idf/ui/CMakeFiles/__idf_ui.dir/ui_events.c.obj
+[19/26] Linking C static library esp-idf\ui\libui.a
+[20/26] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/__/src/ILI9488_lvgl.c.obj
+[21/26] Linking C static library esp-idf\main\libmain.a
+[22/26] Generating esp-idf/esp_system/ld/sections.ld
+[23/26] Linking CXX executable main.elf
+[24/26] Generating binary image from built executable
+esptool.py v4.9.0
+Creating esp32s3 image...
+Merged 2 ELF sections
+Successfully created esp32s3 image.
+Generated D:/esp/project/build/main.bin
+[25/26] C:\Windows\system32\cmd.exe /C "cd /D D:\esp\project\build\esp-idf\esptool_py && D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:/esp/v5.5/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/esp/project/build/partition_table/partition-table.bin D:/esp/project/build/main.bin"
+main.bin binary size 0x1e8cb0 bytes. Smallest app partition is 0x200000 bytes. 0x17350 bytes (5%) free.
+Warning: The smallest app partition is nearly full (5% free space left)!
+[25/26] C:\Windows\system32\cmd.exe /C "cd /D D:\esp\v5.5\esp-idf\components\esptool_py && D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe -D IDF_PATH=D:/esp/v5.5/esp-idf -D SERIAL_TOOL=D:/.espressif/python_env/idf5.5_py3.11_env/Scripts/python.exe;;D:/esp/v5.5/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args -D WORKING_DIRECTORY=D:/esp/project/build -P D:/esp/v5.5/esp-idf/components/esptool_py/run_serial_tool.cmake"
+esptool.py --chip esp32s3 -p COM8 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 16MB 0x0 bootloader/bootloader.bin 0x10000 main.bin 0x8000 partition_table/partition-table.bin 0xe000 ota_data_initial.bin
+esptool.py v4.9.0
+Serial port COM8
+Connecting....
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+MAC: 10:51:db:85:93:20
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x001f8fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Flash will be erased from 0x0000e000 to 0x0000ffff...
+SHA digest in image updated
+Compressed 21088 bytes to 13423...
+Writing at 0x00000000... (100 %)
+Wrote 21088 bytes (13423 compressed) at 0x00000000 in 0.9 seconds (effective 196.9 kbit/s)...
+Hash of data verified.
+Compressed 2002096 bytes to 1076910...
+Writing at 0x00010000... (1 %)
+Writing at 0x0001d077... (3 %)
+Writing at 0x0002b9b7... (4 %)
+Writing at 0x00035743... (6 %)
+Writing at 0x0003c3f2... (7 %)
+Writing at 0x0004290d... (9 %)
+Writing at 0x0004a25b... (10 %)
+Writing at 0x000528b6... (12 %)
+Writing at 0x00059cbe... (13 %)
+Writing at 0x00061043... (15 %)
+Writing at 0x0006995d... (16 %)
+Writing at 0x000715dc... (18 %)
+Writing at 0x0007a0c1... (19 %)
+Writing at 0x000ab3a5... (21 %)
+Writing at 0x000b48ef... (22 %)
+Writing at 0x000c10a6... (24 %)
+Writing at 0x000c6771... (25 %)
+Writing at 0x000cb4e8... (27 %)
+Writing at 0x000d0878... (28 %)
+Writing at 0x000d793a... (30 %)
+Writing at 0x000e2194... (31 %)
+Writing at 0x000ea0e4... (33 %)
+Writing at 0x000effe8... (34 %)
+Writing at 0x000f6194... (36 %)
+Writing at 0x000fc5ed... (37 %)
+Writing at 0x00102e4d... (39 %)
+Writing at 0x00108fe6... (40 %)
+Writing at 0x0010f377... (42 %)
+Writing at 0x00114e8b... (43 %)
+Writing at 0x0011af17... (45 %)
+Writing at 0x0012196d... (46 %)
+Writing at 0x0012759c... (48 %)
+Writing at 0x0012d19f... (50 %)
+Writing at 0x00133193... (51 %)
+Writing at 0x00139dca... (53 %)
+Writing at 0x00141550... (54 %)
+Writing at 0x0014754e... (56 %)
+Writing at 0x0014d312... (57 %)
+Writing at 0x00152e24... (59 %)
+Writing at 0x00158b2c... (60 %)
+Writing at 0x0015e9b9... (62 %)
+Writing at 0x00164893... (63 %)
+Writing at 0x0016ae35... (65 %)
+Writing at 0x00170bcc... (66 %)
+Writing at 0x00176825... (68 %)
+Writing at 0x0017cb93... (69 %)
+Writing at 0x001829d1... (71 %)
+Writing at 0x00188155... (72 %)
+Writing at 0x0018d31e... (74 %)
+Writing at 0x0019279a... (75 %)
+Writing at 0x00198092... (77 %)
+Writing at 0x0019d58c... (78 %)
+Writing at 0x001a299c... (80 %)
+Writing at 0x001a7fcb... (81 %)
+Writing at 0x001adfe4... (83 %)
+Writing at 0x001b3843... (84 %)
+Writing at 0x001b958b... (86 %)
+Writing at 0x001bf14f... (87 %)
+Writing at 0x001c4891... (89 %)
+Writing at 0x001c9da0... (90 %)
+Writing at 0x001d222c... (92 %)
+Writing at 0x001db992... (93 %)
+Writing at 0x001e230a... (95 %)
+Writing at 0x001e8612... (96 %)
+Writing at 0x001eef4b... (98 %)
+Writing at 0x001f4682... (100 %)
+Wrote 2002096 bytes (1076910 compressed) at 0x00010000 in 26.1 seconds (effective 613.6 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 126...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (126 compressed) at 0x00008000 in 0.1 seconds (effective 269.1 kbit/s)...
+Hash of data verified.
+Compressed 8192 bytes to 31...
+Writing at 0x0000e000... (100 %)
+Wrote 8192 bytes (31 compressed) at 0x0000e000 in 0.2 seconds (effective 382.0 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

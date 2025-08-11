@@ -1,0 +1,206 @@
+Command: D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\esp\v5.5\esp-idf\tools/idf_monitor.py -p COM8 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\esp\project\build\main.elf D:\esp\project\build\bootloader\bootloader.elf --force-color -m 'D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\esp\v5.5\esp-idf\tools\idf.py'
+Յ���)�ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x2b (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x159c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f48
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Aug  4 2025 08:44:06[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 app0             OTA app          00 10 00010000 00200000[0m
+[0;32mI (76) boot:  3 app1             OTA app          00 11 00210000 00200000[0m
+[0;32mI (82) boot:  4 spiffs           Unknown data     01 82 00410000 00bf0000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=c25d8h (796120) map[0m
+[0;32mI (240) esp_image: segment 1: paddr=000d2600 vaddr=3fc9f200 size=053d8h ( 21464) load[0m
+[0;32mI (244) esp_image: segment 2: paddr=000d79e0 vaddr=40374000 size=08638h ( 34360) load[0m
+[0;32mI (252) esp_image: segment 3: paddr=000e0020 vaddr=42000020 size=f755ch (1013084) map[0m
+[0;32mI (431) esp_image: segment 4: paddr=001d7584 vaddr=4037c638 size=12ae4h ( 76516) load[0m
+[0;32mI (448) esp_image: segment 5: paddr=001ea070 vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (459) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (459) boot: Disabling RNG early entropy source...[0m
+[0;32mI (469) cpu_start: Multicore app[0m
+[0;32mI (478) cpu_start: Pro cpu start user code[0m
+[0;32mI (478) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (478) app_init: Application information:[0m
+[0;32mI (481) app_init: Project name:     main[0m
+[0;32mI (486) app_init: App version:      1.0.0[0m
+[0;32mI (490) app_init: Compile time:     Aug  4 2025 08:40:51[0m
+[0;32mI (496) app_init: ELF file SHA256:  2c12bccda...[0m
+[0;32mI (502) app_init: ESP-IDF:          v5.5[0m
+[0;32mI (506) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (511) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (516) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (521) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (528) heap_init: At 3FCB10F0 len 00038620 (225 KiB): RAM[0m
+[0;32mI (534) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (540) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (546) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (554) spi_flash: detected chip: generic[0m
+[0;32mI (557) spi_flash: flash io: dio[0m
+[0;32mI (562) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (569) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (576) main_task: Started on CPU0[0m
+[0;32mI (606) main_task: Calling app_main()[0m
+Starting application...
+[0;32mI (606) app_main: application version 1.0.0[0m
+[0;32mI (636) NVS: NVS initialized successfully[0m
+[0;32mI (636) app_main: WiFi config loaded successfully from NVS[0m
+[0;32mI (636) CONFIG: mode           : 0[0m
+[0;32mI (636) CONFIG: ssid           : fang[0m
+[0;32mI (646) CONFIG: password       : 12345678[0m
+[0;32mI (646) CONFIG: deviceIP       : 192.168.1.100[0m
+[0;32mI (656) CONFIG: deviceNetMask  : 255.255.255.0[0m
+[0;32mI (656) CONFIG: deviceGateway  : 192.168.1.1[0m
+[0;32mI (666) CONFIG: device_port    : 9547[0m
+[0;32mI (666) CONFIG: max_connection : 1[0m
+[0;32mI (666) CONFIG: dhcpEnable     : 1[0m
+[0;32mI (676) pp: pp rom version: e7ae62f[0m
+[0;32mI (676) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (696) wifi:wifi driver task: 3fcee254, prio:23, stack:6656, core=0[0m
+[0;32mI (706) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (706) wifi:wifi certification version: v7.0[0m
+[0;32mI (706) wifi:config NVS flash: enabled[0m
+[0;32mI (706) wifi:config nano formatting: disabled[0m
+[0;32mI (706) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (716) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (716) wifi:Init management short buffer num: 32[0m
+[0;32mI (726) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (726) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (726) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (736) wifi:Init static rx buffer num: 10[0m
+[0;32mI (736) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (746) wifi_init: rx ba win: 6[0m
+[0;32mI (746) wifi_init: accept mbox: 6[0m
+[0;32mI (746) wifi_init: tcpip mbox: 32[0m
+[0;32mI (756) wifi_init: udp mbox: 6[0m
+[0;32mI (756) wifi_init: tcp mbox: 6[0m
+[0;32mI (766) wifi_init: tcp tx win: 5760[0m
+[0;32mI (766) wifi_init: tcp rx win: 5760[0m
+[0;32mI (766) wifi_init: tcp mss: 1440[0m
+[0;32mI (776) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (776) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (806) wifi: wifi_init finished.[0m
+[0;32mI (806) uart: queue free spaces: 10[0m
+[0;32mI (806) UART: UART initialized successfully[0m
+[0;32mI (806) IOControl: IO control initialized successfully[0m
+[0;32mI (816) WS2812: Red LED should be on[0m
+[0;32mI (816) DataAnalysis: Data analysis thread started[0m
+[0;32mI (826) app_main: analysis_data_thread created successfully[0m
+[0;32mI (826) app_main: uart_thread created successfully[0m
+[0;32mI (826) UART: UART thread started[0m
+[0;32mI (836) GPIO: GPIO thread started[0m
+[0;32mI (836) app_main: gpio_thread created successfully[0m
+[0;32mI (846) app_main: heartLed_thread created successfully[0m
+[0;32mI (846) HeartLed: Heart LED thread started[0m
+[0;32mI (856) app_main: lvgl_thread created successfully[0m
+[0;32mI (856) ili9488: lvgl_thread start[0m
+[0;32mI (866) ili9488: Initializing SPI bus[0m
+[0;32mI (876) ili9488: Initializing SPI bus[0m
+[0;32mI (876) ili9488: Initializing LVGL[0m
+[0;32mI (886) ili9488: Configuring for BGR color order[0m
+[0;32mI (886) ili9488: new ili9488 panel @0x3fcd03e0[0m
+[0;32mI (886) ili9488: Setting GPIO:8 to 0[0m
+[0;32mI (906) ili9488: Setting GPIO:8 to 1[0m
+[0;32mI (916) ili9488: Initializing ILI9488[0m
+[0;32mI (1116) ili9488: Initialization complete[0m
+[0;32mI (1216) ili9488: Initializing touch[0m
+Switch is ON
+[0;32mI (16046) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (16096) wifi:mode : sta (10:51:db:85:93:20)[0m
+[0;32mI (16096) wifi:enable tsf[0m
+[0;32mI (16206) wifi:new:<11,2>, old:<1,0>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (16216) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (16226) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (16246) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (16266) wifi:connected with fang, aid = 4, channel 11, 40D, bssid = fa:59:a7:6f:02:eb[0m
+[0;32mI (16266) wifi:security: WPA2-PSK, phy: bgn, rssi: -17[0m
+[0;32mI (16276) wifi:pm start, type: 1[0m
+
+[0;32mI (16276) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (16276) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (16286) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (16296) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (16306) wifi: connected to AP[0m
+[0;32mI (16326) wifi:<ba-add>idx:0 (ifx:0, fa:59:a7:6f:02:eb), tid:0, ssn:0, winSize:64[0m
+[0;32mI (17336) esp_netif_handlers: sta ip: 192.168.83.116, mask: 255.255.255.0, gw: 192.168.83.133[0m
+[0;32mI (17336) wifi: get ip address[0m
+[0;32mI (17336) sta_getlocal_IP: IP:192.168.83.116,netmask:255.255.255.0,gateway:192.168.83.133
+[0m
+[0;32mI (17346) wifi: STA local IP: 192.168.83.116[0m
+[0;32mI (17356) aliot: mqtt client start[0m
+[0;32mI (18346) wifi: MQTT_EVENT_CONNECTED[0m
+[0;32mI (18476) aliot: ALIOT_MQTT_EVENT_CONNECTED[0m
+[0;32mI (18476) aliot: subtopic:/ota/device/upgrade/k0c11gkzMGP/mqtt[0m
+[0;32mI (18486) ver: {"id":"0","params":{"version":"1.0.0"}}[0m
+[0;32mI (18486) ntp: Setting up NTP...[0m
+Switch is OFF
+[0;32mI (162396) wifi:state: run -> init (0x0)[0m
+[0;32mI (162506) wifi:pm stop, total sleep time: 139020843 us / 146228201 us[0m
+
+[0;32mI (162506) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (162506) wifi:new:<11,0>, old:<11,2>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;31mE (162516) transport_base: tcp_read error, errno=Software caused connection abort[0m
+[0;31mE (162516) esp-tls-mbedtls: read error :-0x004C[0m
+[0;31mE (162516) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;31mE (162526) transport_base: esp_tls_conn_read error, errno=Software caused connection abort[0m
+[0;31mE (162536) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;31mE (162546) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;31mE (162556) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;32mI (162566) wifi:flush txq[0m
+[0;32mI (162566) wifi:stop sw txq[0m
+[0;32mI (162576) wifi:lmac stop hw txq[0m
+[0;32mI (167566) wifi: connect to the AP fail,retry now[0m
+Slider Value: 0
+Slider Value: 12
+Slider Value: 0
+Slider Value: 34
+Slider Value: 35
+Slider Value: 0
+Slider Value: 12
+Slider Value: 0
+Slider Value: 19
+Slider Value: 43
+Slider Value: 0
+Switch is ON
+[0;32mI (779056) wifi:mode : sta (10:51:db:85:93:20)[0m
+[0;32mI (779056) wifi:enable tsf[0m
+[0;32mI (779076) wifi:new:<11,2>, old:<1,0>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (779076) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (779096) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (779116) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (779146) wifi:connected with fang, aid = 1, channel 11, 40D, bssid = fa:59:a7:6f:02:eb[0m
+[0;32mI (779146) wifi:security: WPA2-PSK, phy: bgn, rssi: -22[0m
+[0;32mI (779146) wifi:pm start, type: 1[0m
+
+[0;32mI (779146) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (779156) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (779166) wifi: connected to AP[0m
+[0;32mI (779166) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (779176) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (779196) wifi:<ba-add>idx:0 (ifx:0, fa:59:a7:6f:02:eb), tid:0, ssn:1, winSize:64[0m
+[0;32mI (780206) esp_netif_handlers: sta ip: 192.168.83.116, mask: 255.255.255.0, gw: 192.168.83.133[0m
+[0;32mI (780206) wifi: get ip address[0m
+[0;32mI (780206) sta_getlocal_IP: IP:192.168.83.116,netmask:255.255.255.0,gateway:192.168.83.133
+[0m
+[0;32mI (780216) wifi: STA local IP: 192.168.83.116[0m
+[0;32mI (780226) aliot: mqtt client start[0m
+[0;32mI (780816) wifi: MQTT_EVENT_CONNECTED[0m
+[0;32mI (781226) aliot: ALIOT_MQTT_EVENT_CONNECTED[0m
+[0;32mI (781226) aliot: subtopic:/ota/device/upgrade/k0c11gkzMGP/mqtt[0m
+[0;32mI (781226) ver: {"id":"1","params":{"version":"1.0.0"}}[0m
+[0;32mI (781226) ntp: Setting up NTP...[0m

@@ -38,9 +38,22 @@
     "regex": "c",
     "tuple": "c",
     "type_traits": "c",
-    "utility": "c"
+    "utility": "c",
+    "ui_home.h": "c",
+    "esp_timer.h": "c",
+    "ledc.h": "c",
+    "mywifi.h": "c",
+    "esp_sntp.h": "c",
+    "ui_events.h": "c",
+    "ui.h": "c",
+    "ui_helpers.h": "c",
+    "esp_wifi.h": "c",
+    "compare": "c",
+    "cstdint": "c",
+    "ui_weather.h": "c",
+    "esp_log.h": "c"
   },
-  "idf.espIdfPathWin": "d:\\esp\\v5.5\\esp-idf",
-  "idf.toolsPathWin": "D:\\.espressif",
-  "idf.pythonInstallPath": "D:\\.espressif\\tools\\idf-python\\3.11.2\\python.exe"
+  "idf.espIdfPathWin": "e:\\esp32\\v5.5\\esp-idf",
+  "idf.toolsPathWin": "e:\\esp32\\.espressif",
+  "idf.pythonInstallPath": "e:\\esp32\\.espressif\\tools\\idf-python\\3.11.2\\python.exe"
 }

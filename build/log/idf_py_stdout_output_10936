@@ -1,0 +1,597 @@
+Command: D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\esp\v5.5\esp-idf\tools/idf_monitor.py -p COM8 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\esp\project\build\main.elf D:\esp\project\build\bootloader\bootloader.elf --force-color -m 'D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\esp\v5.5\esp-idf\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x2b (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x159c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f48
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Aug  4 2025 08:44:06[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 app0             OTA app          00 10 00010000 00200000[0m
+[0;32mI (76) boot:  3 app1             OTA app          00 11 00210000 00200000[0m
+[0;32mI (82) boot:  4 spiffs           Unknown data     01 82 00410000 00bf0000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=d37d8h (866264) map[0m
+[0;32mI (252) esp_image: segment 1: paddr=000e3800 vaddr=3fc9f200 size=053d8h ( 21464) load[0m
+[0;32mI (257) esp_image: segment 2: paddr=000e8be0 vaddr=40374000 size=07438h ( 29752) load[0m
+[0;32mI (263) esp_image: segment 3: paddr=000f0020 vaddr=42000020 size=f91f0h (1020400) map[0m
+[0;32mI (444) esp_image: segment 4: paddr=001e9218 vaddr=4037b438 size=13ce4h ( 81124) load[0m
+[0;32mI (461) esp_image: segment 5: paddr=001fcf04 vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (472) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (472) boot: Disabling RNG early entropy source...[0m
+[0;32mI (483) cpu_start: Multicore app[0m
+[0;32mI (492) cpu_start: Pro cpu start user code[0m
+[0;32mI (492) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (492) app_init: Application information:[0m
+[0;32mI (495) app_init: Project name:     main[0m
+[0;32mI (499) app_init: App version:      1.0.0[0m
+[0;32mI (504) app_init: Compile time:     Aug  4 2025 08:40:51[0m
+[0;32mI (510) app_init: ELF file SHA256:  25730ff98...[0m
+[0;32mI (515) app_init: ESP-IDF:          v5.5[0m
+[0;32mI (520) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (525) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (530) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (534) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (542) heap_init: At 3FCB11B0 len 00038560 (225 KiB): RAM[0m
+[0;32mI (548) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (554) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (560) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (567) spi_flash: detected chip: generic[0m
+[0;32mI (571) spi_flash: flash io: dio[0m
+[0;32mI (575) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (582) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (590) main_task: Started on CPU0[0m
+[0;32mI (620) main_task: Calling app_main()[0m
+Starting application...
+[0;32mI (620) app_main: application version 1.0.0[0m
+[0;32mI (650) NVS: NVS initialized successfully[0m
+[0;32mI (650) app_main: WiFi config loaded successfully from NVS[0m
+[0;32mI (650) CONFIG: mode           : 0[0m
+[0;32mI (650) CONFIG: ssid           : fang[0m
+[0;32mI (650) CONFIG: password       : 12345678[0m
+[0;32mI (660) CONFIG: deviceIP       : 192.168.1.100[0m
+[0;32mI (660) CONFIG: deviceNetMask  : 255.255.255.0[0m
+[0;32mI (670) CONFIG: deviceGateway  : 192.168.1.1[0m
+[0;32mI (670) CONFIG: device_port    : 9547[0m
+[0;32mI (680) CONFIG: max_connection : 1[0m
+[0;32mI (680) CONFIG: dhcpEnable     : 1[0m
+[0;32mI (690) pp: pp rom version: e7ae62f[0m
+[0;32mI (690) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (710) wifi:wifi driver task: 3fcee254, prio:23, stack:6656, core=0[0m
+[0;32mI (720) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (720) wifi:wifi certification version: v7.0[0m
+[0;32mI (720) wifi:config NVS flash: enabled[0m
+[0;32mI (720) wifi:config nano formatting: disabled[0m
+[0;32mI (720) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (730) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (730) wifi:Init management short buffer num: 32[0m
+[0;32mI (740) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (740) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (740) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (750) wifi:Init static rx buffer num: 10[0m
+[0;32mI (750) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (760) wifi_init: rx ba win: 6[0m
+[0;32mI (760) wifi_init: accept mbox: 6[0m
+[0;32mI (760) wifi_init: tcpip mbox: 32[0m
+[0;32mI (770) wifi_init: udp mbox: 6[0m
+[0;32mI (770) wifi_init: tcp mbox: 6[0m
+[0;32mI (780) wifi_init: tcp tx win: 5760[0m
+[0;32mI (780) wifi_init: tcp rx win: 5760[0m
+[0;32mI (780) wifi_init: tcp mss: 1440[0m
+[0;32mI (790) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (790) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (800) wifi: wifi_init finished.[0m
+[0;32mI (810) uart: queue free spaces: 10[0m
+[0;32mI (810) UART: UART initialized successfully[0m
+[0;32mI (810) IOControl: IO control initialized successfully[0m
+[0;32mI (820) WS2812: Red LED should be on[0m
+[0;32mI (820) DataAnalysis: Data analysis thread started[0m
+[0;32mI (830) app_main: analysis_data_thread created successfully[0m
+[0;32mI (830) app_main: uart_thread created successfully[0m
+[0;32mI (830) UART: UART thread started[0m
+[0;32mI (840) GPIO: GPIO thread started[0m
+[0;32mI (840) app_main: gpio_thread created successfully[0m
+[0;32mI (850) app_main: heartLed_thread created successfully[0m
+[0;32mI (850) HeartLed: Heart LED thread started[0m
+[0;32mI (860) app_main: lvgl_thread created successfully[0m
+[0;32mI (860) ili9488: lvgl_thread start[0m
+[0;32mI (870) ili9488: Initializing SPI bus[0m
+[0;32mI (880) ili9488: Initializing LVGL[0m
+[0;33mW (880) UART: Unhandled UART event type: 1[0m
+[0;32mI (890) ili9488: Configuring for BGR color order[0m
+[0;32mI (890) ili9488: new ili9488 panel @0x3fcd01dc[0m
+[0;32mI (890) ili9488: Setting GPIO:8 to 0[0m
+[0;32mI (890) UART: Received data from UART[0m
+[0;33mW (900) UART: Unhandled UART event type: 1[0m
+[0;33mW (920) UART: Unhandled UART event type: 1[0m
+[0;32mI (920) ili9488: Setting GPIO:8 to 1[0m
+[0;32mI (930) ili9488: Initializing ILI9488[0m
+[0;33mW (930) UART: Unhandled UART event type: 1[0m
+[0;33mW (950) UART: Unhandled UART event type: 1[0m
+[0;33mW (970) UART: Unhandled UART event type: 1[0m
+[0;33mW (990) UART: Unhandled UART event type: 1[0m
+[0;33mW (1010) UART: Unhandled UART event type: 1[0m
+[0;33mW (1030) UART: Unhandled UART event type: 1[0m
+[0;32mI (1050) UART: Received data from UART[0m
+[0;33mW (1060) UART: Unhandled UART event type: 1[0m
+[0;32mI (1080) UART: Received data from UART[0m
+[0;32mI (1130) ili9488: Initialization complete[0m
+[0;32mI (1130) UART: Received data from UART[0m
+[0;33mW (1140) UART: Unhandled UART event type: 1[0m
+[0;32mI (1150) UART: Received data from UART[0m
+[0;33mW (1160) UART: Unhandled UART event type: 1[0m
+[0;32mI (1170) UART: Received data from UART[0m
+[0;33mW (1180) UART: Unhandled UART event type: 1[0m
+[0;32mI (1190) UART: Received data from UART[0m
+[0;33mW (1200) UART: Unhandled UART event type: 1[0m
+[0;32mI (1210) UART: Received data from UART[0m
+[0;33mW (1220) UART: Unhandled UART event type: 1[0m
+[0;32mI (1230) ili9488: Initializing touch[0m
+[0;32mI (1230) UART: Received data from UART[0m
+[0;33mW (1400) UART: Unhandled UART event type: 1[0m
+[0;33mW (1400) UART: Unhandled UART event type: 1[0m
+[0;33mW (1410) UART: Unhandled UART event type: 1[0m
+[0;32mI (1900) UART: Received data from UART[0m
+[0;32mI (2270) UART: Received data from UART[0m
+[0;33mW (2330) UART: Unhandled UART event type: 1[0m
+[0;32mI (2770) UART: Received data from UART[0m
+[0;33mW (2970) UART: Unhandled UART event type: 1[0m
+[0;32mI (3770) UART: Received data from UART[0m
+[0;32mI (4770) UART: Received data from UART[0m
+[0;33mW (4950) UART: Unhandled UART event type: 1[0m
+[0;32mI (5470) UART: Received data from UART[0m
+[0;32mI (5960) UART: Received data from UART[0m
+[0;33mW (5970) UART: Unhandled UART event type: 1[0m
+[0;32mI (6780) UART: Received data from UART[0m
+[0;33mW (7310) UART: Unhandled UART event type: 1[0m
+Switch is ON
+[0;32mI (14380) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (14420) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (14440) wifi:mode : sta (10:51:db:85:93:20)[0m
+[0;32mI (14440) wifi:enable tsf[0m
+[0;33mW (14460) UART: Unhandled UART event type: 1[0m
+[0;33mW (14460) UART: Unhandled UART event type: 1[0m
+[0;32mI (14500) UART: Received data from UART[0m
+[0;32mI (14760) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (14760) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (14770) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (14800) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (14860) wifi:connected with fang, aid = 5, channel 1, 40U, bssid = 5a:33:63:f0:31:12[0m
+[0;32mI (14860) wifi:security: WPA2-PSK, phy: bgn, rssi: -33[0m
+[0;32mI (14880) wifi:pm start, type: 1[0m
+
+[0;32mI (14880) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (14880) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (14890) wifi: connected to AP[0m
+[0;32mI (14890) ntp: Setting up NTP...[0m
+[0;32mI (14900) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (14900) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (14910) wifi:<ba-add>idx:0 (ifx:0, 5a:33:63:f0:31:12), tid:0, ssn:1, winSize:64[0m
+[0;32mI (15920) esp_netif_handlers: sta ip: 192.168.83.116, mask: 255.255.255.0, gw: 192.168.83.133[0m
+[0;32mI (15920) wifi: get ip address[0m
+[0;32mI (15920) sta_getlocal_IP: IP:192.168.83.116,netmask:255.255.255.0,gateway:192.168.83.133
+[0m
+[0;32mI (15930) wifi: STA local IP: 192.168.83.116[0m
+[0;32mI (15940) aliot: mqtt client start[0m
+[0;32mI (16210) wifi:<ba-add>idx:1 (ifx:0, 5a:33:63:f0:31:12), tid:6, ssn:2, winSize:64[0m
+[0;31mE (16220) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[0;31mE (16220) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[0;31mE (16230) esp-tls: create_ssl_handle failed[0m
+[0;31mE (16240) esp-tls: Failed to open new connection[0m
+[0;31mE (16240) transport_base: Failed to open a new connection[0m
+[0;31mE (16250) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (16250) weather: failed to get weather[0m
+[0;32mI (16830) wifi: MQTT_EVENT_CONNECTED[0m
+[0;32mI (17240) aliot: ALIOT_MQTT_EVENT_CONNECTED[0m
+[0;32mI (17240) aliot: subtopic:/ota/device/upgrade/k0c11gkzMGP/mqtt[0m
+[0;32mI (17240) ver: {"id":"0","params":{"version":"1.0.0"}}[0m
+[0;32mI (19760) UART: Received data from UART[0m
+[0;33mW (20210) UART: Unhandled UART event type: 1[0m
+[0;33mW (20210) UART: Unhandled UART event type: 1[0m
+[0;32mI (21060) UART: Received data from UART[0m
+[0;33mW (21090) UART: Unhandled UART event type: 1[0m
+[0;32mI (22060) UART: Received data from UART[0m
+[0;33mW (22090) UART: Unhandled UART event type: 1[0m
+[0;32mI (23060) UART: Received data from UART[0m
+[0;33mW (23090) UART: Unhandled UART event type: 1[0m
+[0;32mI (24060) UART: Received data from UART[0m
+[0;33mW (25060) UART: Unhandled UART event type: 1[0m
+[0;33mW (27050) UART: Unhandled UART event type: 1[0m
+[0;33mW (28050) UART: Unhandled UART event type: 1[0m
+[0;33mW (41070) UART: Unhandled UART event type: 1[0m
+[0;32mI (43060) UART: Received data from UART[0m
+[0;33mW (43090) UART: Unhandled UART event type: 1[0m
+[0;32mI (44060) UART: Received data from UART[0m
+[0;33mW (44070) UART: Unhandled UART event type: 1[0m
+[0;33mW (44090) UART: Unhandled UART event type: 1[0m
+[0;33mW (44110) UART: Unhandled UART event type: 1[0m
+[0;32mI (45060) UART: Received data from UART[0m
+[0;33mW (45090) UART: Unhandled UART event type: 1[0m
+[0;33mW (45110) UART: Unhandled UART event type: 1[0m
+[0;32mI (46060) UART: Received data from UART[0m
+[0;33mW (46090) UART: Unhandled UART event type: 1[0m
+[0;33mW (46110) UART: Unhandled UART event type: 1[0m
+[0;32mI (47060) UART: Received data from UART[0m
+[0;33mW (47090) UART: Unhandled UART event type: 1[0m
+[0;33mW (47110) UART: Unhandled UART event type: 1[0m
+[0;32mI (48060) UART: Received data from UART[0m
+[0;33mW (48090) UART: Unhandled UART event type: 1[0m
+[0;33mW (48110) UART: Unhandled UART event type: 1[0m
+[0;32mI (49060) UART: Received data from UART[0m
+[0;33mW (49100) UART: Unhandled UART event type: 1[0m
+[0;32mI (50060) UART: Received data from UART[0m
+[0;33mW (50090) UART: Unhandled UART event type: 1[0m
+[0;33mW (50100) UART: Unhandled UART event type: 1[0m
+[0;33mW (50120) UART: Unhandled UART event type: 1[0m
+[0;32mI (51070) UART: Received data from UART[0m
+[0;33mW (51100) UART: Unhandled UART event type: 1[0m
+[0;32mI (52070) UART: Received data from UART[0m
+[0;33mW (52100) UART: Unhandled UART event type: 1[0m
+[0;32mI (53070) UART: Received data from UART[0m
+[0;33mW (53090) UART: Unhandled UART event type: 1[0m
+[0;32mI (54060) UART: Received data from UART[0m
+[0;33mW (54080) UART: Unhandled UART event type: 1[0m
+[0;33mW (54100) UART: Unhandled UART event type: 1[0m
+[0;32mI (55060) UART: Received data from UART[0m
+[0;33mW (55090) UART: Unhandled UART event type: 1[0m
+[0;33mW (55100) UART: Unhandled UART event type: 1[0m
+[0;33mW (55120) UART: Unhandled UART event type: 1[0m
+[0;32mI (56070) UART: Received data from UART[0m
+[0;33mW (56080) UART: Unhandled UART event type: 1[0m
+[0;33mW (56100) UART: Unhandled UART event type: 1[0m
+[0;33mW (56120) UART: Unhandled UART event type: 1[0m
+[0;32mI (57060) UART: Received data from UART[0m
+[0;33mW (57080) UART: Unhandled UART event type: 1[0m
+[0;33mW (57100) UART: Unhandled UART event type: 1[0m
+[0;32mI (58070) UART: Received data from UART[0m
+[0;33mW (58080) UART: Unhandled UART event type: 1[0m
+[0;33mW (58100) UART: Unhandled UART event type: 1[0m
+[0;33mW (58120) UART: Unhandled UART event type: 1[0m
+[0;32mI (59060) UART: Received data from UART[0m
+[0;33mW (59080) UART: Unhandled UART event type: 1[0m
+[0;33mW (59100) UART: Unhandled UART event type: 1[0m
+[0;32mI (60060) UART: Received data from UART[0m
+[0;33mW (60080) UART: Unhandled UART event type: 1[0m
+[0;33mW (60100) UART: Unhandled UART event type: 1[0m
+[0;33mW (60110) UART: Unhandled UART event type: 1[0m
+[0;32mI (61060) UART: Received data from UART[0m
+[0;33mW (61080) UART: Unhandled UART event type: 1[0m
+[0;33mW (61100) UART: Unhandled UART event type: 1[0m
+[0;32mI (62060) UART: Received data from UART[0m
+[0;33mW (62080) UART: Unhandled UART event type: 1[0m
+[0;33mW (62100) UART: Unhandled UART event type: 1[0m
+[0;33mW (62110) UART: Unhandled UART event type: 1[0m
+[0;32mI (63060) UART: Received data from UART[0m
+[0;33mW (63100) UART: Unhandled UART event type: 1[0m
+[0;32mI (64060) UART: Received data from UART[0m
+[0;33mW (64090) UART: Unhandled UART event type: 1[0m
+[0;32mI (65060) UART: Received data from UART[0m
+[0;33mW (65090) UART: Unhandled UART event type: 1[0m
+[0;32mI (66060) UART: Received data from UART[0m
+[0;33mW (66090) UART: Unhandled UART event type: 1[0m
+[0;32mI (67060) UART: Received data from UART[0m
+[0;33mW (67090) UART: Unhandled UART event type: 1[0m
+[0;33mW (67110) UART: Unhandled UART event type: 1[0m
+[0;32mI (68060) UART: Received data from UART[0m
+[0;33mW (68090) UART: Unhandled UART event type: 1[0m
+[0;32mI (69060) UART: Received data from UART[0m
+[0;33mW (69090) UART: Unhandled UART event type: 1[0m
+[0;32mI (70060) UART: Received data from UART[0m
+[0;33mW (70090) UART: Unhandled UART event type: 1[0m
+[0;32mI (71060) UART: Received data from UART[0m
+[0;33mW (71090) UART: Unhandled UART event type: 1[0m
+[0;32mI (72060) UART: Received data from UART[0m
+[0;33mW (72090) UART: Unhandled UART event type: 1[0m
+[0;32mI (73060) UART: Received data from UART[0m
+[0;33mW (73090) UART: Unhandled UART event type: 1[0m
+[0;32mI (74060) UART: Received data from UART[0m
+[0;33mW (74090) UART: Unhandled UART event type: 1[0m
+[0;32mI (75060) UART: Received data from UART[0m
+[0;33mW (75090) UART: Unhandled UART event type: 1[0m
+[0;32mI (76060) UART: Received data from UART[0m
+[0;33mW (76090) UART: Unhandled UART event type: 1[0m
+[0;32mI (77060) UART: Received data from UART[0m
+[0;33mW (77090) UART: Unhandled UART event type: 1[0m
+[0;32mI (78060) UART: Received data from UART[0m
+[0;33mW (78090) UART: Unhandled UART event type: 1[0m
+[0;32mI (79060) UART: Received data from UART[0m
+[0;33mW (79090) UART: Unhandled UART event type: 1[0m
+[0;33mW (79100) UART: Unhandled UART event type: 1[0m
+[0;32mI (80060) UART: Received data from UART[0m
+[0;33mW (80090) UART: Unhandled UART event type: 1[0m
+[0;32mI (81060) UART: Received data from UART[0m
+[0;33mW (81090) UART: Unhandled UART event type: 1[0m
+[0;33mW (81100) UART: Unhandled UART event type: 1[0m
+[0;32mI (82060) UART: Received data from UART[0m
+[0;33mW (82090) UART: Unhandled UART event type: 1[0m
+[0;32mI (83060) UART: Received data from UART[0m
+[0;33mW (83090) UART: Unhandled UART event type: 1[0m
+[0;33mW (83100) UART: Unhandled UART event type: 1[0m
+[0;32mI (84060) UART: Received data from UART[0m
+[0;33mW (84080) UART: Unhandled UART event type: 1[0m
+[0;33mW (84100) UART: Unhandled UART event type: 1[0m
+[0;32mI (85060) UART: Received data from UART[0m
+[0;33mW (85090) UART: Unhandled UART event type: 1[0m
+[0;33mW (85100) UART: Unhandled UART event type: 1[0m
+[0;32mI (86060) UART: Received data from UART[0m
+[0;33mW (86090) UART: Unhandled UART event type: 1[0m
+[0;33mW (86090) UART: Unhandled UART event type: 1[0m
+[0;33mW (86100) UART: Unhandled UART event type: 1[0m
+[0;32mI (87060) UART: Received data from UART[0m
+[0;33mW (87080) UART: Unhandled UART event type: 1[0m
+[0;33mW (87100) UART: Unhandled UART event type: 1[0m
+[0;32mI (88060) UART: Received data from UART[0m
+[0;33mW (88090) UART: Unhandled UART event type: 1[0m
+[0;33mW (88100) UART: Unhandled UART event type: 1[0m
+[0;32mI (89060) UART: Received data from UART[0m
+[0;33mW (89100) UART: Unhandled UART event type: 1[0m
+[0;32mI (90060) UART: Received data from UART[0m
+[0;33mW (90100) UART: Unhandled UART event type: 1[0m
+[0;32mI (91060) UART: Received data from UART[0m
+[0;33mW (91080) UART: Unhandled UART event type: 1[0m
+[0;33mW (91100) UART: Unhandled UART event type: 1[0m
+[0;32mI (92060) UART: Received data from UART[0m
+[0;33mW (92100) UART: Unhandled UART event type: 1[0m
+[0;32mI (93060) UART: Received data from UART[0m
+[0;33mW (93080) UART: Unhandled UART event type: 1[0m
+[0;33mW (93100) UART: Unhandled UART event type: 1[0m
+[0;32mI (94060) UART: Received data from UART[0m
+[0;33mW (94080) UART: Unhandled UART event type: 1[0m
+[0;33mW (94100) UART: Unhandled UART event type: 1[0m
+[0;32mI (95060) UART: Received data from UART[0m
+[0;33mW (95080) UART: Unhandled UART event type: 1[0m
+[0;33mW (95100) UART: Unhandled UART event type: 1[0m
+[0;32mI (96060) UART: Received data from UART[0m
+[0;33mW (96100) UART: Unhandled UART event type: 1[0m
+[0;32mI (97060) UART: Received data from UART[0m
+[0;33mW (97080) UART: Unhandled UART event type: 1[0m
+[0;33mW (97090) UART: Unhandled UART event type: 1[0m
+[0;32mI (98060) UART: Received data from UART[0m
+[0;33mW (98100) UART: Unhandled UART event type: 1[0m
+[0;32mI (99060) UART: Received data from UART[0m
+[0;33mW (99080) UART: Unhandled UART event type: 1[0m
+[0;33mW (99090) UART: Unhandled UART event type: 1[0m
+[0;32mI (100060) UART: Received data from UART[0m
+[0;33mW (100090) UART: Unhandled UART event type: 1[0m
+[0;32mI (101060) UART: Received data from UART[0m
+[0;33mW (101090) UART: Unhandled UART event type: 1[0m
+[0;32mI (102060) UART: Received data from UART[0m
+[0;33mW (102090) UART: Unhandled UART event type: 1[0m
+[0;32mI (103060) UART: Received data from UART[0m
+[0;33mW (103090) UART: Unhandled UART event type: 1[0m
+[0;32mI (104060) UART: Received data from UART[0m
+[0;33mW (104090) UART: Unhandled UART event type: 1[0m
+[0;32mI (105060) UART: Received data from UART[0m
+[0;33mW (105080) UART: Unhandled UART event type: 1[0m
+[0;33mW (105090) UART: Unhandled UART event type: 1[0m
+[0;32mI (106060) UART: Received data from UART[0m
+[0;33mW (106090) UART: Unhandled UART event type: 1[0m
+[0;33mW (106110) UART: Unhandled UART event type: 1[0m
+[0;32mI (107070) UART: Received data from UART[0m
+[0;33mW (107090) UART: Unhandled UART event type: 1[0m
+[0;32mI (108060) UART: Received data from UART[0m
+[0;33mW (108090) UART: Unhandled UART event type: 1[0m
+[0;33mW (108110) UART: Unhandled UART event type: 1[0m
+[0;32mI (109070) UART: Received data from UART[0m
+[0;33mW (109090) UART: Unhandled UART event type: 1[0m
+[0;33mW (109110) UART: Unhandled UART event type: 1[0m
+[0;32mI (110060) UART: Received data from UART[0m
+[0;33mW (110090) UART: Unhandled UART event type: 1[0m
+[0;33mW (110110) UART: Unhandled UART event type: 1[0m
+[0;32mI (111060) UART: Received data from UART[0m
+[0;33mW (111090) UART: Unhandled UART event type: 1[0m
+[0;33mW (111110) UART: Unhandled UART event type: 1[0m
+[0;32mI (112060) UART: Received data from UART[0m
+[0;33mW (112090) UART: Unhandled UART event type: 1[0m
+[0;33mW (112100) UART: Unhandled UART event type: 1[0m
+[0;32mI (113070) UART: Received data from UART[0m
+[0;33mW (113090) UART: Unhandled UART event type: 1[0m
+[0;33mW (113110) UART: Unhandled UART event type: 1[0m
+[0;32mI (114060) UART: Received data from UART[0m
+[0;33mW (114090) UART: Unhandled UART event type: 1[0m
+[0;33mW (114100) UART: Unhandled UART event type: 1[0m
+[0;32mI (115060) UART: Received data from UART[0m
+[0;33mW (115090) UART: Unhandled UART event type: 1[0m
+[0;33mW (115100) UART: Unhandled UART event type: 1[0m
+[0;32mI (116080) UART: Received data from UART[0m
+[0;33mW (116090) UART: Unhandled UART event type: 1[0m
+[0;33mW (116100) UART: Unhandled UART event type: 1[0m
+[0;32mI (117060) UART: Received data from UART[0m
+[0;33mW (117090) UART: Unhandled UART event type: 1[0m
+[0;33mW (117100) UART: Unhandled UART event type: 1[0m
+[0;32mI (118060) UART: Received data from UART[0m
+[0;33mW (118090) UART: Unhandled UART event type: 1[0m
+[0;33mW (118100) UART: Unhandled UART event type: 1[0m
+[0;32mI (119060) UART: Received data from UART[0m
+[0;33mW (119090) UART: Unhandled UART event type: 1[0m
+[0;33mW (119100) UART: Unhandled UART event type: 1[0m
+[0;32mI (120060) UART: Received data from UART[0m
+[0;33mW (120080) UART: Unhandled UART event type: 1[0m
+[0;33mW (120100) UART: Unhandled UART event type: 1[0m
+[0;32mI (121060) UART: Received data from UART[0m
+[0;33mW (121090) UART: Unhandled UART event type: 1[0m
+[0;33mW (121100) UART: Unhandled UART event type: 1[0m
+[0;32mI (122070) UART: Received data from UART[0m
+[0;33mW (122080) UART: Unhandled UART event type: 1[0m
+[0;33mW (122100) UART: Unhandled UART event type: 1[0m
+[0;32mI (123070) UART: Received data from UART[0m
+[0;33mW (123090) UART: Unhandled UART event type: 1[0m
+[0;33mW (123100) UART: Unhandled UART event type: 1[0m
+[0;32mI (124060) UART: Received data from UART[0m
+[0;33mW (124080) UART: Unhandled UART event type: 1[0m
+[0;33mW (124100) UART: Unhandled UART event type: 1[0m
+[0;32mI (125070) UART: Received data from UART[0m
+[0;33mW (125080) UART: Unhandled UART event type: 1[0m
+[0;33mW (125100) UART: Unhandled UART event type: 1[0m
+[0;32mI (126060) UART: Received data from UART[0m
+[0;33mW (126080) UART: Unhandled UART event type: 1[0m
+[0;33mW (126100) UART: Unhandled UART event type: 1[0m
+[0;32mI (127060) UART: Received data from UART[0m
+[0;33mW (127080) UART: Unhandled UART event type: 1[0m
+[0;33mW (127100) UART: Unhandled UART event type: 1[0m
+[0;32mI (128060) UART: Received data from UART[0m
+[0;33mW (128080) UART: Unhandled UART event type: 1[0m
+[0;33mW (128100) UART: Unhandled UART event type: 1[0m
+[0;32mI (129060) UART: Received data from UART[0m
+[0;33mW (129080) UART: Unhandled UART event type: 1[0m
+[0;33mW (129100) UART: Unhandled UART event type: 1[0m
+[0;32mI (130060) UART: Received data from UART[0m
+[0;33mW (130100) UART: Unhandled UART event type: 1[0m
+[0;32mI (131060) UART: Received data from UART[0m
+[0;33mW (131100) UART: Unhandled UART event type: 1[0m
+[0;33mW (131110) UART: Unhandled UART event type: 1[0m
+[0;32mI (132060) UART: Received data from UART[0m
+[0;33mW (132080) UART: Unhandled UART event type: 1[0m
+[0;33mW (132100) UART: Unhandled UART event type: 1[0m
+[0;32mI (133060) UART: Received data from UART[0m
+[0;33mW (133080) UART: Unhandled UART event type: 1[0m
+[0;33mW (133100) UART: Unhandled UART event type: 1[0m
+[0;32mI (134060) UART: Received data from UART[0m
+[0;33mW (134080) UART: Unhandled UART event type: 1[0m
+[0;33mW (134090) UART: Unhandled UART event type: 1[0m
+[0;32mI (135060) UART: Received data from UART[0m
+[0;33mW (135080) UART: Unhandled UART event type: 1[0m
+[0;33mW (135090) UART: Unhandled UART event type: 1[0m
+[0;32mI (136060) UART: Received data from UART[0m
+[0;33mW (136080) UART: Unhandled UART event type: 1[0m
+[0;33mW (136090) UART: Unhandled UART event type: 1[0m
+[0;32mI (137060) UART: Received data from UART[0m
+[0;33mW (137080) UART: Unhandled UART event type: 1[0m
+[0;33mW (137090) UART: Unhandled UART event type: 1[0m
+[0;32mI (138060) UART: Received data from UART[0m
+[0;33mW (138090) UART: Unhandled UART event type: 1[0m
+[0;33mW (138110) UART: Unhandled UART event type: 1[0m
+[0;32mI (139060) UART: Received data from UART[0m
+[0;33mW (139080) UART: Unhandled UART event type: 1[0m
+[0;33mW (139090) UART: Unhandled UART event type: 1[0m
+[0;32mI (140060) UART: Received data from UART[0m
+[0;33mW (140090) UART: Unhandled UART event type: 1[0m
+[0;32mI (141060) UART: Received data from UART[0m
+[0;33mW (141090) UART: Unhandled UART event type: 1[0m
+[0;32mI (142060) UART: Received data from UART[0m
+[0;33mW (142090) UART: Unhandled UART event type: 1[0m
+[0;33mW (142110) UART: Unhandled UART event type: 1[0m
+[0;32mI (143060) UART: Received data from UART[0m
+[0;33mW (143090) UART: Unhandled UART event type: 1[0m
+[0;32mI (144060) UART: Received data from UART[0m
+[0;33mW (144090) UART: Unhandled UART event type: 1[0m
+[0;33mW (144110) UART: Unhandled UART event type: 1[0m
+[0;32mI (145060) UART: Received data from UART[0m
+[0;33mW (145090) UART: Unhandled UART event type: 1[0m
+[0;33mW (145110) UART: Unhandled UART event type: 1[0m
+[0;32mI (146060) UART: Received data from UART[0m
+[0;33mW (146090) UART: Unhandled UART event type: 1[0m
+[0;33mW (146110) UART: Unhandled UART event type: 1[0m
+[0;32mI (147060) UART: Received data from UART[0m
+[0;33mW (147090) UART: Unhandled UART event type: 1[0m
+[0;33mW (147110) UART: Unhandled UART event type: 1[0m
+[0;32mI (148060) UART: Received data from UART[0m
+[0;33mW (148090) UART: Unhandled UART event type: 1[0m
+[0;33mW (148100) UART: Unhandled UART event type: 1[0m
+[0;32mI (149060) UART: Received data from UART[0m
+[0;33mW (149090) UART: Unhandled UART event type: 1[0m
+[0;33mW (149100) UART: Unhandled UART event type: 1[0m
+[0;32mI (150060) UART: Received data from UART[0m
+[0;33mW (150090) UART: Unhandled UART event type: 1[0m
+[0;33mW (150100) UART: Unhandled UART event type: 1[0m
+[0;32mI (151060) UART: Received data from UART[0m
+[0;33mW (151090) UART: Unhandled UART event type: 1[0m
+[0;33mW (151100) UART: Unhandled UART event type: 1[0m
+[0;32mI (152060) UART: Received data from UART[0m
+[0;33mW (152090) UART: Unhandled UART event type: 1[0m
+[0;33mW (152100) UART: Unhandled UART event type: 1[0m
+[0;32mI (153060) UART: Received data from UART[0m
+[0;33mW (153090) UART: Unhandled UART event type: 1[0m
+[0;33mW (153100) UART: Unhandled UART event type: 1[0m
+[0;32mI (154060) UART: Received data from UART[0m
+[0;33mW (154090) UART: Unhandled UART event type: 1[0m
+[0;33mW (154100) UART: Unhandled UART event type: 1[0m
+[0;32mI (155060) UART: Received data from UART[0m
+[0;33mW (155090) UART: Unhandled UART event type: 1[0m
+[0;33mW (155100) UART: Unhandled UART event type: 1[0m
+[0;32mI (156060) UART: Received data from UART[0m
+[0;33mW (156090) UART: Unhandled UART event type: 1[0m
+[0;33mW (156100) UART: Unhandled UART event type: 1[0m
+[0;32mI (157060) UART: Received data from UART[0m
+[0;33mW (157090) UART: Unhandled UART event type: 1[0m
+[0;33mW (157100) UART: Unhandled UART event type: 1[0m
+[0;32mI (158060) UART: Received data from UART[0m
+[0;33mW (158090) UART: Unhandled UART event type: 1[0m
+[0;33mW (158100) UART: Unhandled UART event type: 1[0m
+[0;32mI (159060) UART: Received data from UART[0m
+[0;33mW (159090) UART: Unhandled UART event type: 1[0m
+[0;33mW (159100) UART: Unhandled UART event type: 1[0m
+[0;32mI (160060) UART: Received data from UART[0m
+[0;33mW (160080) UART: Unhandled UART event type: 1[0m
+[0;33mW (160100) UART: Unhandled UART event type: 1[0m
+[0;32mI (161060) UART: Received data from UART[0m
+[0;33mW (161080) UART: Unhandled UART event type: 1[0m
+[0;33mW (161100) UART: Unhandled UART event type: 1[0m
+[0;32mI (162060) UART: Received data from UART[0m
+[0;33mW (162100) UART: Unhandled UART event type: 1[0m
+[0;32mI (163060) UART: Received data from UART[0m
+[0;33mW (163100) UART: Unhandled UART event type: 1[0m
+[0;32mI (164060) UART: Received data from UART[0m
+[0;33mW (164100) UART: Unhandled UART event type: 1[0m
+[0;32mI (165060) UART: Received data from UART[0m
+[0;33mW (165100) UART: Unhandled UART event type: 1[0m
+[0;32mI (166060) UART: Received data from UART[0m
+[0;33mW (166100) UART: Unhandled UART event type: 1[0m
+[0;32mI (167060) UART: Received data from UART[0m
+[0;33mW (167100) UART: Unhandled UART event type: 1[0m
+[0;32mI (168060) UART: Received data from UART[0m
+[0;33mW (168100) UART: Unhandled UART event type: 1[0m
+[0;33mW (168110) UART: Unhandled UART event type: 1[0m
+[0;32mI (169060) UART: Received data from UART[0m
+[0;33mW (169100) UART: Unhandled UART event type: 1[0m
+[0;33mW (169110) UART: Unhandled UART event type: 1[0m
+[0;32mI (170060) UART: Received data from UART[0m
+[0;33mW (170090) UART: Unhandled UART event type: 1[0m
+[0;32mI (171060) UART: Received data from UART[0m
+[0;33mW (171090) UART: Unhandled UART event type: 1[0m
+[0;33mW (171110) UART: Unhandled UART event type: 1[0m
+[0;32mI (172060) UART: Received data from UART[0m
+[0;33mW (172090) UART: Unhandled UART event type: 1[0m
+[0;32mI (173060) UART: Received data from UART[0m
+[0;33mW (173090) UART: Unhandled UART event type: 1[0m
+[0;33mW (173110) UART: Unhandled UART event type: 1[0m
+[0;32mI (174060) UART: Received data from UART[0m
+[0;33mW (174090) UART: Unhandled UART event type: 1[0m
+[0;32mI (175060) UART: Received data from UART[0m
+[0;33mW (175090) UART: Unhandled UART event type: 1[0m
+[0;33mW (175110) UART: Unhandled UART event type: 1[0m
+[0;32mI (176060) UART: Received data from UART[0m
+[0;33mW (176090) UART: Unhandled UART event type: 1[0m
+[0;33mW (176110) UART: Unhandled UART event type: 1[0m
+[0;32mI (177060) UART: Received data from UART[0m
+[0;33mW (177090) UART: Unhandled UART event type: 1[0m
+[0;33mW (177110) UART: Unhandled UART event type: 1[0m
+[0;32mI (178060) UART: Received data from UART[0m
+[0;33mW (178090) UART: Unhandled UART event type: 1[0m
+[0;33mW (178100) UART: Unhandled UART event type: 1[0m
+[0;32mI (179060) UART: Received data from UART[0m
+[0;33mW (179090) UART: Unhandled UART event type: 1[0m
+[0;33mW (179110) UART: Unhandled UART event type: 1[0m
+[0;32mI (180060) UART: Received data from UART[0m
+[0;33mW (180090) UART: Unhandled UART event type: 1[0m
+[0;33mW (180100) UART: Unhandled UART event type: 1[0m
+[0;32mI (181060) UART: Received data from UART[0m
+[0;33mW (181090) UART: Unhandled UART event type: 1[0m
+[0;33mW (181100) UART: Unhandled UART event type: 1[0m
+[0;32mI (182060) UART: Received data from UART[0m
+[0;33mW (182090) UART: Unhandled UART event type: 1[0m
+[0;33mW (182100) UART: Unhandled UART event type: 1[0m

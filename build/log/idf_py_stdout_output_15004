@@ -1,0 +1,557 @@
+Command: D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\esp\v5.5\esp-idf\tools/idf_monitor.py -p COM8 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\esp\project\build\main.elf D:\esp\project\build\bootloader\bootloader.elf --force-color -m 'D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\esp\v5.5\esp-idf\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x2a (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x159c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f48
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Aug  4 2025 08:44:06[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 app0             OTA app          00 10 00010000 00200000[0m
+[0;32mI (76) boot:  3 app1             OTA app          00 11 00210000 00200000[0m
+[0;32mI (82) boot:  4 spiffs           Unknown data     01 82 00410000 00bf0000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=c25e8h (796136) map[0m
+[0;32mI (240) esp_image: segment 1: paddr=000d2610 vaddr=3fc9f200 size=053d8h ( 21464) load[0m
+[0;32mI (244) esp_image: segment 2: paddr=000d79f0 vaddr=40374000 size=08628h ( 34344) load[0m
+[0;32mI (252) esp_image: segment 3: paddr=000e0020 vaddr=42000020 size=f6fc8h (1011656) map[0m
+[0;32mI (431) esp_image: segment 4: paddr=001d6ff0 vaddr=4037c628 size=12af4h ( 76532) load[0m
+[0;32mI (448) esp_image: segment 5: paddr=001e9aec vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (458) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (459) boot: Disabling RNG early entropy source...[0m
+[0;32mI (469) cpu_start: Multicore app[0m
+[0;32mI (478) cpu_start: Pro cpu start user code[0m
+[0;32mI (478) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (478) app_init: Application information:[0m
+[0;32mI (481) app_init: Project name:     main[0m
+[0;32mI (485) app_init: App version:      1.0.0[0m
+[0;32mI (490) app_init: Compile time:     Aug  4 2025 08:40:51[0m
+[0;32mI (496) app_init: ELF file SHA256:  adee35cce...[0m
+[0;32mI (501) app_init: ESP-IDF:          v5.5[0m
+[0;32mI (506) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (511) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (516) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (521) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (528) heap_init: At 3FCB10C0 len 00038650 (225 KiB): RAM[0m
+[0;32mI (534) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (540) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (546) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (553) spi_flash: detected chip: generic[0m
+[0;32mI (557) spi_flash: flash io: dio[0m
+[0;32mI (561) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (568) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (576) main_task: Started on CPU0[0m
+[0;32mI (606) main_task: Calling app_main()[0m
+Starting application...
+[0;32mI (606) app_main: application version 1.0.0[0m
+[0;32mI (636) NVS: NVS initialized successfully[0m
+[0;32mI (636) app_main: WiFi config loaded successfully from NVS[0m
+[0;32mI (636) CONFIG: mode           : 0[0m
+[0;32mI (636) CONFIG: ssid           : fang[0m
+[0;32mI (636) CONFIG: password       : 12345678[0m
+[0;32mI (646) CONFIG: deviceIP       : 192.168.1.100[0m
+[0;32mI (646) CONFIG: deviceNetMask  : 255.255.255.0[0m
+[0;32mI (656) CONFIG: deviceGateway  : 192.168.1.1[0m
+[0;32mI (656) CONFIG: device_port    : 9547[0m
+[0;32mI (666) CONFIG: max_connection : 1[0m
+[0;32mI (666) CONFIG: dhcpEnable     : 1[0m
+[0;32mI (676) pp: pp rom version: e7ae62f[0m
+[0;32mI (676) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (696) wifi:wifi driver task: 3fcee254, prio:23, stack:6656, core=0[0m
+[0;32mI (706) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (706) wifi:wifi certification version: v7.0[0m
+[0;32mI (706) wifi:config NVS flash: enabled[0m
+[0;32mI (706) wifi:config nano formatting: disabled[0m
+[0;32mI (706) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (716) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (716) wifi:Init management short buffer num: 32[0m
+[0;32mI (726) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (726) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (726) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (736) wifi:Init static rx buffer num: 10[0m
+[0;32mI (736) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (746) wifi_init: rx ba win: 6[0m
+[0;32mI (746) wifi_init: accept mbox: 6[0m
+[0;32mI (746) wifi_init: tcpip mbox: 32[0m
+[0;32mI (756) wifi_init: udp mbox: 6[0m
+[0;32mI (756) wifi_init: tcp mbox: 6[0m
+[0;32mI (766) wifi_init: tcp tx win: 5760[0m
+[0;32mI (766) wifi_init: tcp rx win: 5760[0m
+[0;32mI (766) wifi_init: tcp mss: 1440[0m
+[0;32mI (776) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (776) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (796) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (826) wifi:mode : sta (10:51:db:85:93:20)[0m
+[0;32mI (826) wifi:enable tsf[0m
+[0;32mI (836) wifi: wifi_init finished.[0m
+[0;32mI (836) uart: queue free spaces: 10[0m
+[0;32mI (836) UART: UART initialized successfully[0m
+[0;32mI (926) IOControl: IO control initialized successfully[0m
+[0;32mI (926) WS2812: Red LED should be on[0m
+[0;32mI (926) DataAnalysis: Data analysis thread started[0m
+[0;32mI (936) wifi:new:<11,2>, old:<1,0>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (946) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (946) app_main: analysis_data_thread created successfully[0m
+[0;32mI (946) app_main: uart_thread created successfully[0m
+[0;32mI (956) wifi:[0;32mI (946) UART: UART thread started[0m[0m
+state: auth -> assoc (0x0)[0;32mI (956) GPIO: GPIO thread started[0m
+
+[0;32mI (956) app_main: gpio_thread created successfully[0m
+[0;32mI (976) app_main: heartLed_thread created successfully[0m
+[0;32mI (976) HeartLed: Heart LED thread started[0m
+[0;32mI (976) app_main: lvgl_thread created successfully[0m
+[0;32mI (986) ili9488: lvgl_thread start[0m
+[0;32mI (996) ili9488: Initializing SPI bus[0m
+[0;32mI (996) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (996) ili9488: Initializing SPI bus[0m
+[0;32mI (1006) ili9488: Initializing LVGL[0m
+[0;32mI (1016) ili9488: Configuring for BGR color order[0m
+[0;32mI (1016) ili9488: new ili9488 panel @0x3fcc707c[0m
+[0;32mI (1016) ili9488: Setting GPIO:8 to 0[0m
+[0;32mI (1016) wifi:connected with fang, aid = 10, channel 11, 40D, bssid = 7e:64:cf:b3:68:4c[0m
+[0;32mI (1026) wifi:security: WPA2-PSK, phy: bgn, rssi: -20[0m
+[0;32mI (1036) ili9488: Setting GPIO:8 to 1[0m
+[0;32mI (1046) ili9488: Initializing ILI9488[0m
+[0;32mI (1046) wifi:pm start, type: 1[0m
+
+[0;32mI (1046) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1056) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1066) wifi: connected to AP[0m
+[0;32mI (1066) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1076) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1086) wifi:<ba-add>idx:0 (ifx:0, 7e:64:cf:b3:68:4c), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1246) ili9488: Initialization complete[0m
+[0;32mI (1346) ili9488: Initializing touch[0m
+[0;32mI (2096) esp_netif_handlers: sta ip: 192.168.83.116, mask: 255.255.255.0, gw: 192.168.83.133[0m
+[0;32mI (2096) wifi: get ip address[0m
+[0;32mI (2096) sta_getlocal_IP: IP:192.168.83.116,netmask:255.255.255.0,gateway:192.168.83.133
+[0m
+[0;32mI (2106) wifi: STA local IP: 192.168.83.116[0m
+[0;32mI (2106) aliot: mqtt client start[0m
+[0;32mI (2706) wifi: MQTT_EVENT_CONNECTED[0m
+[0;32mI (2856) get time: ntp fail[0m
+[0;32mI (2886) get time: ntp fail[0m
+[0;32mI (2936) aliot: ALIOT_MQTT_EVENT_CONNECTED[0m
+[0;32mI (2936) aliot: subtopic:/ota/device/upgrade/k0c11gkzMGP/mqtt[0m
+[0;32mI (2936) ver: {"id":"0","params":{"version":"1.0.0"}}[0m
+[0;32mI (2936) ntp: Setting up NTP...[0m
+[0;32mI (3856) get time: ntp fail[0m
+[0;32mI (3886) get time: ntp fail[0m
+[0;32mI (4856) get time: ntp fail[0m
+[0;32mI (4886) get time: ntp fail[0m
+[0;32mI (5856) get time: ntp fail[0m
+[0;32mI (5886) get time: ntp fail[0m
+[0;32mI (6856) get time: ntp fail[0m
+[0;32mI (6886) get time: ntp fail[0m
+[0;32mI (7856) get time: ntp fail[0m
+[0;32mI (7886) get time: ntp fail[0m
+[0;32mI (8856) get time: ntp fail[0m
+[0;32mI (8886) get time: ntp fail[0m
+[0;32mI (9856) get time: ntp fail[0m
+[0;32mI (9886) get time: ntp fail[0m
+[0;32mI (10856) get time: ntp fail[0m
+[0;32mI (10886) get time: ntp fail[0m
+[0;32mI (11856) get time: ntp fail[0m
+[0;32mI (11886) get time: ntp fail[0m
+[0;32mI (12856) get time: ntp fail[0m
+[0;32mI (12886) get time: ntp fail[0m
+[0;32mI (13856) get time: ntp fail[0m
+[0;32mI (13886) get time: ntp fail[0m
+[0;32mI (14856) get time: ntp fail[0m
+[0;32mI (14886) get time: ntp fail[0m
+[0;32mI (15856) get time: ntp fail[0m
+[0;32mI (15886) get time: ntp fail[0m
+[0;32mI (16856) get time: ntp fail[0m
+[0;32mI (16886) get time: ntp fail[0m
+[0;32mI (17856) get time: ntp fail[0m
+[0;32mI (17886) get time: ntp fail[0m
+[0;32mI (18856) get time: ntp fail[0m
+[0;32mI (18886) get time: ntp fail[0m
+[0;32mI (19856) get time: ntp fail[0m
+[0;32mI (19886) get time: ntp fail[0m
+[0;32mI (20856) get time: ntp fail[0m
+[0;32mI (20886) get time: ntp fail[0m
+[0;32mI (21856) get time: ntp fail[0m
+[0;32mI (21886) get time: ntp fail[0m
+[0;32mI (22856) get time: ntp fail[0m
+[0;32mI (22886) get time: ntp fail[0m
+[0;32mI (23856) get time: ntp fail[0m
+[0;32mI (23886) get time: ntp fail[0m
+[0;32mI (24856) get time: ntp fail[0m
+[0;32mI (24886) get time: ntp fail[0m
+[0;32mI (25856) get time: ntp fail[0m
+[0;32mI (25886) get time: ntp fail[0m
+[0;32mI (26856) get time: ntp fail[0m
+[0;32mI (26886) get time: ntp fail[0m
+[0;32mI (27856) get time: ntp fail[0m
+[0;32mI (27886) get time: ntp fail[0m
+[0;32mI (28856) get time: ntp fail[0m
+[0;32mI (28886) get time: ntp fail[0m
+[0;32mI (29856) get time: ntp fail[0m
+[0;32mI (29886) get time: ntp fail[0m
+[0;32mI (30856) get time: ntp fail[0m
+[0;32mI (30886) get time: ntp fail[0m
+[0;32mI (31856) get time: ntp fail[0m
+[0;32mI (31886) get time: ntp fail[0m
+[0;32mI (32856) get time: ntp fail[0m
+[0;32mI (32886) get time: ntp fail[0m
+[0;32mI (33856) get time: ntp fail[0m
+[0;32mI (33886) get time: ntp fail[0m
+[0;32mI (34856) get time: ntp fail[0m
+[0;32mI (34886) get time: ntp fail[0m
+[0;32mI (35856) get time: ntp fail[0m
+[0;32mI (35886) get time: ntp fail[0m
+[0;32mI (36856) get time: ntp fail[0m
+[0;32mI (36886) get time: ntp fail[0m
+[0;32mI (37856) get time: ntp fail[0m
+[0;32mI (37886) get time: ntp fail[0m
+[0;32mI (38856) get time: ntp fail[0m
+[0;32mI (38886) get time: ntp fail[0m
+[0;32mI (39856) get time: ntp fail[0m
+[0;32mI (39886) get time: ntp fail[0m
+[0;32mI (40856) get time: ntp fail[0m
+[0;32mI (40886) get time: ntp fail[0m
+[0;32mI (41856) get time: ntp fail[0m
+[0;32mI (41886) get time: ntp fail[0m
+[0;32mI (42856) get time: ntp fail[0m
+[0;32mI (42886) get time: ntp fail[0m
+[0;32mI (43856) get time: ntp fail[0m
+[0;32mI (43886) get time: ntp fail[0m
+[0;32mI (44856) get time: ntp fail[0m
+[0;32mI (44886) get time: ntp fail[0m
+[0;32mI (45856) get time: ntp fail[0m
+[0;32mI (45886) get time: ntp fail[0m
+[0;32mI (46856) get time: ntp fail[0m
+[0;32mI (46886) get time: ntp fail[0m
+[0;32mI (47856) get time: ntp fail[0m
+[0;32mI (47886) get time: ntp fail[0m
+[0;32mI (48856) get time: ntp fail[0m
+[0;32mI (48886) get time: ntp fail[0m
+[0;32mI (49856) get time: ntp fail[0m
+[0;32mI (49886) get time: ntp fail[0m
+[0;32mI (50856) get time: ntp fail[0m
+[0;32mI (50886) get time: ntp fail[0m
+[0;32mI (51856) get time: ntp fail[0m
+[0;32mI (51886) get time: ntp fail[0m
+[0;32mI (52856) get time: ntp fail[0m
+[0;32mI (52886) get time: ntp fail[0m
+[0;32mI (53856) get time: ntp fail[0m
+[0;32mI (53886) get time: ntp fail[0m
+[0;32mI (54856) get time: ntp fail[0m
+[0;32mI (54886) get time: ntp fail[0m
+[0;32mI (55856) get time: ntp fail[0m
+[0;32mI (55886) get time: ntp fail[0m
+[0;32mI (56856) get time: ntp fail[0m
+[0;32mI (56886) get time: ntp fail[0m
+[0;32mI (57856) get time: ntp fail[0m
+[0;32mI (57886) get time: ntp fail[0m
+[0;32mI (58856) get time: ntp fail[0m
+[0;32mI (58886) get time: ntp fail[0m
+[0;32mI (59856) get time: ntp fail[0m
+[0;32mI (59886) get time: ntp fail[0m
+[0;32mI (60856) get time: ntp fail[0m
+[0;32mI (60886) get time: ntp fail[0m
+[0;32mI (61856) get time: ntp fail[0m
+[0;32mI (61886) get time: ntp fail[0m
+[0;32mI (62856) get time: ntp fail[0m
+[0;32mI (62886) get time: ntp fail[0m
+[0;32mI (63856) get time: ntp fail[0m
+[0;32mI (63886) get time: ntp fail[0m
+[0;32mI (64856) get time: ntp fail[0m
+[0;32mI (64886) get time: ntp fail[0m
+[0;32mI (65856) get time: ntp fail[0m
+[0;32mI (65886) get time: ntp fail[0m
+[0;32mI (66856) get time: ntp fail[0m
+[0;32mI (66886) get time: ntp fail[0m
+[0;32mI (67856) get time: ntp fail[0m
+[0;32mI (67886) get time: ntp fail[0m
+[0;32mI (68856) get time: ntp fail[0m
+[0;32mI (68886) get time: ntp fail[0m
+[0;32mI (69856) get time: ntp fail[0m
+[0;32mI (69886) get time: ntp fail[0m
+[0;32mI (70856) get time: ntp fail[0m
+[0;32mI (70886) get time: ntp fail[0m
+[0;32mI (71856) get time: ntp fail[0m
+[0;32mI (71886) get time: ntp fail[0m
+[0;32mI (72856) get time: ntp fail[0m
+[0;32mI (72886) get time: ntp fail[0m
+[0;32mI (73856) get time: ntp fail[0m
+[0;32mI (73886) get time: ntp fail[0m
+[0;32mI (74856) get time: ntp fail[0m
+[0;32mI (74886) get time: ntp fail[0m
+[0;32mI (75856) get time: ntp fail[0m
+[0;32mI (75886) get time: ntp fail[0m
+[0;32mI (76856) get time: ntp fail[0m
+[0;32mI (76886) get time: ntp fail[0m
+[0;32mI (77856) get time: ntp fail[0m
+[0;32mI (77886) get time: ntp fail[0m
+[0;32mI (78856) get time: ntp fail[0m
+[0;32mI (78886) get time: ntp fail[0m
+[0;32mI (79856) get time: ntp fail[0m
+[0;32mI (79886) get time: ntp fail[0m
+[0;32mI (80856) get time: ntp fail[0m
+[0;32mI (80886) get time: ntp fail[0m
+[0;32mI (81856) get time: ntp fail[0m
+[0;32mI (81886) get time: ntp fail[0m
+[0;32mI (82856) get time: ntp fail[0m
+[0;32mI (82886) get time: ntp fail[0m
+[0;32mI (83856) get time: ntp fail[0m
+[0;32mI (83886) get time: ntp fail[0m
+[0;32mI (84856) get time: ntp fail[0m
+[0;32mI (84886) get time: ntp fail[0m
+[0;32mI (85856) get time: ntp fail[0m
+[0;32mI (85886) get time: ntp fail[0m
+[0;32mI (86856) get time: ntp fail[0m
+[0;32mI (86886) get time: ntp fail[0m
+[0;32mI (87856) get time: ntp fail[0m
+[0;32mI (87886) get time: ntp fail[0m
+[0;32mI (88856) get time: ntp fail[0m
+[0;32mI (88886) get time: ntp fail[0m
+[0;32mI (89856) get time: ntp fail[0m
+[0;32mI (89886) get time: ntp fail[0m
+[0;32mI (90856) get time: ntp fail[0m
+[0;32mI (90886) get time: ntp fail[0m
+[0;32mI (91856) get time: ntp fail[0m
+[0;32mI (91886) get time: ntp fail[0m
+[0;32mI (92856) get time: ntp fail[0m
+[0;32mI (92886) get time: ntp fail[0m
+[0;32mI (93856) get time: ntp fail[0m
+[0;32mI (93886) get time: ntp fail[0m
+[0;32mI (94856) get time: ntp fail[0m
+[0;32mI (94886) get time: ntp fail[0m
+[0;32mI (95856) get time: ntp fail[0m
+[0;32mI (95886) get time: ntp fail[0m
+[0;32mI (96856) get time: ntp fail[0m
+[0;32mI (96886) get time: ntp fail[0m
+[0;32mI (97856) get time: ntp fail[0m
+[0;32mI (97886) get time: ntp fail[0m
+[0;32mI (98856) get time: ntp fail[0m
+[0;32mI (98886) get time: ntp fail[0m
+[0;32mI (99856) get time: ntp fail[0m
+[0;32mI (99886) get time: ntp fail[0m
+[0;32mI (100856) get time: ntp fail[0m
+[0;32mI (100886) get time: ntp fail[0m
+[0;32mI (101856) get time: ntp fail[0m
+[0;32mI (101886) get time: ntp fail[0m
+[0;32mI (102856) get time: ntp fail[0m
+[0;32mI (102886) get time: ntp fail[0m
+[0;32mI (103856) get time: ntp fail[0m
+[0;32mI (103886) get time: ntp fail[0m
+[0;32mI (104856) get time: ntp fail[0m
+[0;32mI (104886) get time: ntp fail[0m
+[0;32mI (105856) get time: ntp fail[0m
+[0;32mI (105886) get time: ntp fail[0m
+[0;32mI (106856) get time: ntp fail[0m
+[0;32mI (106886) get time: ntp fail[0m
+[0;32mI (107856) get time: ntp fail[0m
+[0;32mI (107886) get time: ntp fail[0m
+[0;32mI (108856) get time: ntp fail[0m
+[0;32mI (108886) get time: ntp fail[0m
+[0;32mI (109856) get time: ntp fail[0m
+[0;32mI (109886) get time: ntp fail[0m
+[0;32mI (110856) get time: ntp fail[0m
+[0;32mI (110886) get time: ntp fail[0m
+[0;32mI (111856) get time: ntp fail[0m
+[0;32mI (111886) get time: ntp fail[0m
+[0;32mI (112856) get time: ntp fail[0m
+[0;32mI (112886) get time: ntp fail[0m
+[0;32mI (113856) get time: ntp fail[0m
+[0;32mI (113886) get time: ntp fail[0m
+[0;32mI (114856) get time: ntp fail[0m
+[0;32mI (114886) get time: ntp fail[0m
+[0;32mI (115856) get time: ntp fail[0m
+[0;32mI (115886) get time: ntp fail[0m
+[0;32mI (116856) get time: ntp fail[0m
+[0;32mI (116886) get time: ntp fail[0m
+[0;32mI (117856) get time: ntp fail[0m
+[0;32mI (117886) get time: ntp fail[0m
+[0;32mI (118856) get time: ntp fail[0m
+[0;32mI (118886) get time: ntp fail[0m
+[0;32mI (119856) get time: ntp fail[0m
+[0;32mI (119886) get time: ntp fail[0m
+[0;32mI (120856) get time: ntp fail[0m
+[0;32mI (120886) get time: ntp fail[0m
+[0;32mI (121856) get time: ntp fail[0m
+[0;32mI (121886) get time: ntp fail[0m
+[0;32mI (122856) get time: ntp fail[0m
+[0;32mI (122886) get time: ntp fail[0m
+[0;32mI (123856) get time: ntp fail[0m
+[0;32mI (123886) get time: ntp fail[0m
+[0;32mI (124856) get time: ntp fail[0m
+[0;32mI (124886) get time: ntp fail[0m
+[0;32mI (125856) get time: ntp fail[0m
+[0;32mI (125886) get time: ntp fail[0m
+[0;32mI (126856) get time: ntp fail[0m
+[0;32mI (126886) get time: ntp fail[0m
+[0;32mI (127856) get time: ntp fail[0m
+[0;32mI (127886) get time: ntp fail[0m
+[0;32mI (128856) get time: ntp fail[0m
+[0;32mI (128886) get time: ntp fail[0m
+[0;32mI (129856) get time: ntp fail[0m
+[0;32mI (129886) get time: ntp fail[0m
+[0;32mI (130856) get time: ntp fail[0m
+[0;32mI (130886) get time: ntp fail[0m
+[0;32mI (131856) get time: ntp fail[0m
+[0;32mI (131886) get time: ntp fail[0m
+[0;32mI (132856) get time: ntp fail[0m
+[0;32mI (132886) get time: ntp fail[0m
+[0;32mI (133856) get time: ntp fail[0m
+[0;32mI (133886) get time: ntp fail[0m
+[0;32mI (134856) get time: ntp fail[0m
+[0;32mI (134886) get time: ntp fail[0m
+[0;32mI (135856) get time: ntp fail[0m
+[0;32mI (135886) get time: ntp fail[0m
+[0;32mI (136856) get time: ntp fail[0m
+[0;32mI (136886) get time: ntp fail[0m
+[0;32mI (137856) get time: ntp fail[0m
+[0;32mI (137886) get time: ntp fail[0m
+[0;32mI (138856) get time: ntp fail[0m
+[0;32mI (138886) get time: ntp fail[0m
+[0;32mI (139856) get time: ntp fail[0m
+[0;32mI (139886) get time: ntp fail[0m
+[0;32mI (140856) get time: ntp fail[0m
+[0;32mI (140886) get time: ntp fail[0m
+[0;32mI (141856) get time: ntp fail[0m
+[0;32mI (141886) get time: ntp fail[0m
+[0;32mI (142856) get time: ntp fail[0m
+[0;32mI (142886) get time: ntp fail[0m
+[0;32mI (143856) get time: ntp fail[0m
+[0;32mI (143886) get time: ntp fail[0m
+[0;32mI (144856) get time: ntp fail[0m
+[0;32mI (144886) get time: ntp fail[0m
+[0;32mI (145856) get time: ntp fail[0m
+[0;32mI (145886) get time: ntp fail[0m
+[0;32mI (146856) get time: ntp fail[0m
+[0;32mI (146886) get time: ntp fail[0m
+[0;32mI (147856) get time: ntp fail[0m
+[0;32mI (147886) get time: ntp fail[0m
+[0;32mI (148856) get time: ntp fail[0m
+[0;32mI (148886) get time: ntp fail[0m
+[0;32mI (149856) get time: ntp fail[0m
+[0;32mI (149886) get time: ntp fail[0m
+[0;32mI (150856) get time: ntp fail[0m
+[0;32mI (150886) get time: ntp fail[0m
+[0;32mI (151856) get time: ntp fail[0m
+[0;32mI (151886) get time: ntp fail[0m
+[0;32mI (152856) get time: ntp fail[0m
+[0;32mI (152886) get time: ntp fail[0m
+[0;32mI (153856) get time: ntp fail[0m
+[0;32mI (153886) get time: ntp fail[0m
+[0;32mI (154856) get time: ntp fail[0m
+[0;32mI (154886) get time: ntp fail[0m
+[0;32mI (155856) get time: ntp fail[0m
+[0;32mI (155886) get time: ntp fail[0m
+[0;32mI (156856) get time: ntp fail[0m
+[0;32mI (156886) get time: ntp fail[0m
+[0;32mI (157856) get time: ntp fail[0m
+[0;32mI (157886) get time: ntp fail[0m
+[0;32mI (158856) get time: ntp fail[0m
+[0;32mI (158886) get time: ntp fail[0m
+[0;32mI (159856) get time: ntp fail[0m
+[0;32mI (159886) get time: ntp fail[0m
+[0;32mI (160856) get time: ntp fail[0m
+[0;32mI (160886) get time: ntp fail[0m
+[0;32mI (161856) get time: ntp fail[0m
+[0;32mI (161886) get time: ntp fail[0m
+[0;32mI (162856) get time: ntp fail[0m
+[0;32mI (162886) get time: ntp fail[0m
+[0;32mI (163856) get time: ntp fail[0m
+[0;32mI (163886) get time: ntp fail[0m
+[0;32mI (164856) get time: ntp fail[0m
+[0;32mI (164886) get time: ntp fail[0m
+[0;32mI (165856) get time: ntp fail[0m
+[0;32mI (165886) get time: ntp fail[0m
+[0;32mI (166856) get time: ntp fail[0m
+[0;32mI (166886) get time: ntp fail[0m
+[0;32mI (167856) get time: ntp fail[0m
+[0;32mI (167886) get time: ntp fail[0m
+[0;32mI (168856) get time: ntp fail[0m
+[0;32mI (168886) get time: ntp fail[0m
+[0;32mI (169856) get time: ntp fail[0m
+[0;32mI (169886) get time: ntp fail[0m
+[0;32mI (170856) get time: ntp fail[0m
+[0;32mI (170886) get time: ntp fail[0m
+[0;32mI (171856) get time: ntp fail[0m
+[0;32mI (171886) get time: ntp fail[0m
+[0;32mI (172856) get time: ntp fail[0m
+[0;32mI (172886) get time: ntp fail[0m
+[0;32mI (173856) get time: ntp fail[0m
+[0;32mI (173886) get time: ntp fail[0m
+[0;32mI (174856) get time: ntp fail[0m
+[0;32mI (174886) get time: ntp fail[0m
+[0;32mI (175856) get time: ntp fail[0m
+[0;32mI (175886) get time: ntp fail[0m
+[0;32mI (176856) get time: ntp fail[0m
+[0;32mI (176886) get time: ntp fail[0m
+[0;32mI (177856) get time: ntp fail[0m
+[0;32mI (177886) get time: ntp fail[0m
+[0;32mI (178856) get time: ntp fail[0m
+[0;32mI (178886) get time: ntp fail[0m
+[0;32mI (179856) get time: ntp fail[0m
+[0;32mI (179886) get time: ntp fail[0m
+[0;32mI (180856) get time: ntp fail[0m
+[0;32mI (180886) get time: ntp fail[0m
+[0;32mI (181856) get time: ntp fail[0m
+[0;32mI (181886) get time: ntp fail[0m
+[0;32mI (182856) get time: ntp fail[0m
+[0;32mI (182886) get time: ntp fail[0m
+[0;32mI (183856) get time: ntp fail[0m
+[0;32mI (183886) get time: ntp fail[0m
+[0;32mI (184856) get time: ntp fail[0m
+[0;32mI (184886) get time: ntp fail[0m
+[0;32mI (185856) get time: ntp fail[0m
+[0;32mI (185886) get time: ntp fail[0m
+[0;32mI (186856) get time: ntp fail[0m
+[0;32mI (186886) get time: ntp fail[0m
+[0;32mI (187856) get time: ntp fail[0m
+[0;32mI (187886) get time: ntp fail[0m
+[0;32mI (188856) get time: ntp fail[0m
+[0;32mI (188886) get time: ntp fail[0m
+[0;32mI (189856) get time: ntp fail[0m
+[0;32mI (189886) get time: ntp fail[0m
+[0;32mI (190856) get time: ntp fail[0m
+[0;32mI (190886) get time: ntp fail[0m
+[0;32mI (191856) get time: ntp fail[0m
+[0;32mI (191886) get time: ntp fail[0m
+[0;32mI (192856) get time: ntp fail[0m
+[0;32mI (192886) get time: ntp fail[0m
+[0;32mI (193856) get time: ntp fail[0m
+[0;32mI (193886) get time: ntp fail[0m
+[0;32mI (194856) get time: ntp fail[0m
+[0;32mI (194886) get time: ntp fail[0m
+[0;32mI (195856) get time: ntp fail[0m
+[0;32mI (195886) get time: ntp fail[0m
+[0;32mI (196856) get time: ntp fail[0m
+[0;32mI (196886) get time: ntp fail[0m
+[0;32mI (197856) get time: ntp fail[0m
+[0;32mI (197886) get time: ntp fail[0m
+[0;32mI (198856) get time: ntp fail[0m
+[0;32mI (198886) get time: ntp fail[0m
+[0;32mI (199856) get time: ntp fail[0m
+[0;32mI (199886) get time: ntp fail[0m
+[0;32mI (200856) get time: ntp fail[0m
+[0;32mI (200886) get time: ntp fail[0m
+[0;32mI (201856) get time: ntp fail[0m
+[0;32mI (201886) get time: ntp fail[0m
+[0;32mI (202856) get time: ntp fail[0m
+[0;32mI (202886) get time: ntp fail[0m
+[0;32mI (203856) get time: ntp fail[0m
+[0;32mI (203886) get time: ntp fail[0m
+[0;32mI (204856) get time: ntp fail[0m
+[0;32mI (204886) get time: ntp fail[0m
+[0;32mI (205856) get time: ntp fail[0m
+[0;32mI (205886) get time: ntp fail[0m

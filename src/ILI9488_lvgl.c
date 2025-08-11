@@ -16,7 +16,7 @@
 #include <stdio.h>
 #include "sdkconfig.h"
 #include "mynvs.h"
-#include "ui_home.h"
+#include "ui.h"
 static const char* TAG = "ili9488";
 
 #define LCD_H_RES   320
@@ -25,28 +25,29 @@ static const char* TAG = "ili9488";
 #define LCD_PIXEL_CLK_HZ    (40 * 1000 * 1000)
 #define LCD_CMD_BITS        8
 #define LCD_PARAM_BITS      8
-#define LCD_COLOR_SPACE     ESP_LCD_COLOR_SPACE_RGB
+#define LCD_COLOR_SPACE     ESP_LCD_COLOR_SPACE_BGR
 #define LCD_BITS_PER_PIXEL  18
 #define LCD_MAX_TRANSFER_SIZE 32768
 #define LCD_QUEUE_LEN 10
-#define LVGL_BUFFER_HEIGHT 50
+#define LVGL_BUFFER_HEIGHT 40
 #define LVGL_BUFFER_SIZE (LCD_H_RES * LVGL_BUFFER_HEIGHT)
-#define LVGL_UPDATE_PERIOD_MS 5
+#define LVGL_UPDATE_PERIOD_MS 10
 
 // Pin definitions
-#define LCD_BACKLIGHT_PIN GPIO_NUM_6
-#define LCD_MOSI         GPIO_NUM_11
-#define LCD_MISO         GPIO_NUM_13
-#define LCD_CS           GPIO_NUM_10
-#define LCD_CLK          GPIO_NUM_12
+#define LCD_BACKLIGHT_PIN GPIO_NUM_7
+#define LCD_MOSI         GPIO_NUM_10
+#define LCD_MISO         GPIO_NUM_12
+#define LCD_CS           GPIO_NUM_3
+#define LCD_CLK          GPIO_NUM_11
 #define LCD_DC            GPIO_NUM_9
 #define LCD_RST           GPIO_NUM_8
 
-#define TOUCH_CS          GPIO_NUM_10
-#define TOUCH_CLK         GPIO_NUM_12
-#define TOUCH_DIN         GPIO_NUM_11
-#define TOUCH_DO          GPIO_NUM_13
-#define TOUCH_IRQ         GPIO_NUM_7
+#define TOUCH_SPI_NUM SPI2_HOST
+#define TOUCH_CS          GPIO_NUM_6
+#define TOUCH_CLK         GPIO_NUM_11
+#define TOUCH_DIN         GPIO_NUM_10
+#define TOUCH_DO          GPIO_NUM_12
+#define TOUCH_IRQ         GPIO_NUM_13
 
 #define BACKLIGHT_FREQ    5000
 #define LEDC_SPEED_MODE   LEDC_LOW_SPEED_MODE
@@ -94,7 +95,6 @@ static void ili9488_spi_init(void)
     };
     ESP_ERROR_CHECK(spi_bus_initialize(LCD_SPI_NUM, &bus_cfg, SPI_DMA_CH_AUTO));
 }
-
 // ======= 背光控制 =======
 static void backlight_init(void)
 {
@@ -120,7 +120,7 @@ static void backlight_init(void)
     ESP_ERROR_CHECK(ledc_channel_config(&channel_cfg));
 }
 
-static void backlight_set_brightness(int brightness_percent)
+void backlight_set_brightness(int brightness_percent)
 {
     if (brightness_percent > 100) brightness_percent = 100;
     if (brightness_percent < 0) brightness_percent = 0;
@@ -215,6 +215,8 @@ static void touch_calibration_run(void)
     lv_obj_t *label = lv_label_create(lv_scr_act());
     lv_label_set_text(label, "Touch calibration completed!");
     lv_obj_center(label);
+    vTaskDelay(1000);
+    lv_obj_del(label);
     ESP_LOGI("touch","校准完成");
 }
 
@@ -267,6 +269,7 @@ static void touch_read_cb(lv_indev_t *indev, lv_indev_data_t *data)
 
     data->point.x = x;
     data->point.y = y;
+    // ESP_LOGI(TAG, "Touch read raw: x=%d, y=%d, irq=%d", x_raw, y_raw, gpio_get_level(TOUCH_IRQ));
     data->state = touched ? LV_INDEV_STATE_PRESSED : LV_INDEV_STATE_RELEASED;
 }
 // ======= 触摸初始化 =======
@@ -283,8 +286,7 @@ static void touch_init(void)
         .queue_size = 1,
         // .flags = SPI_DEVICE_HALFDUPLEX,
     };
-
-    ESP_ERROR_CHECK(spi_bus_add_device(LCD_SPI_NUM, &devcfg, &touch_spi));
+    ESP_ERROR_CHECK(spi_bus_add_device(TOUCH_SPI_NUM, &devcfg, &touch_spi));
 
     gpio_config_t io_conf = {
         .pin_bit_mask = 1ULL << TOUCH_IRQ,
@@ -347,15 +349,15 @@ static void display_init(void)
         .color_space = LCD_COLOR_SPACE,
         .bits_per_pixel = LCD_BITS_PER_PIXEL,
     };
-
+    
     ESP_ERROR_CHECK(esp_lcd_new_panel_io_spi((esp_lcd_spi_bus_handle_t)LCD_SPI_NUM, &io_cfg, &lcd_io_handle));
     ESP_ERROR_CHECK(esp_lcd_new_panel_ili9488(lcd_io_handle, &panel_cfg, LVGL_BUFFER_SIZE, &lcd_handle));
 
     ESP_ERROR_CHECK(esp_lcd_panel_reset(lcd_handle));
     ESP_ERROR_CHECK(esp_lcd_panel_init(lcd_handle));
-    ESP_ERROR_CHECK(esp_lcd_panel_invert_color(lcd_handle, false));
+    ESP_ERROR_CHECK(esp_lcd_panel_invert_color(lcd_handle, true));
     ESP_ERROR_CHECK(esp_lcd_panel_swap_xy(lcd_handle, false));
-    ESP_ERROR_CHECK(esp_lcd_panel_mirror(lcd_handle, true, false));
+    ESP_ERROR_CHECK(esp_lcd_panel_mirror(lcd_handle, false, false));
     ESP_ERROR_CHECK(esp_lcd_panel_set_gap(lcd_handle, 0, 0));
     ESP_ERROR_CHECK(esp_lcd_panel_disp_on_off(lcd_handle, true));
 
@@ -383,16 +385,23 @@ static void lvgl_init(void)
 
     lv_buf_2 = NULL; // 不使用双缓冲，简化
 
+    // lv_buf_2 = (lv_color_t *)heap_caps_malloc(buf_size, MALLOC_CAP_DMA);
+    // if (!lv_buf_2) {
+    //     ESP_LOGE(TAG, "Failed to allocate lv_buf_2");
+    //     // free(lv_buf_1);
+    //     return;
+    // }
     lv_display = lv_display_create(LCD_H_RES, LCD_V_RES);
     if (!lv_display) {
         ESP_LOGE(TAG, "Failed to create LVGL display");
         free(lv_buf_1);
+        // free(lv_buf_2);
         return;
     }
 
     lv_display_set_flush_cb(lv_display, lvgl_flush_cb);
     lv_display_set_buffers(lv_display, lv_buf_1, lv_buf_2, LVGL_BUFFER_SIZE, LV_DISPLAY_RENDER_MODE_PARTIAL);
-    lv_display_set_color_format(lv_display, LV_COLOR_FORMAT_RGB888);
+    lv_display_set_color_format(lv_display, LV_COLOR_FORMAT_RGB565);
 
     const esp_timer_create_args_t timer_args = {
         .callback = &lvgl_tick_cb,
@@ -403,7 +412,7 @@ static void lvgl_init(void)
     ESP_ERROR_CHECK(esp_timer_create(&timer_args, &timer));
     ESP_ERROR_CHECK(esp_timer_start_periodic(timer, LVGL_UPDATE_PERIOD_MS * 1000));
 
-    touch_init();
+    
 }
 
 // ======= 总初始化 =======
@@ -411,13 +420,12 @@ void ili9488_lvgl_init(void)
 {
     backlight_init();
     backlight_set_brightness(0);
-
     ili9488_spi_init();
-
     lvgl_init();
     display_init();
-
-    backlight_set_brightness(75);
+    touch_init();
+    vTaskDelay(pdMS_TO_TICKS(500));
+    backlight_set_brightness(100);
 }
 
 
@@ -448,6 +456,8 @@ void lvgl_free(void)
     }
 }
 
+
+
 void lvgl_thread(void *arg)
 {
     ESP_LOGI(TAG,"lvgl_thread start");
@@ -455,14 +465,9 @@ void lvgl_thread(void *arg)
     ili9488_lvgl_init();
     if(!nvs_get_lcd_calibration_param(&raw_min_x,&raw_max_x,&raw_min_y,&raw_max_y))//如果没有校准过就校准
         touch_calibration_run();
-    // 创建按钮
-    lv_obj_t * btn = lv_button_create(lv_screen_active());
-    lv_obj_set_size(btn, 100, 50);
-    lv_obj_center(btn);
+    
+    ui_init();
 
-    // 添加按钮标签
-    lv_obj_t * label = lv_label_create(btn);
-    lv_label_set_text(label, "Click Me!");
     while(1) 
     {
         vTaskDelay(pdMS_TO_TICKS(10));

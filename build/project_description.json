@@ -1285,7 +1285,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__esp_lcd_touch", "espressif__esp_lvgl_port", "espressif__led_strip", "lvgl__lvgl" ],
             "file": "D:/esp/project/build/esp-idf/main/libmain.a",
-            "sources": [ "D:/esp/project/main/main.c", "D:/esp/project/src/mywifi.c", "D:/esp/project/src/mynvs.c", "D:/esp/project/src/uart.c", "D:/esp/project/src/io_control.c", "D:/esp/project/src/WS2812.c", "D:/esp/project/src/data_analysis.c", "D:/esp/project/src/aliot_ota.c", "D:/esp/project/src/aliot_dm.c", "D:/esp/project/src/ILI9488_lvgl.c", "D:/esp/project/src/esp_lcd_ili9488.c" ],
+            "sources": [ "D:/esp/project/main/main.c", "D:/esp/project/src/mywifi.c", "D:/esp/project/src/mynvs.c", "D:/esp/project/src/uart.c", "D:/esp/project/src/io_control.c", "D:/esp/project/src/WS2812.c", "D:/esp/project/src/data_analysis.c", "D:/esp/project/src/aliot_ota.c", "D:/esp/project/src/aliot_dm.c", "D:/esp/project/src/ILI9488_lvgl.c", "D:/esp/project/src/esp_lcd_ili9488.c", "D:/esp/project/src/weather.c" ],
             "include_dirs": [ ".", "../include" ]
         },
         "mbedtls": {
@@ -1565,13 +1565,13 @@
             "dir": "D:/esp/project/components/ui",
             "type": "LIBRARY",
             "lib": "__idf_ui",
-            "reqs": [ "lvgl__lvgl" ],
+            "reqs": [ "driver", "esp_wifi", "esp_timer" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "D:/esp/project/build/esp-idf/ui/libui.a",
-            "sources": [ "D:/esp/project/components/ui/ui_home.c" ],
-            "include_dirs": [ "." ]
+            "sources": [ "D:/esp/project/components/ui/screens/ui_home.c", "D:/esp/project/components/ui/screens/ui_setting.c", "D:/esp/project/components/ui/screens/ui_home1.c", "D:/esp/project/components/ui/screens/ui_brightness.c", "D:/esp/project/components/ui/screens/ui_systemInfo.c", "D:/esp/project/components/ui/screens/ui_weather.c", "D:/esp/project/components/ui/ui.c", "D:/esp/project/components/ui/ui_comp_hook.c", "D:/esp/project/components/ui/ui_helpers.c", "D:/esp/project/components/ui/images/ui_img_back_png.c", "D:/esp/project/components/ui/images/ui_img_bizhi_png.c", "D:/esp/project/components/ui/images/ui_img_connect_wifi_png.c", "D:/esp/project/components/ui/images/ui_img_home_png.c", "D:/esp/project/components/ui/images/ui_img_setting_png.c", "D:/esp/project/components/ui/images/ui_img_brightness_png.c", "D:/esp/project/components/ui/images/ui_img_systeminfo_png.c", "D:/esp/project/components/ui/images/ui_img_sprinkle_png.c", "D:/esp/project/components/ui/images/ui_img_sun_png.c", "D:/esp/project/components/ui/images/ui_img_weather_png.c", "D:/esp/project/components/ui/images/ui_img_cloudy_png.c", "D:/esp/project/components/ui/ui_events.c" ],
+            "include_dirs": [ ".", "../../include", "screens", "../../managed_components/lvgl__lvgl", "../../main" ]
         },
         "ulp": {
             "alias": "idf::ulp",
@@ -3009,11 +3009,11 @@
             "prefix": "idf",
             "dir": "D:/esp/project/components/ui",
             "lib": "__idf_ui",
-            "reqs": [ "lvgl__lvgl" ],
+            "reqs": [ "driver", "esp_wifi", "esp_timer" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": [ "." ]
+            "include_dirs": [ ".", "../../include", "screens", "../../managed_components/lvgl__lvgl", "../../main" ]
         },
         "espressif__esp_lcd_touch": {
             "alias": "idf::espressif__esp_lcd_touch",

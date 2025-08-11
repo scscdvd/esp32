@@ -101,6 +101,8 @@ void uart_thread(void *arg)
                     break;
                 default:
                     ESP_LOGW("UART", "Unhandled UART event type: %d", event.type);
+                    uart_flush_input(UART_NUM_1);     // 清掉 FIFO
+                    xQueueReset(uartQueue);          // 清掉事件队列
                     break;
             }
         }

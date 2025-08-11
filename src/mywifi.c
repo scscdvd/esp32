@@ -2,6 +2,10 @@
 #include "main.h"
 #include "mqtt_client.h"
 #include "aliot_ota.h"
+#include "lvgl.h"
+#include "ui_events.h"
+#include "esp_sntp.h"
+#include "weather.h"
 static const char *TAG = "wifi";
 mqtt mqttclient =
 {
@@ -98,6 +102,9 @@ static void sta_event_handler(void* arg, esp_event_base_t event_base,int32_t eve
                 break;
             case WIFI_EVENT_STA_CONNECTED:  //WIFI连上路由器后，触发此事件
                 ESP_LOGI(TAG, "connected to AP");
+                lv_obj_clear_flag(ui_Image1, LV_OBJ_FLAG_HIDDEN);
+                lv_obj_clear_flag(ui_Image2, LV_OBJ_FLAG_HIDDEN);
+                aliot_ntp_init();
                 break;
             case WIFI_EVENT_STA_DISCONNECTED:   //WIFI从路由器断开连接后触发此事件
                 if(flag)
@@ -108,6 +115,9 @@ static void sta_event_handler(void* arg, esp_event_base_t event_base,int32_t eve
                     aliot_mqtt_stop();
                     flag = 0;
                 }
+                lv_obj_add_flag(ui_Image1, LV_OBJ_FLAG_HIDDEN);
+                lv_obj_add_flag(ui_Image2, LV_OBJ_FLAG_HIDDEN);
+                esp_sntp_stop();
                 esp_wifi_connect();             //继续重连
                 ESP_LOGI(TAG,"connect to the AP fail,retry now");
                 break;
@@ -124,8 +134,12 @@ static void sta_event_handler(void* arg, esp_event_base_t event_base,int32_t eve
                 /*保存自己的IP地址*/
                 sta_getlocal_IP(); //获取STA模式下的本地IP地址
                 ESP_LOGI(TAG, "STA local IP: %s", wifiConfigInfo.deviceIP);
+                lv_label_set_text(ui_Label8,wifiConfigInfo.deviceIP);
+                lv_label_set_text(ui_Label11,wifiConfigInfo.deviceNetMask);
+                lv_label_set_text(ui_Label13,wifiConfigInfo.deviceGateway);
                 mqtt_start();//启动mqtt客户端
                 start_aliot_mqtt();//连接阿里云
+                // get_weather();
                 flag = 1;
                 break;
         }
@@ -222,7 +236,7 @@ esp_err_t wifi_init(Config_t config)
         ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_AP, &wifi_config) );   //设置wifi配置
     }
    
-    ESP_ERROR_CHECK(esp_wifi_start() );                         //启动WIFI
+    // ESP_ERROR_CHECK(esp_wifi_start() );                         //启动WIFI
     
     ESP_LOGI(TAG, "wifi_init finished.");
     return ESP_OK;

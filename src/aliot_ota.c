@@ -10,6 +10,9 @@
 #include "esp_crt_bundle.h"
 #include "aliot_dm.h"
 #include "ILI9488_lvgl.h"
+#include "esp_sntp.h"
+#include "lwip/dns.h"
+#include "lwip/ip_addr.h"
 
 #define ALIOT_URI "iot-06z00aqatwxu3xb.mqtt.iothub.aliyuncs.com"
 #define ALIOT_PORT 8883
@@ -23,6 +26,16 @@ bool isCurrentUpdata = false;//当前是否正在升级
 static char* ota_uri;
 static ota_finish_callback_t  s_ota_finish_f = NULL;
 #define OTA_URI_SIZE 256 
+void aliot_ntp_init(void)
+{
+    ESP_LOGI("ntp", "Setting up NTP...");
+    esp_sntp_setoperatingmode(SNTP_OPMODE_POLL); // 设置工作模式为轮询
+    esp_sntp_setservername(0,"ntp.aliyun.com");
+    esp_sntp_init(); // 初始化 NTP 客户端
+    setenv("TZ", "CST-8", 1);
+    tzset();
+    esp_sntp_enabled();
+}
 static void ota_finish_callback(int code)
 {
     if(!s_aliot_connected_flg)

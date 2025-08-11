@@ -1,0 +1,501 @@
+Command: D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\esp\v5.5\esp-idf\tools/idf_monitor.py -p COM8 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\esp\project\build\main.elf D:\esp\project\build\bootloader\bootloader.elf --force-color -m 'D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\esp\v5.5\esp-idf\tools\idf.py'
+"幅ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x159c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f48
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Aug  4 2025 08:44:06[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 app0             OTA app          00 10 00010000 00200000[0m
+[0;32mI (75) boot:  3 app1             OTA app          00 11 00210000 00200000[0m
+[0;32mI (82) boot:  4 spiffs           Unknown data     01 82 00410000 00bf0000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=c25e8h (796136) map[0m
+[0;32mI (240) esp_image: segment 1: paddr=000d2610 vaddr=3fc9f200 size=053d8h ( 21464) load[0m
+[0;32mI (244) esp_image: segment 2: paddr=000d79f0 vaddr=40374000 size=08628h ( 34344) load[0m
+[0;32mI (252) esp_image: segment 3: paddr=000e0020 vaddr=42000020 size=f6fc8h (1011656) map[0m
+[0;32mI (431) esp_image: segment 4: paddr=001d6ff0 vaddr=4037c628 size=12af4h ( 76532) load[0m
+[0;32mI (447) esp_image: segment 5: paddr=001e9aec vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (458) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (458) boot: Disabling RNG early entropy source...[0m
+[0;32mI (469) cpu_start: Multicore app[0m
+[0;32mI (478) cpu_start: Pro cpu start user code[0m
+[0;32mI (478) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (478) app_init: Application information:[0m
+[0;32mI (481) app_init: Project name:     main[0m
+[0;32mI (485) app_init: App version:      1.0.0[0m
+[0;32mI (490) app_init: Compile time:     Aug  4 2025 08:40:51[0m
+[0;32mI (496) app_init: ELF file SHA256:  2bee1a02a...[0m
+[0;32mI (501) app_init: ESP-IDF:          v5.5[0m
+[0;32mI (506) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (511) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (516) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (520) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (528) heap_init: At 3FCB10C0 len 00038650 (225 KiB): RAM[0m
+[0;32mI (534) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (540) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (546) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (553) spi_flash: detected chip: generic[0m
+[0;32mI (557) spi_flash: flash io: dio[0m
+[0;32mI (561) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (568) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (576) main_task: Started on CPU0[0m
+[0;32mI (606) main_task: Calling app_main()[0m
+Starting application...
+[0;32mI (606) app_main: application version 1.0.0[0m
+[0;32mI (636) NVS: NVS initialized successfully[0m
+[0;32mI (636) app_main: WiFi config loaded successfully from NVS[0m
+[0;32mI (636) CONFIG: mode           : 0[0m
+[0;32mI (636) CONFIG: ssid           : fang[0m
+[0;32mI (646) CONFIG: password       : 12345678[0m
+[0;32mI (646) CONFIG: deviceIP       : 192.168.1.100[0m
+[0;32mI (656) CONFIG: deviceNetMask  : 255.255.255.0[0m
+[0;32mI (656) CONFIG: deviceGateway  : 192.168.1.1[0m
+[0;32mI (666) CONFIG: device_port    : 9547[0m
+[0;32mI (666) CONFIG: max_connection : 1[0m
+[0;32mI (666) CONFIG: dhcpEnable     : 1[0m
+[0;32mI (676) pp: pp rom version: e7ae62f[0m
+[0;32mI (676) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (696) wifi:wifi driver task: 3fcee254, prio:23, stack:6656, core=0[0m
+[0;32mI (706) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (706) wifi:wifi certification version: v7.0[0m
+[0;32mI (706) wifi:config NVS flash: enabled[0m
+[0;32mI (706) wifi:config nano formatting: disabled[0m
+[0;32mI (706) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (716) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (716) wifi:Init management short buffer num: 32[0m
+[0;32mI (726) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (726) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (726) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (736) wifi:Init static rx buffer num: 10[0m
+[0;32mI (736) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (746) wifi_init: rx ba win: 6[0m
+[0;32mI (746) wifi_init: accept mbox: 6[0m
+[0;32mI (746) wifi_init: tcpip mbox: 32[0m
+[0;32mI (756) wifi_init: udp mbox: 6[0m
+[0;32mI (756) wifi_init: tcp mbox: 6[0m
+[0;32mI (766) wifi_init: tcp tx win: 5760[0m
+[0;32mI (766) wifi_init: tcp rx win: 5760[0m
+[0;32mI (766) wifi_init: tcp mss: 1440[0m
+[0;32mI (776) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (776) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (806) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (846) wifi:mode : sta (10:51:db:85:93:20)[0m
+[0;32mI (846) wifi:enable tsf[0m
+[0;32mI (846) wifi: wifi_init finished.[0m
+[0;32mI (846) uart: queue free spaces: 10[0m
+[0;32mI (846) UART: UART initialized successfully[0m
+[0;32mI (856) IOControl: IO control initialized successfully[0m
+[0;32mI (946) wifi:new:<11,2>, old:<1,0>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (956) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (956) WS2812: Red LED should be on[0m
+[0;32mI (956) DataAnalysis: Data analysis thread started[0m
+[0;32mI (956) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (966) app_main: analysis_data_thread created successfully[0m
+[0;32mI (966) app_main: uart_thread created successfully[0m
+[0;32mI (966) UART: UART thread started[0m
+[0;32mI (976) GPIO: GPIO thread started[0m
+[0;32mI (976) app_main: gpio_thread created successfully[0m
+[0;32mI (986) app_main: heartLed_thread created successfully[0m
+[0;32mI (986) wifi:[0;32mI (986) HeartLed: Heart LED thread started[0m[0m
+state: assoc -> run (0x10)
+[0;32mI (996) ili9488: lvgl_thread start[0m
+[0;32mI (996) app_main: lvgl_thread created successfully[0m
+[0;32mI (1006) ili9488: Initializing SPI bus[0m
+[0;32mI (1016) wifi:connected with fang, aid = 9, channel 11, 40D, bssid = 7e:64:cf:b3:68:4c[0m
+[0;32mI (1026) wifi:security: WPA2-PSK, phy: bgn, rssi: -20[0;32mI (1016) ili9488: Initializing SPI bus[0m[0m
+
+[0;32mI (1036) ili9488: Initializing LVGL[0m
+[0;32mI (1046) wifi:pm start, type: 1[0m
+
+[0;32mI (1046) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1046) ili9488: Configuring for BGR color order[0m
+[0;32mI (1046) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1056) ili9488: new ili9488 panel @0x3fcc7020[0m
+[0;32mI (1066) wifi: connected to AP[0m
+[0;32mI (1066) ili9488: Setting GPIO:8 to 0[0m
+[0;32mI (1086) wifi:<ba-add>idx:0 (ifx:0, 7e:64:cf:b3:68:4c), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1086) ili9488: Setting GPIO:8 to 1[0m
+[0;32mI (1086) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1096) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1096) ili9488: Initializing ILI9488[0m
+[0;32mI (1306) ili9488: Initialization complete[0m
+[0;32mI (1406) ili9488: Initializing touch[0m
+[0;32mI (1966) UART: Received data from UART[0m
+[0;32mI (2106) esp_netif_handlers: sta ip: 192.168.83.116, mask: 255.255.255.0, gw: 192.168.83.133[0m
+[0;32mI (2106) wifi: get ip address[0m
+[0;32mI (2106) sta_getlocal_IP: IP:192.168.83.116,netmask:255.255.255.0,gateway:192.168.83.133
+[0m
+[0;32mI (2116) wifi: STA local IP: 192.168.83.116[0m
+[0;32mI (2116) aliot: mqtt client start[0m
+[0;33mW (2266) UART: Unhandled UART event type: 1[0m
+[0;32mI (2916) get time: ntp fail[0m
+[0;32mI (2916) wifi: MQTT_EVENT_CONNECTED[0m
+[0;32mI (2936) UART: Received data from UART[0m
+[0;32mI (2946) get time: ntp fail[0m
+[0;33mW (3016) UART: Unhandled UART event type: 1[0m
+[0;32mI (3076) aliot: ALIOT_MQTT_EVENT_CONNECTED[0m
+[0;32mI (3076) aliot: subtopic:/ota/device/upgrade/k0c11gkzMGP/mqtt[0m
+[0;32mI (3076) ver: {"id":"0","params":{"version":"1.0.0"}}[0m
+[0;32mI (3076) ntp: Setting up NTP...[0m
+[0;32mI (3916) get time: ntp fail[0m
+[0;32mI (3936) UART: Received data from UART[0m
+[0;32mI (3946) get time: ntp fail[0m
+[0;33mW (4016) UART: Unhandled UART event type: 1[0m
+[0;32mI (4916) get time: ntp fail[0m
+[0;32mI (4936) UART: Received data from UART[0m
+[0;32mI (4946) get time: ntp fail[0m
+[0;33mW (5016) UART: Unhandled UART event type: 1[0m
+[0;32mI (5916) get time: ntp fail[0m
+[0;32mI (5936) UART: Received data from UART[0m
+[0;32mI (5946) get time: ntp fail[0m
+[0;33mW (6016) UART: Unhandled UART event type: 1[0m
+[0;32mI (6916) get time: ntp fail[0m
+[0;32mI (6936) UART: Received data from UART[0m
+[0;32mI (6946) get time: ntp fail[0m
+[0;33mW (7016) UART: Unhandled UART event type: 1[0m
+[0;32mI (7916) get time: ntp fail[0m
+[0;32mI (7936) UART: Received data from UART[0m
+[0;32mI (7946) get time: ntp fail[0m
+[0;33mW (8016) UART: Unhandled UART event type: 1[0m
+[0;32mI (8916) get time: ntp fail[0m
+[0;32mI (8936) UART: Received data from UART[0m
+[0;32mI (8946) get time: ntp fail[0m
+[0;33mW (9016) UART: Unhandled UART event type: 1[0m
+[0;32mI (9916) get time: ntp fail[0m
+[0;32mI (9936) UART: Received data from UART[0m
+[0;32mI (9946) get time: ntp fail[0m
+[0;33mW (10006) UART: Unhandled UART event type: 1[0m
+[0;32mI (10916) get time: ntp fail[0m
+[0;32mI (10936) UART: Received data from UART[0m
+[0;32mI (10946) get time: ntp fail[0m
+[0;33mW (11016) UART: Unhandled UART event type: 1[0m
+[0;32mI (11916) get time: ntp fail[0m
+[0;32mI (11936) UART: Received data from UART[0m
+[0;32mI (11946) get time: ntp fail[0m
+[0;33mW (12016) UART: Unhandled UART event type: 1[0m
+[0;32mI (12916) get time: ntp fail[0m
+[0;32mI (12936) UART: Received data from UART[0m
+[0;32mI (12946) get time: ntp fail[0m
+[0;33mW (13016) UART: Unhandled UART event type: 1[0m
+[0;32mI (13916) get time: ntp fail[0m
+[0;32mI (13936) UART: Received data from UART[0m
+[0;32mI (13946) get time: ntp fail[0m
+[0;33mW (14016) UART: Unhandled UART event type: 1[0m
+[0;32mI (14916) get time: ntp fail[0m
+[0;32mI (14936) UART: Received data from UART[0m
+[0;32mI (14946) get time: ntp fail[0m
+[0;33mW (15016) UART: Unhandled UART event type: 1[0m
+[0;32mI (15916) get time: ntp fail[0m
+[0;32mI (15936) UART: Received data from UART[0m
+[0;32mI (15946) get time: ntp fail[0m
+[0;33mW (16016) UART: Unhandled UART event type: 1[0m
+[0;32mI (16916) get time: ntp fail[0m
+[0;32mI (16936) UART: Received data from UART[0m
+[0;32mI (16946) get time: ntp fail[0m
+[0;33mW (17016) UART: Unhandled UART event type: 1[0m
+[0;32mI (17916) get time: ntp fail[0m
+[0;32mI (17936) UART: Received data from UART[0m
+[0;32mI (17946) get time: ntp fail[0m
+[0;33mW (18016) UART: Unhandled UART event type: 1[0m
+[0;32mI (18916) get time: ntp fail[0m
+[0;32mI (18936) UART: Received data from UART[0m
+[0;32mI (18946) get time: ntp fail[0m
+[0;33mW (19016) UART: Unhandled UART event type: 1[0m
+[0;32mI (19916) get time: ntp fail[0m
+[0;32mI (19936) UART: Received data from UART[0m
+[0;32mI (19946) get time: ntp fail[0m
+[0;33mW (20016) UART: Unhandled UART event type: 1[0m
+[0;32mI (20916) get time: ntp fail[0m
+[0;32mI (20936) UART: Received data from UART[0m
+[0;32mI (20946) get time: ntp fail[0m
+[0;33mW (21006) UART: Unhandled UART event type: 1[0m
+[0;32mI (21916) get time: ntp fail[0m
+[0;32mI (21936) UART: Received data from UART[0m
+[0;32mI (21946) get time: ntp fail[0m
+[0;33mW (22016) UART: Unhandled UART event type: 1[0m
+[0;32mI (22916) get time: ntp fail[0m
+[0;32mI (22936) UART: Received data from UART[0m
+[0;32mI (22946) get time: ntp fail[0m
+[0;33mW (23006) UART: Unhandled UART event type: 1[0m
+[0;32mI (23916) get time: ntp fail[0m
+[0;32mI (23936) UART: Received data from UART[0m
+[0;32mI (23946) get time: ntp fail[0m
+[0;33mW (24016) UART: Unhandled UART event type: 1[0m
+[0;32mI (24916) get time: ntp fail[0m
+[0;32mI (24936) UART: Received data from UART[0m
+[0;32mI (24946) get time: ntp fail[0m
+[0;33mW (25016) UART: Unhandled UART event type: 1[0m
+[0;32mI (25916) get time: ntp fail[0m
+[0;32mI (25936) UART: Received data from UART[0m
+[0;32mI (25946) get time: ntp fail[0m
+[0;33mW (26006) UART: Unhandled UART event type: 1[0m
+[0;32mI (26916) get time: ntp fail[0m
+[0;32mI (26936) UART: Received data from UART[0m
+[0;32mI (26946) get time: ntp fail[0m
+[0;33mW (27006) UART: Unhandled UART event type: 1[0m
+[0;32mI (27916) get time: ntp fail[0m
+[0;32mI (27936) UART: Received data from UART[0m
+[0;32mI (27946) get time: ntp fail[0m
+[0;33mW (28016) UART: Unhandled UART event type: 1[0m
+[0;32mI (28916) get time: ntp fail[0m
+[0;32mI (28936) UART: Received data from UART[0m
+[0;32mI (28946) get time: ntp fail[0m
+[0;33mW (29016) UART: Unhandled UART event type: 1[0m
+[0;32mI (29916) get time: ntp fail[0m
+[0;32mI (29936) UART: Received data from UART[0m
+[0;32mI (29946) get time: ntp fail[0m
+[0;33mW (30016) UART: Unhandled UART event type: 1[0m
+[0;32mI (30916) get time: ntp fail[0m
+[0;32mI (30936) UART: Received data from UART[0m
+[0;32mI (30946) get time: ntp fail[0m
+[0;33mW (31016) UART: Unhandled UART event type: 1[0m
+[0;32mI (31916) get time: ntp fail[0m
+[0;32mI (31936) UART: Received data from UART[0m
+[0;32mI (31946) get time: ntp fail[0m
+[0;33mW (32016) UART: Unhandled UART event type: 1[0m
+[0;32mI (32916) get time: ntp fail[0m
+[0;32mI (32936) UART: Received data from UART[0m
+[0;32mI (32946) get time: ntp fail[0m
+[0;33mW (33016) UART: Unhandled UART event type: 1[0m
+[0;32mI (33916) get time: ntp fail[0m
+[0;32mI (33936) UART: Received data from UART[0m
+[0;32mI (33946) get time: ntp fail[0m
+[0;33mW (34016) UART: Unhandled UART event type: 1[0m
+[0;32mI (34916) get time: ntp fail[0m
+[0;32mI (34936) UART: Received data from UART[0m
+[0;32mI (34946) get time: ntp fail[0m
+[0;33mW (35016) UART: Unhandled UART event type: 1[0m
+[0;32mI (35916) get time: ntp fail[0m
+[0;32mI (35936) UART: Received data from UART[0m
+[0;32mI (35946) get time: ntp fail[0m
+[0;33mW (36016) UART: Unhandled UART event type: 1[0m
+[0;32mI (36916) get time: ntp fail[0m
+[0;32mI (36936) UART: Received data from UART[0m
+[0;32mI (36946) get time: ntp fail[0m
+[0;33mW (37006) UART: Unhandled UART event type: 1[0m
+[0;32mI (37916) get time: ntp fail[0m
+[0;32mI (37936) UART: Received data from UART[0m
+[0;32mI (37946) get time: ntp fail[0m
+[0;33mW (38016) UART: Unhandled UART event type: 1[0m
+[0;32mI (38916) get time: ntp fail[0m
+[0;32mI (38936) UART: Received data from UART[0m
+[0;32mI (38946) get time: ntp fail[0m
+[0;33mW (39016) UART: Unhandled UART event type: 1[0m
+[0;32mI (39916) get time: ntp fail[0m
+[0;32mI (39936) UART: Received data from UART[0m
+[0;32mI (39946) get time: ntp fail[0m
+[0;33mW (40016) UART: Unhandled UART event type: 1[0m
+[0;32mI (40916) get time: ntp fail[0m
+[0;32mI (40936) UART: Received data from UART[0m
+[0;32mI (40946) get time: ntp fail[0m
+[0;33mW (41006) UART: Unhandled UART event type: 1[0m
+[0;32mI (41916) get time: ntp fail[0m
+[0;32mI (41936) UART: Received data from UART[0m
+[0;32mI (41946) get time: ntp fail[0m
+[0;33mW (42016) UART: Unhandled UART event type: 1[0m
+[0;32mI (42916) get time: ntp fail[0m
+[0;32mI (42936) UART: Received data from UART[0m
+[0;32mI (42946) get time: ntp fail[0m
+[0;33mW (43016) UART: Unhandled UART event type: 1[0m
+[0;32mI (43916) get time: ntp fail[0m
+[0;32mI (43936) UART: Received data from UART[0m
+[0;32mI (43946) get time: ntp fail[0m
+[0;33mW (44016) UART: Unhandled UART event type: 1[0m
+[0;32mI (44916) get time: ntp fail[0m
+[0;32mI (44936) UART: Received data from UART[0m
+[0;32mI (44946) get time: ntp fail[0m
+[0;33mW (45016) UART: Unhandled UART event type: 1[0m
+[0;32mI (45916) get time: ntp fail[0m
+[0;32mI (45936) UART: Received data from UART[0m
+[0;32mI (45946) get time: ntp fail[0m
+[0;33mW (46006) UART: Unhandled UART event type: 1[0m
+[0;32mI (46916) get time: ntp fail[0m
+[0;32mI (46936) UART: Received data from UART[0m
+[0;32mI (46946) get time: ntp fail[0m
+[0;33mW (47016) UART: Unhandled UART event type: 1[0m
+[0;32mI (47916) get time: ntp fail[0m
+[0;32mI (47936) UART: Received data from UART[0m
+[0;32mI (47946) get time: ntp fail[0m
+[0;33mW (48016) UART: Unhandled UART event type: 1[0m
+[0;32mI (48916) get time: ntp fail[0m
+[0;32mI (48936) UART: Received data from UART[0m
+[0;32mI (48946) get time: ntp fail[0m
+[0;33mW (49016) UART: Unhandled UART event type: 1[0m
+[0;32mI (49916) get time: ntp fail[0m
+[0;32mI (49936) UART: Received data from UART[0m
+[0;32mI (49946) get time: ntp fail[0m
+[0;33mW (50016) UART: Unhandled UART event type: 1[0m
+[0;32mI (50916) get time: ntp fail[0m
+[0;32mI (50936) UART: Received data from UART[0m
+[0;32mI (50946) get time: ntp fail[0m
+[0;33mW (51006) UART: Unhandled UART event type: 1[0m
+[0;32mI (51916) get time: ntp fail[0m
+[0;32mI (51936) UART: Received data from UART[0m
+[0;32mI (51946) get time: ntp fail[0m
+[0;32mI (52916) get time: ntp fail[0m
+[0;32mI (52936) UART: Received data from UART[0m
+[0;32mI (52946) get time: ntp fail[0m
+[0;33mW (53006) UART: Unhandled UART event type: 1[0m
+[0;32mI (53916) get time: ntp fail[0m
+[0;32mI (53936) UART: Received data from UART[0m
+[0;32mI (53946) get time: ntp fail[0m
+[0;33mW (54006) UART: Unhandled UART event type: 1[0m
+[0;32mI (54916) get time: ntp fail[0m
+[0;32mI (54936) UART: Received data from UART[0m
+[0;32mI (54946) get time: ntp fail[0m
+[0;33mW (55006) UART: Unhandled UART event type: 1[0m
+[0;32mI (55916) get time: ntp fail[0m
+[0;32mI (55936) UART: Received data from UART[0m
+[0;32mI (55946) get time: ntp fail[0m
+[0;33mW (56006) UART: Unhandled UART event type: 1[0m
+[0;32mI (56916) get time: ntp fail[0m
+[0;32mI (56936) UART: Received data from UART[0m
+[0;32mI (56946) get time: ntp fail[0m
+[0;33mW (57006) UART: Unhandled UART event type: 1[0m
+[0;32mI (57916) get time: ntp fail[0m
+[0;32mI (57936) UART: Received data from UART[0m
+[0;32mI (57946) get time: ntp fail[0m
+[0;33mW (58006) UART: Unhandled UART event type: 1[0m
+[0;32mI (58916) get time: ntp fail[0m
+[0;32mI (58936) UART: Received data from UART[0m
+[0;32mI (58946) get time: ntp fail[0m
+[0;33mW (59006) UART: Unhandled UART event type: 1[0m
+[0;32mI (59916) get time: ntp fail[0m
+[0;32mI (59936) UART: Received data from UART[0m
+[0;32mI (59946) get time: ntp fail[0m
+[0;33mW (60006) UART: Unhandled UART event type: 1[0m
+[0;32mI (60916) get time: ntp fail[0m
+[0;32mI (60936) UART: Received data from UART[0m
+[0;32mI (60946) get time: ntp fail[0m
+[0;33mW (61006) UART: Unhandled UART event type: 1[0m
+[0;32mI (61916) get time: ntp fail[0m
+[0;32mI (61936) UART: Received data from UART[0m
+[0;32mI (61946) get time: ntp fail[0m
+[0;33mW (62016) UART: Unhandled UART event type: 1[0m
+[0;32mI (62916) get time: ntp fail[0m
+[0;32mI (62936) UART: Received data from UART[0m
+[0;32mI (62946) get time: ntp fail[0m
+[0;33mW (63006) UART: Unhandled UART event type: 1[0m
+[0;32mI (63916) get time: ntp fail[0m
+[0;32mI (63936) UART: Received data from UART[0m
+[0;32mI (63946) get time: ntp fail[0m
+[0;33mW (64006) UART: Unhandled UART event type: 1[0m
+[0;32mI (64916) get time: ntp fail[0m
+[0;32mI (64936) UART: Received data from UART[0m
+[0;32mI (64946) get time: ntp fail[0m
+[0;33mW (65006) UART: Unhandled UART event type: 1[0m
+[0;32mI (65916) get time: ntp fail[0m
+[0;32mI (65936) UART: Received data from UART[0m
+[0;32mI (65946) get time: ntp fail[0m
+[0;33mW (66016) UART: Unhandled UART event type: 1[0m
+[0;32mI (66916) get time: ntp fail[0m
+[0;32mI (66936) UART: Received data from UART[0m
+[0;32mI (66946) get time: ntp fail[0m
+[0;33mW (67016) UART: Unhandled UART event type: 1[0m
+[0;32mI (67916) get time: ntp fail[0m
+[0;32mI (67936) UART: Received data from UART[0m
+[0;32mI (67946) get time: ntp fail[0m
+[0;33mW (68016) UART: Unhandled UART event type: 1[0m
+[0;32mI (68916) get time: ntp fail[0m
+[0;32mI (68936) UART: Received data from UART[0m
+[0;32mI (68946) get time: ntp fail[0m
+[0;33mW (69016) UART: Unhandled UART event type: 1[0m
+[0;32mI (69916) get time: ntp fail[0m
+[0;32mI (69936) UART: Received data from UART[0m
+[0;32mI (69946) get time: ntp fail[0m
+[0;33mW (70016) UART: Unhandled UART event type: 1[0m
+[0;32mI (70916) get time: ntp fail[0m
+[0;32mI (70936) UART: Received data from UART[0m
+[0;32mI (70946) get time: ntp fail[0m
+[0;33mW (71016) UART: Unhandled UART event type: 1[0m
+[0;32mI (71916) get time: ntp fail[0m
+[0;32mI (71936) UART: Received data from UART[0m
+[0;32mI (71946) get time: ntp fail[0m
+[0;33mW (72006) UART: Unhandled UART event type: 1[0m
+[0;32mI (72916) get time: ntp fail[0m
+[0;32mI (72936) UART: Received data from UART[0m
+[0;32mI (72946) get time: ntp fail[0m
+[0;33mW (73016) UART: Unhandled UART event type: 1[0m
+[0;32mI (73916) get time: ntp fail[0m
+[0;32mI (73936) UART: Received data from UART[0m
+[0;32mI (73946) get time: ntp fail[0m
+[0;33mW (74016) UART: Unhandled UART event type: 1[0m
+[0;32mI (74916) get time: ntp fail[0m
+[0;32mI (74936) UART: Received data from UART[0m
+[0;32mI (74946) get time: ntp fail[0m
+[0;33mW (75016) UART: Unhandled UART event type: 1[0m
+[0;32mI (75916) get time: ntp fail[0m
+[0;32mI (75936) UART: Received data from UART[0m
+[0;32mI (75946) get time: ntp fail[0m
+[0;33mW (76006) UART: Unhandled UART event type: 1[0m
+[0;32mI (76916) get time: ntp fail[0m
+[0;32mI (76936) UART: Received data from UART[0m
+[0;32mI (76946) get time: ntp fail[0m
+[0;33mW (77016) UART: Unhandled UART event type: 1[0m
+[0;32mI (77916) get time: ntp fail[0m
+[0;32mI (77936) UART: Received data from UART[0m
+[0;32mI (77946) get time: ntp fail[0m
+[0;33mW (78016) UART: Unhandled UART event type: 1[0m
+[0;32mI (78916) get time: ntp fail[0m
+[0;32mI (78936) UART: Received data from UART[0m
+[0;32mI (78946) get time: ntp fail[0m
+[0;33mW (79016) UART: Unhandled UART event type: 1[0m
+[0;32mI (79916) get time: ntp fail[0m
+[0;32mI (79936) UART: Received data from UART[0m
+[0;32mI (79946) get time: ntp fail[0m
+[0;33mW (80016) UART: Unhandled UART event type: 1[0m
+[0;32mI (80916) get time: ntp fail[0m
+[0;32mI (80936) UART: Received data from UART[0m
+[0;32mI (80946) get time: ntp fail[0m
+[0;33mW (81016) UART: Unhandled UART event type: 1[0m
+[0;32mI (81916) get time: ntp fail[0m
+[0;32mI (81936) UART: Received data from UART[0m
+[0;32mI (81946) get time: ntp fail[0m
+[0;33mW (82016) UART: Unhandled UART event type: 1[0m
+[0;32mI (82916) get time: ntp fail[0m
+[0;32mI (82936) UART: Received data from UART[0m
+[0;32mI (82946) get time: ntp fail[0m
+[0;32mI (83916) get time: ntp fail[0m
+[0;32mI (83936) UART: Received data from UART[0m
+[0;32mI (83946) get time: ntp fail[0m
+[0;33mW (84016) UART: Unhandled UART event type: 1[0m
+[0;32mI (84916) get time: ntp fail[0m
+[0;32mI (84936) UART: Received data from UART[0m
+[0;32mI (84946) get time: ntp fail[0m
+[0;33mW (85006) UART: Unhandled UART event type: 1[0m
+[0;32mI (85916) get time: ntp fail[0m
+[0;32mI (85936) UART: Received data from UART[0m
+[0;32mI (85946) get time: ntp fail[0m
+[0;33mW (86006) UART: Unhandled UART event type: 1[0m
+[0;32mI (86916) get time: ntp fail[0m
+[0;32mI (86936) UART: Received data from UART[0m
+[0;32mI (86946) get time: ntp fail[0m
+[0;33mW (87006) UART: Unhandled UART event type: 1[0m
+[0;32mI (87916) get time: ntp fail[0m
+[0;32mI (87936) UART: Received data from UART[0m
+[0;32mI (87946) get time: ntp fail[0m
+[0;33mW (88006) UART: Unhandled UART event type: 1[0m
+[0;32mI (88916) get time: ntp fail[0m
+[0;32mI (88936) UART: Received data from UART[0m
+[0;32mI (88946) get time: ntp fail[0m
+[0;33mW (89006) UART: Unhandled UART event type: 1[0m
+[0;32mI (89916) get time: ntp fail[0m
+[0;32mI (89936) UART: Received data from UART[0m
+[0;32mI (89946) get time: ntp fail[0m
+[0;33mW (90006) UART: Unhandled UART event type: 1[0m

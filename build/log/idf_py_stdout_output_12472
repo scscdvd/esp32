@@ -1,0 +1,1587 @@
+Command: D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\esp\v5.5\esp-idf\tools/idf_monitor.py -p COM8 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\esp\project\build\main.elf D:\esp\project\build\bootloader\bootloader.elf --force-color -m 'D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\esp\v5.5\esp-idf\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x159c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f48
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Aug  4 2025 08:44:06[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 app0             OTA app          00 10 00010000 00200000[0m
+[0;32mI (75) boot:  3 app1             OTA app          00 11 00210000 00200000[0m
+[0;32mI (82) boot:  4 spiffs           Unknown data     01 82 00410000 00bf0000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=d3818h (866328) map[0m
+[0;32mI (252) esp_image: segment 1: paddr=000e3840 vaddr=3fc9f200 size=053d8h ( 21464) load[0m
+[0;32mI (257) esp_image: segment 2: paddr=000e8c20 vaddr=40374000 size=073f8h ( 29688) load[0m
+[0;32mI (263) esp_image: segment 3: paddr=000f0020 vaddr=42000020 size=f9228h (1020456) map[0m
+[0;32mI (443) esp_image: segment 4: paddr=001e9250 vaddr=4037b3f8 size=13d24h ( 81188) load[0m
+[0;32mI (461) esp_image: segment 5: paddr=001fcf7c vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (472) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (472) boot: Disabling RNG early entropy source...[0m
+[0;32mI (483) cpu_start: Multicore app[0m
+[0;32mI (492) cpu_start: Pro cpu start user code[0m
+[0;32mI (492) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (492) app_init: Application information:[0m
+[0;32mI (495) app_init: Project name:     main[0m
+[0;32mI (499) app_init: App version:      1.0.0[0m
+[0;32mI (504) app_init: Compile time:     Aug  4 2025 08:40:51[0m
+[0;32mI (510) app_init: ELF file SHA256:  56bbb64b4...[0m
+[0;32mI (515) app_init: ESP-IDF:          v5.5[0m
+[0;32mI (520) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (525) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (530) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (534) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (542) heap_init: At 3FCB11B0 len 00038560 (225 KiB): RAM[0m
+[0;32mI (548) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (554) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (560) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (567) spi_flash: detected chip: generic[0m
+[0;32mI (571) spi_flash: flash io: dio[0m
+[0;32mI (575) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (582) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (590) main_task: Started on CPU0[0m
+[0;32mI (620) main_task: Calling app_main()[0m
+Starting application...
+[0;32mI (620) app_main: application version 1.0.0[0m
+[0;32mI (650) NVS: NVS initialized successfully[0m
+[0;32mI (650) app_main: WiFi config loaded successfully from NVS[0m
+[0;32mI (650) CONFIG: mode           : 0[0m
+[0;32mI (650) CONFIG: ssid           : fang[0m
+[0;32mI (650) CONFIG: password       : 12345678[0m
+[0;32mI (660) CONFIG: deviceIP       : 192.168.1.100[0m
+[0;32mI (660) CONFIG: deviceNetMask  : 255.255.255.0[0m
+[0;32mI (670) CONFIG: deviceGateway  : 192.168.1.1[0m
+[0;32mI (670) CONFIG: device_port    : 9547[0m
+[0;32mI (680) CONFIG: max_connection : 1[0m
+[0;32mI (680) CONFIG: dhcpEnable     : 1[0m
+[0;32mI (690) pp: pp rom version: e7ae62f[0m
+[0;32mI (690) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (710) wifi:wifi driver task: 3fcee254, prio:23, stack:6656, core=0[0m
+[0;32mI (720) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (720) wifi:wifi certification version: v7.0[0m
+[0;32mI (720) wifi:config NVS flash: enabled[0m
+[0;32mI (720) wifi:config nano formatting: disabled[0m
+[0;32mI (720) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (730) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (730) wifi:Init management short buffer num: 32[0m
+[0;32mI (740) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (740) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (740) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (750) wifi:Init static rx buffer num: 10[0m
+[0;32mI (750) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (760) wifi_init: rx ba win: 6[0m
+[0;32mI (760) wifi_init: accept mbox: 6[0m
+[0;32mI (760) wifi_init: tcpip mbox: 32[0m
+[0;32mI (770) wifi_init: udp mbox: 6[0m
+[0;32mI (770) wifi_init: tcp mbox: 6[0m
+[0;32mI (780) wifi_init: tcp tx win: 5760[0m
+[0;32mI (780) wifi_init: tcp rx win: 5760[0m
+[0;32mI (780) wifi_init: tcp mss: 1440[0m
+[0;32mI (790) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (790) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (800) wifi: wifi_init finished.[0m
+[0;32mI (810) uart: queue free spaces: 10[0m
+[0;32mI (810) UART: UART initialized successfully[0m
+[0;32mI (810) IOControl: IO control initialized successfully[0m
+[0;32mI (820) WS2812: Red LED should be on[0m
+[0;32mI (820) DataAnalysis: Data analysis thread started[0m
+[0;32mI (830) app_main: analysis_data_thread created successfully[0m
+[0;32mI (830) app_main: uart_thread created successfully[0m
+[0;32mI (830) UART: UART thread started[0m
+[0;32mI (840) GPIO: GPIO thread started[0m
+[0;32mI (840) app_main: gpio_thread created successfully[0m
+[0;33mW (840) UART: Unhandled UART event type: 1[0m
+[0;32mI (850) HeartLed: Heart LED thread started[0m
+[0;32mI (850) app_main: heartLed_thread created successfully[0m
+[0;32mI (870) app_main: lvgl_thread created successfully[0m
+[0;32mI (870) ili9488: lvgl_thread start[0m
+[0;32mI (880) ili9488: Initializing SPI bus[0m
+[0;32mI (880) ili9488: Initializing LVGL[0m
+[0;32mI (890) ili9488: Configuring for BGR color order[0m
+[0;32mI (890) ili9488: new ili9488 panel @0x3fcd01dc[0m
+[0;32mI (890) ili9488: Setting GPIO:8 to 0[0m
+[0;32mI (910) ili9488: Setting GPIO:8 to 1[0m
+[0;32mI (920) ili9488: Initializing ILI9488[0m
+[0;32mI (1120) ili9488: Initialization complete[0m
+[0;32mI (1220) ili9488: Initializing touch[0m
+[0;32mI (1880) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (1900) UART: Received data from UART[0m
+[0;32mI (2140) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2180) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2220) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2260) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (2270) UART: Unhandled UART event type: 1[0m
+[0;32mI (2300) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2340) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2380) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2420) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2460) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2500) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2540) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2580) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2620) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2660) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2700) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2740) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2770) UART: Received data from UART[0m
+[0;32mI (2790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (2910) UART: Unhandled UART event type: 1[0m
+[0;33mW (2920) UART: Unhandled UART event type: 1[0m
+[0;32mI (2950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (2990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3760) UART: Received data from UART[0m
+[0;32mI (3780) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3820) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3860) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3900) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (3910) UART: Unhandled UART event type: 1[0m
+[0;32mI (3940) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (3980) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4020) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4060) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4100) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4140) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4180) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4220) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4260) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4300) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4340) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4380) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4420) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4460) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4500) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4540) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4580) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4620) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4660) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4700) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4740) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4780) UART: Received data from UART[0m
+[0;32mI (4790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (4890) UART: Unhandled UART event type: 1[0m
+[0;33mW (4910) UART: Unhandled UART event type: 1[0m
+[0;32mI (4920) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (4960) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5000) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5040) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5080) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5120) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5160) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5200) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5240) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5280) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5320) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5360) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5400) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5440) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5480) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5520) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5560) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5600) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5640) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5680) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5720) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5770) UART: Received data from UART[0m
+[0;32mI (5790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5880) UART: Received data from UART[0m
+[0;33mW (5910) UART: Unhandled UART event type: 1[0m
+[0;32mI (5920) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (5960) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6000) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6040) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6080) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6120) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6160) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6200) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6240) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6280) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6320) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6360) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6400) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6440) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6480) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6520) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6560) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6600) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6640) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6680) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6720) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6770) UART: Received data from UART[0m
+[0;32mI (6790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (6890) UART: Unhandled UART event type: 1[0m
+[0;33mW (6910) UART: Unhandled UART event type: 1[0m
+[0;32mI (6920) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (6960) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7000) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7040) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7080) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7120) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7160) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7200) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7240) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7280) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7320) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7360) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7400) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7440) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7480) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7520) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7560) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7600) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7640) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7680) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7720) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7770) UART: Received data from UART[0m
+[0;32mI (7790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (7910) UART: Unhandled UART event type: 1[0m
+[0;32mI (7920) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (7960) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8000) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8040) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8080) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8120) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8160) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8200) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8240) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8280) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8320) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8360) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8400) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8440) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8480) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8520) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8560) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8600) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8640) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8680) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8720) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8770) UART: Received data from UART[0m
+[0;32mI (8790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (8910) UART: Unhandled UART event type: 1[0m
+[0;32mI (8920) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (8960) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9000) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9040) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9080) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9120) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9160) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9200) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9240) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9280) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9320) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9360) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9400) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9440) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9480) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9520) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9560) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9600) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9640) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9680) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9720) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9770) UART: Received data from UART[0m
+[0;32mI (9780) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9820) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9860) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (9890) UART: Unhandled UART event type: 1[0m
+[0;32mI (9900) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (9910) UART: Unhandled UART event type: 1[0m
+[0;32mI (9940) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (9980) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10020) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10060) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10100) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10140) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10180) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10220) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10260) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10300) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10340) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10380) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10420) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10460) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10500) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10540) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10580) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10620) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10660) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10700) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10740) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10770) UART: Received data from UART[0m
+[0;32mI (10790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (10910) UART: Unhandled UART event type: 1[0m
+[0;32mI (10910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (10990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11770) UART: Received data from UART[0m
+[0;32mI (11790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (11900) UART: Unhandled UART event type: 1[0m
+[0;33mW (11910) UART: Unhandled UART event type: 1[0m
+[0;32mI (11910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (11990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12770) UART: Received data from UART[0m
+[0;32mI (12790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (12900) UART: Unhandled UART event type: 1[0m
+[0;33mW (12910) UART: Unhandled UART event type: 1[0m
+[0;32mI (12910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (12990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13770) UART: Received data from UART[0m
+[0;32mI (13790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (13890) UART: Unhandled UART event type: 1[0m
+[0;33mW (13910) UART: Unhandled UART event type: 1[0m
+[0;32mI (13910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (13990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14770) UART: Received data from UART[0m
+[0;32mI (14790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (14900) UART: Unhandled UART event type: 1[0m
+[0;32mI (14910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (14910) UART: Unhandled UART event type: 1[0m
+[0;32mI (14950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (14990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15770) UART: Received data from UART[0m
+[0;32mI (15790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (15900) UART: Unhandled UART event type: 1[0m
+[0;32mI (15910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (15910) UART: Unhandled UART event type: 1[0m
+[0;32mI (15950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (15990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16770) UART: Received data from UART[0m
+[0;32mI (16790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (16890) UART: Unhandled UART event type: 1[0m
+[0;32mI (16910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (16990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17770) UART: Received data from UART[0m
+[0;32mI (17790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (17900) UART: Unhandled UART event type: 1[0m
+[0;32mI (17910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (17910) UART: Unhandled UART event type: 1[0m
+[0;32mI (17950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (17990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18770) UART: Received data from UART[0m
+[0;32mI (18790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (18890) UART: Unhandled UART event type: 1[0m
+[0;32mI (18910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (18990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19770) UART: Received data from UART[0m
+[0;32mI (19790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (19900) UART: Unhandled UART event type: 1[0m
+[0;32mI (19910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (19910) UART: Unhandled UART event type: 1[0m
+[0;32mI (19950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (19990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20770) UART: Received data from UART[0m
+[0;32mI (20790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (20900) UART: Unhandled UART event type: 1[0m
+[0;32mI (20910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (20910) UART: Unhandled UART event type: 1[0m
+[0;32mI (20950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (20990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21780) UART: Received data from UART[0m
+[0;32mI (21780) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21810) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21850) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21890) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (21900) UART: Unhandled UART event type: 1[0m
+[0;33mW (21910) UART: Unhandled UART event type: 1[0m
+[0;32mI (21930) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (21970) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22010) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22050) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22090) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22130) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22170) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22210) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22250) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22290) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22330) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22370) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22410) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22450) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22490) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22530) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22570) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22610) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22650) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22690) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22730) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22770) UART: Received data from UART[0m
+[0;32mI (22790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (22900) UART: Unhandled UART event type: 1[0m
+[0;32mI (22910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (22910) UART: Unhandled UART event type: 1[0m
+[0;32mI (22950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (22990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23770) UART: Received data from UART[0m
+[0;32mI (23780) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23820) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23860) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (23900) UART: Unhandled UART event type: 1[0m
+[0;32mI (23910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (23910) UART: Unhandled UART event type: 1[0m
+[0;32mI (23950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (23990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24780) UART: Received data from UART[0m
+[0;32mI (24780) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24810) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24850) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24890) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (24900) UART: Unhandled UART event type: 1[0m
+[0;33mW (24910) UART: Unhandled UART event type: 1[0m
+[0;32mI (24930) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (24970) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25010) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25050) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25090) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25130) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25170) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25210) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25250) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25290) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25330) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25370) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25410) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25450) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25490) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25530) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25570) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25610) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25650) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25690) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25730) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25780) UART: Received data from UART[0m
+[0;32mI (25780) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25810) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25850) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25890) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (25900) UART: Unhandled UART event type: 1[0m
+[0;33mW (25910) UART: Unhandled UART event type: 1[0m
+[0;32mI (25930) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (25970) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26010) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26050) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26090) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26130) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26170) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26210) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26250) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26290) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26330) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26370) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26410) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26450) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26490) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26530) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26570) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26610) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26650) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26690) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26730) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26780) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26820) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26860) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26900) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26940) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (26980) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (27020) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (27060) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (27100) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (27140) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (27180) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27220) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27260) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27300) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27340) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27380) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27420) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27460) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27500) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27540) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27580) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27620) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27660) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27700) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27740) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (27760) UART: Unhandled UART event type: 1[0m
+[0;32mI (27780) UART: Received data from UART[0m
+[0;32mI (27790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (27900) UART: Unhandled UART event type: 1[0m
+[0;32mI (27910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (27920) UART: Unhandled UART event type: 1[0m
+[0;32mI (27950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (27990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (28030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (28070) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28110) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28150) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28190) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28230) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28270) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28310) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28350) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28390) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28430) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28470) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28510) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28550) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28590) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (28630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (28670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (28710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (28760) UART: Unhandled UART event type: 1[0m
+[0;32mI (28780) UART: Received data from UART[0m
+[0;32mI (28790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (28830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (28870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (28900) UART: Unhandled UART event type: 1[0m
+[0;32mI (28910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (28920) UART: Unhandled UART event type: 1[0m
+[0;32mI (28950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (28990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (29030) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29070) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29110) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29150) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29190) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29230) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29270) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29310) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29350) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29390) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29430) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29470) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29510) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29550) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29590) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29630) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29670) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29710) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29780) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29820) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29860) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29900) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (29940) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (29980) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30020) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30060) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30100) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30140) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30180) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30220) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30260) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30300) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30340) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30380) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30420) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30460) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30500) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30540) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30580) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30620) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30660) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30700) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (30740) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (30790) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (30830) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (30870) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (30910) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (30950) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (30990) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31030) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31070) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31110) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31150) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31190) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31230) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31270) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31310) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31350) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31390) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31430) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31470) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31510) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31550) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31590) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31630) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31670) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31710) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31780) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31820) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31860) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31900) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31940) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (31980) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32020) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32060) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32100) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32140) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32180) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32220) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32260) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32300) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32340) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32380) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32420) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32460) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32500) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32540) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32580) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32620) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32660) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32700) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32740) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32790) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32830) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32870) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32910) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32950) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (32990) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (33030) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (33070) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (33110) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (33150) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (33190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33770) UART: Received data from UART[0m
+[0;32mI (33780) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33820) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33860) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (33890) UART: Unhandled UART event type: 1[0m
+[0;32mI (33900) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (33900) UART: Unhandled UART event type: 1[0m
+[0;32mI (33940) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (33980) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (34020) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34060) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34100) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34140) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34180) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34220) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34260) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34300) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34340) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34380) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34420) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34460) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34500) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34540) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34580) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34620) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34660) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34700) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34740) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34790) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (34830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (34870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (34910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (34950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (34990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35780) UART: Received data from UART[0m
+[0;32mI (35780) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35810) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35850) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (35890) UART: Unhandled UART event type: 1[0m
+[0;32mI (35900) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (35900) UART: Unhandled UART event type: 1[0m
+[0;32mI (35940) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (35980) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (36020) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (36060) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (36100) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (36140) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (36180) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (36220) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (36260) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (36300) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (36340) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (36380) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36420) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36460) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36500) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36540) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36580) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36620) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36660) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36700) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36740) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36790) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36830) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36870) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36910) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36950) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (36990) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (37030) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (37070) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (37110) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (37150) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (37190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37780) UART: Received data from UART[0m
+[0;32mI (37780) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37810) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37850) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (37890) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (37900) UART: Unhandled UART event type: 1[0m
+[0;32mI (37930) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (37970) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38010) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38050) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38090) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38130) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38170) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38210) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38250) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38290) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38330) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38370) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38410) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38450) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38490) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38530) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38570) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (38610) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (38650) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (38690) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (38730) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (38780) UART: Received data from UART[0m
+[0;32mI (38780) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (38810) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (38850) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (38890) UART: Unhandled UART event type: 1[0m
+[0;32mI (38900) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (38900) UART: Unhandled UART event type: 1[0m
+[0;32mI (38940) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (38980) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39020) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39060) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39100) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39140) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39180) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39220) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39260) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39300) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39340) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39380) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39420) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39460) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39500) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39540) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39580) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (39620) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (39660) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (39700) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (39740) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (39790) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (39830) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (39870) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (39910) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (39950) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (39990) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40030) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40070) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40110) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40150) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40190) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40230) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40270) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40310) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40350) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40390) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40430) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40470) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40510) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40550) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40590) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40630) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40670) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40710) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40780) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40820) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40860) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40900) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40940) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (40980) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (41020) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (41060) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (41100) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (41140) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (41180) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (41220) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (41260) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (41300) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (41340) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (41380) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (41420) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (41460) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (41500) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (41540) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (41580) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (41620) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (41660) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (41700) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (41740) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (41780) UART: Received data from UART[0m
+[0;32mI (41790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (41830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (41870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (41890) UART: Unhandled UART event type: 1[0m
+[0;33mW (41900) UART: Unhandled UART event type: 1[0m
+[0;32mI (41910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (41950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (41990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (42550) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (42590) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (42630) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (42670) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (42710) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (42780) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (42820) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (42860) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (42900) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (42940) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (42980) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (43020) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (43060) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (43100) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (43140) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (43180) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (43220) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (43260) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (43300) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (43340) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43380) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43420) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43460) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43500) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43540) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43580) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43620) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43660) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43700) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43740) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43760) UART: Received data from UART[0m
+[0;32mI (43780) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43820) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43860) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (43890) UART: Unhandled UART event type: 1[0m
+[0;32mI (43900) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (43900) UART: Unhandled UART event type: 1[0m
+[0;32mI (43940) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (43980) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (44020) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44060) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44100) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44140) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44180) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44220) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44260) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44300) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44340) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44380) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44420) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44460) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44500) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44540) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44580) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44620) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44660) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44700) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44740) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44790) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44830) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44870) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44910) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44950) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (44990) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45030) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45070) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45110) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45150) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45190) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45230) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45270) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45310) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45350) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45390) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45430) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45470) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45510) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45550) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45590) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45630) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45670) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (45710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (45780) UART: Received data from UART[0m
+[0;32mI (45780) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (45810) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (45850) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (45890) UART: Unhandled UART event type: 1[0m
+[0;32mI (45890) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (45900) UART: Unhandled UART event type: 1[0m
+[0;32mI (45930) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (45970) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (46010) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (46050) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (46090) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (46130) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (46170) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (46210) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (46250) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (46290) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (46330) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (46370) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46410) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46450) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46490) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46530) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46570) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46610) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46650) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46690) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46730) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46780) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46820) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46860) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46900) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46940) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (46980) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (47020) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (47060) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (47100) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (47140) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (47180) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (47220) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (47260) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (47300) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (47340) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (47380) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (47420) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (47460) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (47500) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (47540) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (47580) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (47620) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (47660) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (47700) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (47740) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (47770) UART: Received data from UART[0m
+[0;32mI (47790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (47830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (47870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (47900) UART: Unhandled UART event type: 1[0m
+[0;32mI (47910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (47950) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (47990) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48030) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48070) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48110) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48150) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48190) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48230) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48270) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48310) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48350) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48390) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48430) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48470) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48510) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48550) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48590) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48630) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48670) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48710) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48780) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48820) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48860) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48900) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48940) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (48980) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49020) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49060) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49100) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49140) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49180) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49220) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49260) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49300) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49340) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49380) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49420) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49460) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49500) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49540) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49580) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49620) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49660) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49700) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49740) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49790) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49830) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49870) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49910) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49950) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (49990) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50030) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50070) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50110) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50150) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (50230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (50270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (50310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (50350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (50390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (50430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (50470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (50510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (50550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (50590) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50630) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50670) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50710) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50780) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50820) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50860) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50900) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50940) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (50980) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51020) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51060) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51100) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51140) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51180) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51220) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51260) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51300) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51340) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51380) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51420) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51460) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51500) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (51540) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (51580) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (51620) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (51660) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (51700) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (51740) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (51780) UART: Received data from UART[0m
+[0;32mI (51790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (51830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (51870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (51890) UART: Unhandled UART event type: 1[0m
+[0;33mW (51900) UART: Unhandled UART event type: 1[0m
+[0;32mI (51910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (51950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (51990) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52030) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52070) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52110) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52150) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52190) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52230) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52270) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52310) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52350) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52390) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52430) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52470) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52510) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52550) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52590) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52630) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52670) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52710) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52780) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52820) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52860) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52900) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52940) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (52980) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53020) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53060) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53100) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53140) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53180) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (53220) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53260) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (53300) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (53340) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (53380) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (53420) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (53460) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (53500) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (53540) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (53580) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (53620) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (53660) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53700) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53740) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53780) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53820) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53860) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53900) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53940) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (53980) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (54020) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (54060) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (54100) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (54140) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (54180) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (54220) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (54260) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (54300) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (54340) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (54380) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (54420) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (54460) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (54500) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (54540) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (54580) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (54620) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (54660) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (54700) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (54740) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (54770) UART: Received data from UART[0m
+[0;32mI (54780) UART: Received data from UART[0m
+[0;32mI (54790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (54830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (54870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (54900) UART: Unhandled UART event type: 1[0m
+[0;32mI (54910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (54950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (54990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (55030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (55070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (55110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (55150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (55190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (55230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (55270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (55310) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55350) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55390) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55430) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55470) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55510) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55550) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55590) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55630) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55670) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55710) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55780) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55820) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55860) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55900) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55940) ili9488: Touch read raw: x=0, y=0, irq=0[0m
+[0;32mI (55980) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56020) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56060) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56100) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56140) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56180) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56220) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56260) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56300) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56340) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56380) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56420) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56460) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56500) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56540) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56580) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56620) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56660) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56700) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56740) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56770) UART: Received data from UART[0m
+[0;32mI (56790) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56830) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56870) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;33mW (56900) UART: Unhandled UART event type: 1[0m
+[0;32mI (56910) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56950) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (56990) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57030) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57070) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57110) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57150) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57190) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57230) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57270) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57310) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57350) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57390) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57430) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57470) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57510) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57550) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57590) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57630) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57670) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57710) ili9488: Touch read raw: x=0, y=0, irq=1[0m
+[0;32mI (57760) UART: Received data from UART[0m

@@ -169,7 +169,7 @@ esp_err_t nvs_save_lcd_calibration_param(long int min_x,long int max_x,long int 
 {
     nvs_handle_t handle;
     xSemaphoreTake(xReadWriteSemaphore, portMAX_DELAY);
-    esp_err_t err = nvs_open("calibration_param", NVS_READWRITE, &handle);
+    esp_err_t err = nvs_open("touch", NVS_READWRITE, &handle);
     if(err != ESP_OK) 
     {
         ESP_LOGE("NVS", "Failed to open NVS partition: %s", esp_err_to_name(err));
@@ -222,7 +222,7 @@ uint8_t nvs_get_lcd_calibration_param(long int *min_x,long int *max_x,long int *
     uint8_t isSave = 0;
     nvs_handle_t handle;
     xSemaphoreTake(xReadWriteSemaphore, portMAX_DELAY);
-    esp_err_t err = nvs_open("calibration_param", NVS_READONLY, &handle);
+    esp_err_t err = nvs_open("touch", NVS_READONLY, &handle);
     if(err != ESP_OK) 
     {
         ESP_LOGE("NVS", "Failed to open NVS partition: %s", esp_err_to_name(err));

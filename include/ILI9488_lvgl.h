@@ -13,5 +13,5 @@
 
 void ili9488_lvgl_init(void);
 void lvgl_free() ;
-
+void backlight_set_brightness(int brightness_percent);
 #endif // !_ILI9488_LVGL_H

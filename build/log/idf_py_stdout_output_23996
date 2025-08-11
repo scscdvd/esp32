@@ -1,0 +1,1008 @@
+Command: D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\esp\v5.5\esp-idf\tools/idf_monitor.py -p COM8 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\esp\project\build\main.elf D:\esp\project\build\bootloader\bootloader.elf --force-color -m 'D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\esp\v5.5\esp-idf\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x2b (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x159c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f48
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Aug  4 2025 08:44:06[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 app0             OTA app          00 10 00010000 00200000[0m
+[0;32mI (76) boot:  3 app1             OTA app          00 11 00210000 00200000[0m
+[0;32mI (82) boot:  4 spiffs           Unknown data     01 82 00410000 00bf0000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=c7b48h (817992) map[0m
+[0;32mI (243) esp_image: segment 1: paddr=000d7b70 vaddr=3fc9f200 size=053d8h ( 21464) load[0m
+[0;32mI (248) esp_image: segment 2: paddr=000dcf50 vaddr=40374000 size=030c8h ( 12488) load[0m
+[0;32mI (251) esp_image: segment 3: paddr=000e0020 vaddr=42000020 size=f703ch (1011772) map[0m
+[0;32mI (433) esp_image: segment 4: paddr=001d7064 vaddr=403770c8 size=18054h ( 98388) load[0m
+[0;32mI (455) esp_image: segment 5: paddr=001ef0c0 vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (466) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (466) boot: Disabling RNG early entropy source...[0m
+[0;32mI (476) cpu_start: Multicore app[0m
+[0;32mI (485) cpu_start: Pro cpu start user code[0m
+[0;32mI (485) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (485) app_init: Application information:[0m
+[0;32mI (488) app_init: Project name:     main[0m
+[0;32mI (493) app_init: App version:      1.0.0[0m
+[0;32mI (497) app_init: Compile time:     Aug  4 2025 08:40:51[0m
+[0;32mI (503) app_init: ELF file SHA256:  a50b006d1...[0m
+[0;32mI (509) app_init: ESP-IDF:          v5.5[0m
+[0;32mI (513) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (518) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (523) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (528) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (535) heap_init: At 3FCB10D0 len 00038640 (225 KiB): RAM[0m
+[0;32mI (541) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (547) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (553) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (561) spi_flash: detected chip: generic[0m
+[0;32mI (564) spi_flash: flash io: dio[0m
+[0;32mI (569) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (576) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (584) main_task: Started on CPU0[0m
+[0;32mI (614) main_task: Calling app_main()[0m
+Starting application...
+[0;32mI (614) app_main: application version 1.0.0[0m
+[0;32mI (654) NVS: NVS initialized successfully[0m
+[0;32mI (654) app_main: WiFi config loaded successfully from NVS[0m
+[0;32mI (654) CONFIG: mode           : 0[0m
+[0;32mI (654) CONFIG: ssid           : fang[0m
+[0;32mI (664) CONFIG: password       : 12345678[0m
+[0;32mI (664) CONFIG: deviceIP       : 192.168.1.100[0m
+[0;32mI (674) CONFIG: deviceNetMask  : 255.255.255.0[0m
+[0;32mI (674) CONFIG: deviceGateway  : 192.168.1.1[0m
+[0;32mI (684) CONFIG: device_port    : 9547[0m
+[0;32mI (684) CONFIG: max_connection : 1[0m
+[0;32mI (684) CONFIG: dhcpEnable     : 1[0m
+[0;32mI (694) pp: pp rom version: e7ae62f[0m
+[0;32mI (694) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (714) wifi:wifi driver task: 3fcee254, prio:23, stack:6656, core=0[0m
+[0;32mI (724) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (724) wifi:wifi certification version: v7.0[0m
+[0;32mI (724) wifi:config NVS flash: enabled[0m
+[0;32mI (724) wifi:config nano formatting: disabled[0m
+[0;32mI (724) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (734) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (734) wifi:Init management short buffer num: 32[0m
+[0;32mI (744) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (744) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (744) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (754) wifi:Init static rx buffer num: 10[0m
+[0;32mI (754) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (764) wifi_init: rx ba win: 6[0m
+[0;32mI (764) wifi_init: accept mbox: 6[0m
+[0;32mI (764) wifi_init: tcpip mbox: 32[0m
+[0;32mI (774) wifi_init: udp mbox: 6[0m
+[0;32mI (774) wifi_init: tcp mbox: 6[0m
+[0;32mI (784) wifi_init: tcp tx win: 5760[0m
+[0;32mI (784) wifi_init: tcp rx win: 5760[0m
+[0;32mI (784) wifi_init: tcp mss: 1440[0m
+[0;32mI (794) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (794) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (814) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (844) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (864) wifi:mode : sta (10:51:db:85:93:20)[0m
+[0;32mI (864) wifi:enable tsf[0m
+[0;32mI (864) wifi: wifi_init finished.[0m
+[0;32mI (874) uart: queue free spaces: 10[0m
+[0;32mI (874) UART: UART initialized successfully[0m
+[0;32mI (964) IOControl: IO control initialized successfully[0m
+[0;32mI (964) ili9488: Initializing SPI bus[0m
+[0;32mI (964) ili9488: Initializing SPI bus[0m
+[0;32mI (964) ili9488: Initializing LVGL[0m
+[0;32mI (974) wifi:new:<11,2>, old:<1,0>, ap:<255,255>, sta:<11,2>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (984) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (984) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (994) ili9488: Configuring for BGR color order[0m
+[0;32mI (994) ili9488: new ili9488 panel @0x3fcd2e1c[0m
+[0;32mI (994) ili9488: Setting GPIO:8 to 0[0m
+[0;32mI (1004) ili9488: Setting GPIO:8 to 1[0m
+[0;32mI (1014) ili9488: Initializing ILI9488[0m
+[0;32mI (1014) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1034) wifi:connected with fang, aid = 5, channel 11, 40D, bssid = 7e:64:cf:b3:68:4c[0m
+[0;32mI (1034) wifi:security: WPA2-PSK, phy: bgn, rssi: -16[0m
+[0;32mI (1044) wifi:pm start, type: 1[0m
+
+[0;32mI (1044) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1044) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1054) wifi: connected to AP[0m
+[0;32mI (1074) wifi:<ba-add>idx:0 (ifx:0, 7e:64:cf:b3:68:4c), tid:0, ssn:1, winSize:64[0m
+[0;32mI (1124) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1134) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (1214) ili9488: Initialization complete[0m
+[0;32mI (1314) ili9488: Initializing touch[0m
+[0;32mI (1814) WS2812: Red LED should be on[0m
+[0;32mI (1814) DataAnalysis: Data analysis thread started[0m
+[0;32mI (1814) app_main: analysis_data_thread created successfully[0m
+[0;32mI (1814) app_main: uart_thread created successfully[0m
+[0;32mI (1814) UART: UART thread started[0m
+[0;32mI (1824) GPIO: GPIO thread started[0m
+[0;32mI (1824) app_main: gpio_thread created successfully[0m
+[0;32mI (1834) app_main: heartLed_thread created successfully[0m
+[0;32mI (1834) HeartLed: Heart LED thread started[0m
+[0;32mI (1844) app_main: lvgl_thread created successfully[0m
+[0;32mI (1844) ili9488: lvgl_thread start[0m
+[0;32mI (2084) esp_netif_handlers: sta ip: 192.168.83.116, mask: 255.255.255.0, gw: 192.168.83.133[0m
+[0;32mI (2084) wifi: get ip address[0m
+[0;32mI (2084) sta_getlocal_IP: IP:192.168.83.116,netmask:255.255.255.0,gateway:192.168.83.133
+[0m
+[0;32mI (2094) wifi: STA local IP: 192.168.83.116[0m
+[0;32mI (2104) aliot: mqtt client start[0m
+[0;32mI (2674) wifi: MQTT_EVENT_CONNECTED[0m
+[0;31mE (2684) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (2684) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (2684) esp-tls: Failed to open new connection[0m
+[0;31mE (2694) transport_base: Failed to open a new connection[0m
+[0;31mE (2694) mqtt_client: Error transport connect[0m
+[0;32mI (2704) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2704) mqtt_client: Client force reconnect requested[0m
+[0;33mW (2834) wifi:m f null[0m
+
+[0;32mI (2864) get time: ntp fail[0m
+[0;31mE (2864) esp-aes: Failed to allocate memory[0m
+[0;31mE (2864) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x0001[0m
+[0;32mI (2874) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (2874) esp-tls: Failed to open new connection[0m
+[0;31mE (2884) transport_base: Failed to open a new connection[0m
+[0;31mE (2894) mqtt_client: Error transport connect[0m
+[0;32mI (2894) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (2894) mqtt_client: Client force reconnect requested[0m
+[0;32mI (2964) get time: ntp fail[0m
+[0;33mW (3064) wifi:m f null[0m
+
+[0;32mI (3864) get time: ntp fail[0m
+[0;32mI (3964) get time: ntp fail[0m
+[0;32mI (4864) get time: ntp fail[0m
+[0;32mI (4964) get time: ntp fail[0m
+[0;32mI (5864) get time: ntp fail[0m
+[0;32mI (5964) get time: ntp fail[0m
+[0;32mI (6864) get time: ntp fail[0m
+[0;32mI (6964) get time: ntp fail[0m
+[0;32mI (7864) get time: ntp fail[0m
+[0;32mI (7964) get time: ntp fail[0m
+[0;32mI (8864) get time: ntp fail[0m
+[0;32mI (8964) get time: ntp fail[0m
+[0;32mI (9864) get time: ntp fail[0m
+[0;32mI (9964) get time: ntp fail[0m
+[0;32mI (10864) get time: ntp fail[0m
+[0;32mI (10964) get time: ntp fail[0m
+[0;32mI (11864) get time: ntp fail[0m
+[0;32mI (11964) get time: ntp fail[0m
+[0;32mI (12864) get time: ntp fail[0m
+[0;32mI (12964) get time: ntp fail[0m
+[0;33mW (13364) esp-tls: Failed to open new connection in specified timeout[0m
+[0;31mE (13364) transport_base: Failed to open a new connection[0m
+[0;31mE (13364) mqtt_client: Error transport connect[0m
+[0;32mI (13364) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (13374) mqtt_client: Client force reconnect requested[0m
+[0;32mI (13864) get time: ntp fail[0m
+[0;32mI (13964) get time: ntp fail[0m
+[0;32mI (14864) get time: ntp fail[0m
+[0;32mI (14964) get time: ntp fail[0m
+[0;32mI (15874) get time: ntp fail[0m
+[0;32mI (16034) get time: ntp fail[0m
+[0;32mI (16974) get time: ntp fail[0m
+[0;32mI (17164) get time: ntp fail[0m
+[0;32mI (18004) get time: ntp fail[0m
+[0;32mI (18204) get time: ntp fail[0m
+[0;32mI (19134) get time: ntp fail[0m
+[0;32mI (19324) get time: ntp fail[0m
+[0;32mI (20174) get time: ntp fail[0m
+[0;32mI (20334) get time: ntp fail[0m
+[0;32mI (21174) get time: ntp fail[0m
+[0;32mI (21334) get time: ntp fail[0m
+[0;32mI (22304) get time: ntp fail[0m
+[0;32mI (22334) get time: ntp fail[0m
+[0;32mI (23354) get time: ntp fail[0m
+[0;32mI (23354) get time: ntp fail[0m
+[0;32mI (24444) get time: ntp fail[0m
+[0;32mI (24444) get time: ntp fail[0m
+[0;33mW (24534) esp-tls: Failed to open new connection in specified timeout[0m
+[0;31mE (24534) transport_base: Failed to open a new connection[0m
+[0;31mE (24534) mqtt_client: Error transport connect[0m
+[0;32mI (24534) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (24544) mqtt_client: Client force reconnect requested[0m
+[0;33mW (24844) wifi:m f null[0m
+
+[0;31mE (24904) esp-aes: Failed to allocate memory[0m
+[0;31mE (24914) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x0001[0m
+[0;32mI (24914) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (24914) esp-tls: Failed to open new connection[0m
+[0;31mE (24924) transport_base: Failed to open a new connection[0m
+[0;31mE (24934) mqtt_client: Error transport connect[0m
+[0;32mI (24934) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (24934) mqtt_client: Client force reconnect requested[0m
+[0;33mW (25094) wifi:m f null[0m
+
+[0;31mE (25104) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (25104) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (25104) esp-tls: Failed to open new connection[0m
+[0;31mE (25104) transport_base: Failed to open a new connection[0m
+[0;31mE (25114) mqtt_client: Error transport connect[0m
+[0;32mI (25114) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (25124) mqtt_client: Client force reconnect requested[0m
+[0;33mW (25284) wifi:m f null[0m
+
+[0;32mI (25604) get time: ntp fail[0m
+[0;32mI (25604) get time: ntp fail[0m
+[0;32mI (26604) get time: ntp fail[0m
+[0;32mI (26604) get time: ntp fail[0m
+[0;32mI (27604) get time: ntp fail[0m
+[0;32mI (27604) get time: ntp fail[0m
+[0;32mI (28604) get time: ntp fail[0m
+[0;32mI (28604) get time: ntp fail[0m
+[0;32mI (29604) get time: ntp fail[0m
+[0;32mI (29604) get time: ntp fail[0m
+[0;32mI (30604) get time: ntp fail[0m
+[0;32mI (30604) get time: ntp fail[0m
+[0;32mI (31604) get time: ntp fail[0m
+[0;32mI (31604) get time: ntp fail[0m
+[0;32mI (32604) get time: ntp fail[0m
+[0;32mI (32604) get time: ntp fail[0m
+[0;32mI (33604) get time: ntp fail[0m
+[0;32mI (33604) get time: ntp fail[0m
+[0;32mI (34604) get time: ntp fail[0m
+[0;32mI (34604) get time: ntp fail[0m
+[0;33mW (35584) esp-tls: Failed to open new connection in specified timeout[0m
+[0;31mE (35584) transport_base: Failed to open a new connection[0m
+[0;31mE (35584) mqtt_client: Error transport connect[0m
+[0;32mI (35584) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (35594) mqtt_client: Client force reconnect requested[0m
+[0;32mI (35594) get time: ntp fail[0m
+[0;32mI (35604) get time: ntp fail[0m
+[0;33mW (36114) wifi:m f null[0m
+
+[0;31mE (36134) esp-aes: Failed to allocate memory[0m
+[0;31mE (36134) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x0001[0m
+[0;32mI (36134) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (36144) esp-tls: Failed to open new connection[0m
+[0;31mE (36154) transport_base: Failed to open a new connection[0m
+[0;31mE (36154) mqtt_client: Error transport connect[0m
+[0;32mI (36164) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (36164) mqtt_client: Client force reconnect requested[0m
+[0;31mE (36494) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (36494) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (36494) esp-tls: Failed to open new connection[0m
+[0;31mE (36504) transport_base: Failed to open a new connection[0m
+[0;31mE (36514) mqtt_client: Error transport connect[0m
+[0;32mI (36514) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (36524) mqtt_client: Client force reconnect requested[0m
+[0;32mI (36604) get time: ntp fail[0m
+[0;32mI (36604) get time: ntp fail[0m
+[0;31mE (36724) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (36724) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (36724) esp-tls: Failed to open new connection[0m
+[0;31mE (36724) transport_base: Failed to open a new connection[0m
+[0;31mE (36734) mqtt_client: Error transport connect[0m
+[0;32mI (36744) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (36744) mqtt_client: Client force reconnect requested[0m
+[0;33mW (36914) wifi:m f null[0m
+
+[0;31mE (36914) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (36914) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (36914) esp-tls: Failed to open new connection[0m
+[0;31mE (36924) transport_base: Failed to open a new connection[0m
+[0;31mE (36934) mqtt_client: Error transport connect[0m
+[0;32mI (36934) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (36944) mqtt_client: Client force reconnect requested[0m
+[0;31mE (37134) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (37134) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (37134) esp-tls: Failed to open new connection[0m
+[0;31mE (37144) transport_base: Failed to open a new connection[0m
+[0;31mE (37154) mqtt_client: Error transport connect[0m
+[0;32mI (37154) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (37164) mqtt_client: Client force reconnect requested[0m
+[0;33mW (37314) wifi:m f null[0m
+
+[0;31mE (37324) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (37324) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (37324) esp-tls: Failed to open new connection[0m
+[0;31mE (37324) transport_base: Failed to open a new connection[0m
+[0;31mE (37334) mqtt_client: Error transport connect[0m
+[0;32mI (37334) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (37344) mqtt_client: Client force reconnect requested[0m
+[0;31mE (37474) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (37484) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (37484) esp-tls: Failed to open new connection[0m
+[0;31mE (37484) transport_base: Failed to open a new connection[0m
+[0;31mE (37494) mqtt_client: Error transport connect[0m
+[0;32mI (37494) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (37504) mqtt_client: Client force reconnect requested[0m
+[0;32mI (37604) get time: ntp fail[0m
+[0;32mI (37604) get time: ntp fail[0m
+[0;33mW (37634) wifi:m f null[0m
+
+[0;31mE (37644) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (37644) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (37644) esp-tls: Failed to open new connection[0m
+[0;31mE (37654) transport_base: Failed to open a new connection[0m
+[0;31mE (37664) mqtt_client: Error transport connect[0m
+[0;32mI (37664) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (37674) mqtt_client: Client force reconnect requested[0m
+[0;31mE (37934) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (37934) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (37934) esp-tls: Failed to open new connection[0m
+[0;31mE (37934) transport_base: Failed to open a new connection[0m
+[0;31mE (37944) mqtt_client: Error transport connect[0m
+[0;32mI (37954) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (37954) mqtt_client: Client force reconnect requested[0m
+[0;31mE (38114) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (38114) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (38114) esp-tls: Failed to open new connection[0m
+[0;31mE (38124) transport_base: Failed to open a new connection[0m
+[0;31mE (38134) mqtt_client: Error transport connect[0m
+[0;32mI (38134) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (38134) mqtt_client: Client force reconnect requested[0m
+[0;33mW (38304) wifi:m f null[0m
+
+[0;31mE (38304) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (38304) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (38314) esp-tls: Failed to open new connection[0m
+[0;31mE (38314) transport_base: Failed to open a new connection[0m
+[0;31mE (38324) mqtt_client: Error transport connect[0m
+[0;32mI (38324) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (38334) mqtt_client: Client force reconnect requested[0m
+[0;31mE (38544) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (38544) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (38544) esp-tls: Failed to open new connection[0m
+[0;31mE (38554) transport_base: Failed to open a new connection[0m
+[0;31mE (38554) mqtt_client: Error transport connect[0m
+[0;32mI (38564) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (38564) mqtt_client: Client force reconnect requested[0m
+[0;32mI (38604) get time: ntp fail[0m
+[0;32mI (38604) get time: ntp fail[0m
+[0;33mW (38714) wifi:m f null[0m
+
+[0;31mE (38724) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (38724) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (38724) esp-tls: Failed to open new connection[0m
+[0;31mE (38724) transport_base: Failed to open a new connection[0m
+[0;31mE (38734) mqtt_client: Error transport connect[0m
+[0;32mI (38734) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (38744) mqtt_client: Client force reconnect requested[0m
+[0;33mW (38894) wifi:m f null[0m
+
+[0;31mE (38894) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (38894) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (38904) esp-tls: Failed to open new connection[0m
+[0;31mE (38904) transport_base: Failed to open a new connection[0m
+[0;31mE (38914) mqtt_client: Error transport connect[0m
+[0;32mI (38914) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (38924) mqtt_client: Client force reconnect requested[0m
+[0;31mE (39154) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (39154) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (39164) esp-tls: Failed to open new connection[0m
+[0;31mE (39164) transport_base: Failed to open a new connection[0m
+[0;31mE (39174) mqtt_client: Error transport connect[0m
+[0;32mI (39174) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (39184) mqtt_client: Client force reconnect requested[0m
+[0;33mW (39384) wifi:m f null[0m
+
+[0;31mE (39394) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (39394) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (39394) esp-tls: Failed to open new connection[0m
+[0;31mE (39394) transport_base: Failed to open a new connection[0m
+[0;31mE (39404) mqtt_client: Error transport connect[0m
+[0;32mI (39404) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (39414) mqtt_client: Client force reconnect requested[0m
+[0;31mE (39594) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (39594) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (39594) esp-tls: Failed to open new connection[0m
+[0;31mE (39594) transport_base: Failed to open a new connection[0m
+[0;32mI (39604) get time: ntp fail[0m
+[0;31mE (39604) mqtt_client: Error transport connect[0m
+[0;32mI (39614) get time: ntp fail[0m
+[0;32mI (39614) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (39624) mqtt_client: Client force reconnect requested[0m
+[0;33mW (39794) wifi:m f null[0m
+
+[0;31mE (39794) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (39794) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (39794) esp-tls: Failed to open new connection[0m
+[0;31mE (39804) transport_base: Failed to open a new connection[0m
+[0;31mE (39814) mqtt_client: Error transport connect[0m
+[0;32mI (39814) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (39814) mqtt_client: Client force reconnect requested[0m
+[0;31mE (40274) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (40274) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (40274) esp-tls: Failed to open new connection[0m
+[0;31mE (40274) transport_base: Failed to open a new connection[0m
+[0;31mE (40284) mqtt_client: Error transport connect[0m
+[0;32mI (40294) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (40294) mqtt_client: Client force reconnect requested[0m
+[0;33mW (40434) wifi:m f null[0m
+
+[0;31mE (40444) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (40444) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (40444) esp-tls: Failed to open new connection[0m
+[0;31mE (40454) transport_base: Failed to open a new connection[0m
+[0;31mE (40464) mqtt_client: Error transport connect[0m
+[0;32mI (40464) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (40464) mqtt_client: Client force reconnect requested[0m
+[0;33mW (40604) wifi:m f null[0m
+
+[0;32mI (40604) get time: ntp fail[0m
+[0;32mI (40614) get time: ntp fail[0m
+[0;31mE (40614) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (40614) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (40614) esp-tls: Failed to open new connection[0m
+[0;31mE (40624) transport_base: Failed to open a new connection[0m
+[0;31mE (40634) mqtt_client: Error transport connect[0m
+[0;32mI (40634) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (40644) mqtt_client: Client force reconnect requested[0m
+[0;31mE (41074) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (41074) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (41074) esp-tls: Failed to open new connection[0m
+[0;31mE (41084) transport_base: Failed to open a new connection[0m
+[0;31mE (41094) mqtt_client: Error transport connect[0m
+[0;32mI (41094) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (41094) mqtt_client: Client force reconnect requested[0m
+[0;33mW (41424) wifi:m f null[0m
+
+[0;31mE (41434) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (41434) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (41434) esp-tls: Failed to open new connection[0m
+[0;31mE (41444) transport_base: Failed to open a new connection[0m
+[0;31mE (41454) mqtt_client: Error transport connect[0m
+[0;32mI (41454) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (41454) mqtt_client: Client force reconnect requested[0m
+[0;32mI (41614) get time: ntp fail[0m
+[0;32mI (41634) get time: ntp fail[0m
+[0;31mE (41644) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (41644) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (41644) esp-tls: Failed to open new connection[0m
+[0;31mE (41654) transport_base: Failed to open a new connection[0m
+[0;31mE (41664) mqtt_client: Error transport connect[0m
+[0;32mI (41664) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (41664) mqtt_client: Client force reconnect requested[0m
+[0;31mE (41784) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (41784) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (41784) esp-tls: Failed to open new connection[0m
+[0;31mE (41794) transport_base: Failed to open a new connection[0m
+[0;31mE (41804) mqtt_client: Error transport connect[0m
+[0;32mI (41804) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (41814) mqtt_client: Client force reconnect requested[0m
+[0;31mE (41924) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (41924) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (41934) esp-tls: Failed to open new connection[0m
+[0;31mE (41934) transport_base: Failed to open a new connection[0m
+[0;31mE (41944) mqtt_client: Error transport connect[0m
+[0;32mI (41944) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (41954) mqtt_client: Client force reconnect requested[0m
+[0;33mW (42104) wifi:m f null[0m
+
+[0;31mE (42104) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (42104) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (42104) esp-tls: Failed to open new connection[0m
+[0;31mE (42114) transport_base: Failed to open a new connection[0m
+[0;31mE (42124) mqtt_client: Error transport connect[0m
+[0;32mI (42124) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (42134) mqtt_client: Client force reconnect requested[0m
+[0;33mW (42454) wifi:m f null[0m
+
+[0;31mE (42464) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (42464) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (42464) esp-tls: Failed to open new connection[0m
+[0;31mE (42474) transport_base: Failed to open a new connection[0m
+[0;31mE (42474) mqtt_client: Error transport connect[0m
+[0;32mI (42484) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (42484) mqtt_client: Client force reconnect requested[0m
+[0;32mI (42634) get time: ntp fail[0m
+[0;33mW (42664) wifi:m f null[0m
+
+[0;32mI (42664) get time: ntp fail[0m
+[0;31mE (42664) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (42674) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (42674) esp-tls: Failed to open new connection[0m
+[0;31mE (42674) transport_base: Failed to open a new connection[0m
+[0;31mE (42684) mqtt_client: Error transport connect[0m
+[0;32mI (42684) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (42694) mqtt_client: Client force reconnect requested[0m
+[0;31mE (42804) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (42814) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (42814) esp-tls: Failed to open new connection[0m
+[0;31mE (42814) transport_base: Failed to open a new connection[0m
+[0;31mE (42824) mqtt_client: Error transport connect[0m
+[0;32mI (42824) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (42834) mqtt_client: Client force reconnect requested[0m
+[0;33mW (42984) wifi:m f null[0m
+
+[0;31mE (42994) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (42994) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (42994) esp-tls: Failed to open new connection[0m
+[0;31mE (43004) transport_base: Failed to open a new connection[0m
+[0;31mE (43014) mqtt_client: Error transport connect[0m
+[0;32mI (43014) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (43014) mqtt_client: Client force reconnect requested[0m
+[0;31mE (43154) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (43154) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (43154) esp-tls: Failed to open new connection[0m
+[0;31mE (43164) transport_base: Failed to open a new connection[0m
+[0;31mE (43174) mqtt_client: Error transport connect[0m
+[0;32mI (43174) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (43184) mqtt_client: Client force reconnect requested[0m
+[0;31mE (43324) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (43324) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (43324) esp-tls: Failed to open new connection[0m
+[0;31mE (43324) transport_base: Failed to open a new connection[0m
+[0;31mE (43334) mqtt_client: Error transport connect[0m
+[0;32mI (43334) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (43344) mqtt_client: Client force reconnect requested[0m
+[0;32mI (43644) get time: ntp fail[0m
+[0;32mI (43664) get time: ntp fail[0m
+[0;31mE (43664) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (43674) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (43674) esp-tls: Failed to open new connection[0m
+[0;31mE (43674) transport_base: Failed to open a new connection[0m
+[0;31mE (43684) mqtt_client: Error transport connect[0m
+[0;32mI (43684) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (43694) mqtt_client: Client force reconnect requested[0m
+[0;31mE (43824) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (43834) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (43834) esp-tls: Failed to open new connection[0m
+[0;31mE (43834) transport_base: Failed to open a new connection[0m
+[0;31mE (43844) mqtt_client: Error transport connect[0m
+[0;32mI (43844) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (43854) mqtt_client: Client force reconnect requested[0m
+[0;33mW (43994) wifi:m f null[0m
+
+[0;31mE (43994) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (43994) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (43994) esp-tls: Failed to open new connection[0m
+[0;31mE (44004) transport_base: Failed to open a new connection[0m
+[0;31mE (44014) mqtt_client: Error transport connect[0m
+[0;32mI (44014) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (44024) mqtt_client: Client force reconnect requested[0m
+[0;33mW (44304) wifi:m f null[0m
+
+[0;31mE (44304) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (44304) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (44304) esp-tls: Failed to open new connection[0m
+[0;31mE (44314) transport_base: Failed to open a new connection[0m
+[0;31mE (44324) mqtt_client: Error transport connect[0m
+[0;32mI (44324) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (44324) mqtt_client: Client force reconnect requested[0m
+[0;33mW (44504) wifi:m f null[0m
+
+[0;31mE (44514) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (44514) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (44514) esp-tls: Failed to open new connection[0m
+[0;31mE (44524) transport_base: Failed to open a new connection[0m
+[0;31mE (44524) mqtt_client: Error transport connect[0m
+[0;32mI (44534) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (44534) mqtt_client: Client force reconnect requested[0m
+[0;32mI (44664) get time: ntp fail[0m
+[0;33mW (44694) wifi:m f null[0m
+
+[0;32mI (44694) get time: ntp fail[0m
+[0;31mE (44694) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (44694) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (44704) esp-tls: Failed to open new connection[0m
+[0;31mE (44704) transport_base: Failed to open a new connection[0m
+[0;31mE (44714) mqtt_client: Error transport connect[0m
+[0;32mI (44714) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (44724) mqtt_client: Client force reconnect requested[0m
+[0;31mE (44894) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (44894) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (44894) esp-tls: Failed to open new connection[0m
+[0;31mE (44894) transport_base: Failed to open a new connection[0m
+[0;31mE (44904) mqtt_client: Error transport connect[0m
+[0;32mI (44914) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (44914) mqtt_client: Client force reconnect requested[0m
+[0;31mE (45054) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (45054) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (45054) esp-tls: Failed to open new connection[0m
+[0;31mE (45064) transport_base: Failed to open a new connection[0m
+[0;31mE (45064) mqtt_client: Error transport connect[0m
+[0;32mI (45074) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (45074) mqtt_client: Client force reconnect requested[0m
+[0;33mW (45214) wifi:m f null[0m
+
+[0;31mE (45224) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (45224) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (45224) esp-tls: Failed to open new connection[0m
+[0;31mE (45234) transport_base: Failed to open a new connection[0m
+[0;31mE (45234) mqtt_client: Error transport connect[0m
+[0;32mI (45244) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (45244) mqtt_client: Client force reconnect requested[0m
+[0;31mE (45384) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (45384) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (45384) esp-tls: Failed to open new connection[0m
+[0;31mE (45394) transport_base: Failed to open a new connection[0m
+[0;31mE (45404) mqtt_client: Error transport connect[0m
+[0;32mI (45404) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (45404) mqtt_client: Client force reconnect requested[0m
+[0;32mI (45674) get time: ntp fail[0m
+[0;32mI (45704) get time: ntp fail[0m
+[0;33mW (45734) wifi:m f null[0m
+
+[0;31mE (45744) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (45744) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (45744) esp-tls: Failed to open new connection[0m
+[0;31mE (45754) transport_base: Failed to open a new connection[0m
+[0;31mE (45754) mqtt_client: Error transport connect[0m
+[0;32mI (45764) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (45764) mqtt_client: Client force reconnect requested[0m
+[0;33mW (45914) wifi:m f null[0m
+
+[0;31mE (45914) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (45914) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (45914) esp-tls: Failed to open new connection[0m
+[0;31mE (45924) transport_base: Failed to open a new connection[0m
+[0;31mE (45934) mqtt_client: Error transport connect[0m
+[0;32mI (45934) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (45944) mqtt_client: Client force reconnect requested[0m
+[0;31mE (46094) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (46094) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (46104) esp-tls: Failed to open new connection[0m
+[0;31mE (46104) transport_base: Failed to open a new connection[0m
+[0;31mE (46114) mqtt_client: Error transport connect[0m
+[0;32mI (46114) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (46124) mqtt_client: Client force reconnect requested[0m
+[0;33mW (46254) wifi:m f null[0m
+
+[0;31mE (46264) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (46264) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (46264) esp-tls: Failed to open new connection[0m
+[0;31mE (46274) transport_base: Failed to open a new connection[0m
+[0;31mE (46284) mqtt_client: Error transport connect[0m
+[0;32mI (46284) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (46284) mqtt_client: Client force reconnect requested[0m
+[0;31mE (46444) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (46444) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (46444) esp-tls: Failed to open new connection[0m
+[0;31mE (46454) transport_base: Failed to open a new connection[0m
+[0;31mE (46464) mqtt_client: Error transport connect[0m
+[0;32mI (46464) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (46464) mqtt_client: Client force reconnect requested[0m
+[0;33mW (46604) wifi:m f null[0m
+
+[0;31mE (46614) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (46614) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (46614) esp-tls: Failed to open new connection[0m
+[0;31mE (46624) transport_base: Failed to open a new connection[0m
+[0;31mE (46624) mqtt_client: Error transport connect[0m
+[0;32mI (46634) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (46634) mqtt_client: Client force reconnect requested[0m
+[0;32mI (46674) get time: ntp fail[0m
+[0;32mI (46704) get time: ntp fail[0m
+[0;33mW (46974) wifi:m f null[0m
+
+[0;31mE (46984) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (46984) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (46984) esp-tls: Failed to open new connection[0m
+[0;31mE (46994) transport_base: Failed to open a new connection[0m
+[0;31mE (47004) mqtt_client: Error transport connect[0m
+[0;32mI (47004) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (47004) mqtt_client: Client force reconnect requested[0m
+[0;33mW (47144) wifi:m f null[0m
+
+[0;31mE (47154) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (47154) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (47154) esp-tls: Failed to open new connection[0m
+[0;31mE (47154) transport_base: Failed to open a new connection[0m
+[0;31mE (47164) mqtt_client: Error transport connect[0m
+[0;32mI (47164) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (47174) mqtt_client: Client force reconnect requested[0m
+[0;33mW (47334) wifi:m f null[0m
+
+[0;31mE (47334) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (47334) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (47344) esp-tls: Failed to open new connection[0m
+[0;31mE (47344) transport_base: Failed to open a new connection[0m
+[0;31mE (47354) mqtt_client: Error transport connect[0m
+[0;32mI (47354) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (47364) mqtt_client: Client force reconnect requested[0m
+[0;33mW (47574) wifi:m f null[0m
+
+[0;31mE (47574) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (47584) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (47584) esp-tls: Failed to open new connection[0m
+[0;31mE (47584) transport_base: Failed to open a new connection[0m
+[0;31mE (47594) mqtt_client: Error transport connect[0m
+[0;32mI (47594) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (47604) mqtt_client: Client force reconnect requested[0m
+[0;32mI (47674) get time: ntp fail[0m
+[0;32mI (47704) get time: ntp fail[0m
+[0;33mW (47744) wifi:m f null[0m
+
+[0;31mE (47754) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (47754) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (47754) esp-tls: Failed to open new connection[0m
+[0;31mE (47764) transport_base: Failed to open a new connection[0m
+[0;31mE (47774) mqtt_client: Error transport connect[0m
+[0;32mI (47774) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (47774) mqtt_client: Client force reconnect requested[0m
+[0;33mW (47934) wifi:m f null[0m
+
+[0;31mE (47934) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (47934) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (47934) esp-tls: Failed to open new connection[0m
+[0;31mE (47944) transport_base: Failed to open a new connection[0m
+[0;31mE (47954) mqtt_client: Error transport connect[0m
+[0;32mI (47954) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (47954) mqtt_client: Client force reconnect requested[0m
+[0;31mE (48104) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (48104) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (48104) esp-tls: Failed to open new connection[0m
+[0;31mE (48104) transport_base: Failed to open a new connection[0m
+[0;31mE (48114) mqtt_client: Error transport connect[0m
+[0;32mI (48114) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (48124) mqtt_client: Client force reconnect requested[0m
+[0;31mE (48404) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (48404) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (48404) esp-tls: Failed to open new connection[0m
+[0;31mE (48404) transport_base: Failed to open a new connection[0m
+[0;31mE (48414) mqtt_client: Error transport connect[0m
+[0;32mI (48414) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (48424) mqtt_client: Client force reconnect requested[0m
+[0;33mW (48574) wifi:m f null[0m
+
+[0;31mE (48584) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (48584) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (48584) esp-tls: Failed to open new connection[0m
+[0;31mE (48594) transport_base: Failed to open a new connection[0m
+[0;31mE (48604) mqtt_client: Error transport connect[0m
+[0;32mI (48604) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (48604) mqtt_client: Client force reconnect requested[0m
+[0;32mI (48674) get time: ntp fail[0m
+[0;32mI (48704) get time: ntp fail[0m
+[0;33mW (48754) wifi:m f null[0m
+
+[0;31mE (48764) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (48764) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (48764) esp-tls: Failed to open new connection[0m
+[0;31mE (48774) transport_base: Failed to open a new connection[0m
+[0;31mE (48774) mqtt_client: Error transport connect[0m
+[0;32mI (48784) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (48784) mqtt_client: Client force reconnect requested[0m
+[0;33mW (49004) wifi:m f null[0m
+
+[0;31mE (49014) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (49014) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (49014) esp-tls: Failed to open new connection[0m
+[0;31mE (49014) transport_base: Failed to open a new connection[0m
+[0;31mE (49024) mqtt_client: Error transport connect[0m
+[0;32mI (49034) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (49034) mqtt_client: Client force reconnect requested[0m
+[0;33mW (49194) wifi:m f null[0m
+
+[0;31mE (49194) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (49204) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (49204) esp-tls: Failed to open new connection[0m
+[0;31mE (49204) transport_base: Failed to open a new connection[0m
+[0;31mE (49214) mqtt_client: Error transport connect[0m
+[0;32mI (49214) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (49224) mqtt_client: Client force reconnect requested[0m
+[0;33mW (49354) wifi:m f null[0m
+
+[0;31mE (49364) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (49364) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (49364) esp-tls: Failed to open new connection[0m
+[0;31mE (49374) transport_base: Failed to open a new connection[0m
+[0;31mE (49374) mqtt_client: Error transport connect[0m
+[0;32mI (49384) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (49384) mqtt_client: Client force reconnect requested[0m
+[0;33mW (49624) wifi:m f null[0m
+
+[0;31mE (49624) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (49624) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (49624) esp-tls: Failed to open new connection[0m
+[0;31mE (49634) transport_base: Failed to open a new connection[0m
+[0;31mE (49644) mqtt_client: Error transport connect[0m
+[0;32mI (49644) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (49654) mqtt_client: Client force reconnect requested[0m
+[0;32mI (49674) get time: ntp fail[0m
+[0;32mI (49704) get time: ntp fail[0m
+[0;31mE (49804) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (49804) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (49814) esp-tls: Failed to open new connection[0m
+[0;31mE (49814) transport_base: Failed to open a new connection[0m
+[0;31mE (49824) mqtt_client: Error transport connect[0m
+[0;32mI (49824) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (49834) mqtt_client: Client force reconnect requested[0m
+[0;31mE (50014) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (50014) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (50014) esp-tls: Failed to open new connection[0m
+[0;31mE (50024) transport_base: Failed to open a new connection[0m
+[0;31mE (50024) mqtt_client: Error transport connect[0m
+[0;32mI (50034) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (50034) mqtt_client: Client force reconnect requested[0m
+[0;33mW (50234) wifi:m f null[0m
+
+[0;31mE (50244) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (50244) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (50244) esp-tls: Failed to open new connection[0m
+[0;31mE (50254) transport_base: Failed to open a new connection[0m
+[0;31mE (50254) mqtt_client: Error transport connect[0m
+[0;32mI (50264) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (50264) mqtt_client: Client force reconnect requested[0m
+[0;31mE (50384) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (50384) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (50384) esp-tls: Failed to open new connection[0m
+[0;31mE (50394) transport_base: Failed to open a new connection[0m
+[0;31mE (50404) mqtt_client: Error transport connect[0m
+[0;32mI (50404) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (50404) mqtt_client: Client force reconnect requested[0m
+[0;33mW (50644) wifi:m f null[0m
+
+[0;31mE (50654) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (50654) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (50654) esp-tls: Failed to open new connection[0m
+[0;31mE (50654) transport_base: Failed to open a new connection[0m
+[0;31mE (50664) mqtt_client: Error transport connect[0m
+[0;32mI (50674) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (50674) mqtt_client: Client force reconnect requested[0m
+[0;32mI (50674) get time: ntp fail[0m
+[0;32mI (50714) get time: ntp fail[0m
+[0;31mE (50834) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (50834) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (50834) esp-tls: Failed to open new connection[0m
+[0;31mE (50834) transport_base: Failed to open a new connection[0m
+[0;31mE (50844) mqtt_client: Error transport connect[0m
+[0;32mI (50854) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (50854) mqtt_client: Client force reconnect requested[0m
+[0;33mW (51464) wifi:m f null[0m
+
+[0;31mE (51474) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (51474) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (51474) esp-tls: Failed to open new connection[0m
+[0;31mE (51474) transport_base: Failed to open a new connection[0m
+[0;31mE (51484) mqtt_client: Error transport connect[0m
+[0;32mI (51484) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (51494) mqtt_client: Client force reconnect requested[0m
+[0;33mW (51634) wifi:m f null[0m
+
+[0;31mE (51644) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (51644) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (51644) esp-tls: Failed to open new connection[0m
+[0;31mE (51644) transport_base: Failed to open a new connection[0m
+[0;31mE (51654) mqtt_client: Error transport connect[0m
+[0;32mI (51664) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (51664) mqtt_client: Client force reconnect requested[0m
+[0;32mI (51674) get time: ntp fail[0m
+[0;32mI (51714) get time: ntp fail[0m
+[0;31mE (51804) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (51804) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (51804) esp-tls: Failed to open new connection[0m
+[0;31mE (51814) transport_base: Failed to open a new connection[0m
+[0;31mE (51824) mqtt_client: Error transport connect[0m
+[0;32mI (51824) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (51834) mqtt_client: Client force reconnect requested[0m
+[0;31mE (52084) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (52084) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (52084) esp-tls: Failed to open new connection[0m
+[0;31mE (52094) transport_base: Failed to open a new connection[0m
+[0;31mE (52104) mqtt_client: Error transport connect[0m
+[0;32mI (52104) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (52104) mqtt_client: Client force reconnect requested[0m
+[0;33mW (52264) wifi:m f null[0m
+
+[0;31mE (52264) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (52264) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (52264) esp-tls: Failed to open new connection[0m
+[0;31mE (52274) transport_base: Failed to open a new connection[0m
+[0;31mE (52284) mqtt_client: Error transport connect[0m
+[0;32mI (52284) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (52294) mqtt_client: Client force reconnect requested[0m
+[0;33mW (52434) wifi:m f null[0m
+
+[0;31mE (52444) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (52444) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (52444) esp-tls: Failed to open new connection[0m
+[0;31mE (52444) transport_base: Failed to open a new connection[0m
+[0;31mE (52454) mqtt_client: Error transport connect[0m
+[0;32mI (52464) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (52464) mqtt_client: Client force reconnect requested[0m
+[0;32mI (52674) get time: ntp fail[0m
+[0;33mW (52694) wifi:m f null[0m
+
+[0;31mE (52704) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (52704) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (52704) esp-tls: Failed to open new connection[0m
+[0;31mE (52704) transport_base: Failed to open a new connection[0m
+[0;31mE (52714) mqtt_client: Error transport connect[0m
+[0;32mI (52714) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (52724) mqtt_client: Client force reconnect requested[0m
+[0;32mI (52744) get time: ntp fail[0m
+[0;31mE (52874) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (52874) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (52874) esp-tls: Failed to open new connection[0m
+[0;31mE (52884) transport_base: Failed to open a new connection[0m
+[0;31mE (52884) mqtt_client: Error transport connect[0m
+[0;32mI (52894) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (52894) mqtt_client: Client force reconnect requested[0m
+[0;33mW (53064) wifi:m f null[0m
+
+[0;31mE (53064) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (53064) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (53064) esp-tls: Failed to open new connection[0m
+[0;31mE (53074) transport_base: Failed to open a new connection[0m
+[0;31mE (53084) mqtt_client: Error transport connect[0m
+[0;32mI (53084) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (53094) mqtt_client: Client force reconnect requested[0m
+[0;33mW (53304) wifi:m f null[0m
+
+[0;31mE (53314) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (53314) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (53314) esp-tls: Failed to open new connection[0m
+[0;31mE (53324) transport_base: Failed to open a new connection[0m
+[0;31mE (53324) mqtt_client: Error transport connect[0m
+[0;32mI (53334) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (53334) mqtt_client: Client force reconnect requested[0m
+[0;31mE (53494) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x2700[0m
+[0;32mI (53494) esp-tls-mbedtls: Failed to verify peer certificate![0m
+[0;31mE (53494) esp-tls: Failed to open new connection[0m
+[0;31mE (53504) transport_base: Failed to open a new connection[0m
+[0;31mE (53504) mqtt_client: Error transport connect[0m
+[0;32mI (53514) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (53514) mqtt_client: Client force reconnect requested[0m
+[0;32mI (53674) get time: ntp fail[0m
+[0;32mI (53744) get time: ntp fail[0m
+[0;31mE (53964) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (53964) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (53964) esp-tls: Failed to open new connection[0m
+[0;31mE (53964) transport_base: Failed to open a new connection[0m
+[0;31mE (53974) mqtt_client: Error transport connect[0m
+[0;32mI (53984) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (53984) mqtt_client: Client force reconnect requested[0m
+[0;33mW (54134) wifi:m f null[0m
+
+[0;31mE (54144) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (54144) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (54144) esp-tls: Failed to open new connection[0m
+[0;31mE (54154) transport_base: Failed to open a new connection[0m
+[0;31mE (54164) mqtt_client: Error transport connect[0m
+[0;32mI (54164) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (54164) mqtt_client: Client force reconnect requested[0m
+[0;33mW (54314) wifi:m f null[0m
+
+[0;31mE (54314) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (54314) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (54324) esp-tls: Failed to open new connection[0m
+[0;31mE (54324) transport_base: Failed to open a new connection[0m
+[0;31mE (54334) mqtt_client: Error transport connect[0m
+[0;32mI (54334) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (54344) mqtt_client: Client force reconnect requested[0m
+[0;33mW (54474) wifi:m f null[0m
+
+[0;31mE (54484) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (54484) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (54484) esp-tls: Failed to open new connection[0m
+[0;31mE (54484) transport_base: Failed to open a new connection[0m
+[0;31mE (54494) mqtt_client: Error transport connect[0m
+[0;32mI (54494) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (54504) mqtt_client: Client force reconnect requested[0m
+[0;32mI (54674) get time: ntp fail[0m
+[0;32mI (54744) get time: ntp fail[0m
+[0;31mE (54754) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (54754) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (54754) esp-tls: Failed to open new connection[0m
+[0;31mE (54754) transport_base: Failed to open a new connection[0m
+[0;31mE (54764) mqtt_client: Error transport connect[0m
+[0;32mI (54764) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (54774) mqtt_client: Client force reconnect requested[0m
+[0;31mE (54954) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (54954) esp-tls-mbedtls: Certificate verified.[0m
+[0;31mE (54954) esp-tls: Failed to open new connection[0m
+[0;31mE (54964) transport_base: Failed to open a new connection[0m
+[0;31mE (54974) mqtt_client: Error transport connect[0m
+[0;32mI (54974) aliot: ALIOT_MQTT_EVENT_DISCONNECTED[0m
+[0;32mI (54984) mqtt_client: Client force reconnect requested[0m
+[0;31mE (55154) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x4290[0m
+[0;32mI (55154) esp-tls-mbedtls: Certificate verified.[0m
