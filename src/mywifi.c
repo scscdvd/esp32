@@ -139,7 +139,7 @@ static void sta_event_handler(void* arg, esp_event_base_t event_base,int32_t eve
                 lv_label_set_text(ui_Label13,wifiConfigInfo.deviceGateway);
                 mqtt_start();//启动mqtt客户端
                 start_aliot_mqtt();//连接阿里云
-                // get_weather();
+                update_weather_cb(NULL);
                 flag = 1;
                 break;
         }

@@ -51,7 +51,12 @@
     "compare": "c",
     "cstdint": "c",
     "ui_weather.h": "c",
-    "esp_log.h": "c"
+    "esp_log.h": "c",
+    "span": "c",
+    "string_view": "c",
+    "weather.h": "c",
+    "lv_tabview.h": "c",
+    "esp_http_client.h": "c"
   },
   "idf.espIdfPathWin": "e:\\esp32\\v5.5\\esp-idf",
   "idf.toolsPathWin": "e:\\esp32\\.espressif",

@@ -200,6 +200,7 @@ void ui_weather_screen_init(void)
     lv_obj_add_event_cb(ui_Image13, ui_event_Image13, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Image14, ui_event_Image14, LV_EVENT_ALL, NULL);
 
+    lv_timer_create(update_weather_cb, 1000 * 60 * 60, NULL);
 }
 
 void ui_weather_screen_destroy(void)

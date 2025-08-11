@@ -1,0 +1,11 @@
+Command: ninja flash
+CMake Error at D:/esp/v5.5/esp-idf/tools/cmake/component.cmake:318 (message):
+  Include directory
+  'D:/esp/v5.5/esp-idf/components/third_party/cjson/include' is not a
+  directory.
+Call Stack (most recent call first):
+  D:/esp/v5.5/esp-idf/tools/cmake/component.cmake:493 (__component_add_include_dirs)
+  components/ui/CMakeLists.txt:25 (idf_component_register)
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed

@@ -46,7 +46,7 @@ void app_main(void)
 {
     printf("Starting application...\n");
     ESP_LOGI("app_main","application version %s",get_app_version());
-    // esp_log_level_set("*", ESP_LOG_NONE);  // 关闭所有模块的日志i
+    esp_log_level_set("*", ESP_LOG_NONE);  // 关闭所有模块的日志i
     xReadWriteSemaphore = xSemaphoreCreateBinary();//nvs读写信号量
     assert(xReadWriteSemaphore);
     xSemaphoreGive(xReadWriteSemaphore);//先释放一次

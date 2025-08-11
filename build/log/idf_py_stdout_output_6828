@@ -1,0 +1,821 @@
+Command: D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\esp\v5.5\esp-idf\tools/idf_monitor.py -p COM8 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 D:\esp\project\build\main.elf D:\esp\project\build\bootloader\bootloader.elf --force-color -m 'D:\.espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\esp\v5.5\esp-idf\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x159c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f48
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Aug  4 2025 08:44:06[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (62) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 app0             OTA app          00 10 00010000 00200000[0m
+[0;32mI (75) boot:  3 app1             OTA app          00 11 00210000 00200000[0m
+[0;32mI (82) boot:  4 spiffs           Unknown data     01 82 00410000 00bf0000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=d3968h (866664) map[0m
+[0;32mI (252) esp_image: segment 1: paddr=000e3990 vaddr=3fc9f200 size=053d8h ( 21464) load[0m
+[0;32mI (257) esp_image: segment 2: paddr=000e8d70 vaddr=40374000 size=072a8h ( 29352) load[0m
+[0;32mI (263) esp_image: segment 3: paddr=000f0020 vaddr=42000020 size=f9888h (1022088) map[0m
+[0;32mI (444) esp_image: segment 4: paddr=001e98b0 vaddr=4037b2a8 size=13e74h ( 81524) load[0m
+[0;32mI (462) esp_image: segment 5: paddr=001fd72c vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (473) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (473) boot: Disabling RNG early entropy source...[0m
+[0;32mI (483) cpu_start: Multicore app[0m
+[0;32mI (492) cpu_start: Pro cpu start user code[0m
+[0;32mI (492) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (492) app_init: Application information:[0m
+[0;32mI (495) app_init: Project name:     main[0m
+[0;32mI (500) app_init: App version:      1.0.0[0m
+[0;32mI (504) app_init: Compile time:     Aug  4 2025 08:40:51[0m
+[0;32mI (510) app_init: ELF file SHA256:  b01c720e4...[0m
+[0;32mI (516) app_init: ESP-IDF:          v5.5[0m
+[0;32mI (520) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (525) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (530) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (535) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (542) heap_init: At 3FCB1270 len 000384A0 (225 KiB): RAM[0m
+[0;32mI (548) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (554) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (560) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (568) spi_flash: detected chip: generic[0m
+[0;32mI (571) spi_flash: flash io: dio[0m
+[0;32mI (576) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (583) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (590) main_task: Started on CPU0[0m
+[0;32mI (620) main_task: Calling app_main()[0m
+Starting application...
+[0;32mI (620) app_main: application version 1.0.0[0m
+[0;32mI (650) NVS: NVS initialized successfully[0m
+[0;32mI (650) app_main: WiFi config loaded successfully from NVS[0m
+[0;32mI (650) CONFIG: mode           : 0[0m
+[0;32mI (650) CONFIG: ssid           : fang[0m
+[0;32mI (650) CONFIG: password       : 12345678[0m
+[0;32mI (660) CONFIG: deviceIP       : 192.168.1.100[0m
+[0;32mI (660) CONFIG: deviceNetMask  : 255.255.255.0[0m
+[0;32mI (670) CONFIG: deviceGateway  : 192.168.1.1[0m
+[0;32mI (670) CONFIG: device_port    : 9547[0m
+[0;32mI (680) CONFIG: max_connection : 1[0m
+[0;32mI (680) CONFIG: dhcpEnable     : 1[0m
+[0;32mI (690) pp: pp rom version: e7ae62f[0m
+[0;32mI (690) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (710) wifi:wifi driver task: 3fcee254, prio:23, stack:6656, core=0[0m
+[0;32mI (720) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (720) wifi:wifi certification version: v7.0[0m
+[0;32mI (720) wifi:config NVS flash: enabled[0m
+[0;32mI (720) wifi:config nano formatting: disabled[0m
+[0;32mI (720) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (730) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (730) wifi:Init management short buffer num: 32[0m
+[0;32mI (740) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (740) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (740) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (750) wifi:Init static rx buffer num: 10[0m
+[0;32mI (750) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (760) wifi_init: rx ba win: 6[0m
+[0;32mI (760) wifi_init: accept mbox: 6[0m
+[0;32mI (760) wifi_init: tcpip mbox: 32[0m
+[0;32mI (770) wifi_init: udp mbox: 6[0m
+[0;32mI (770) wifi_init: tcp mbox: 6[0m
+[0;32mI (780) wifi_init: tcp tx win: 5760[0m
+[0;32mI (780) wifi_init: tcp rx win: 5760[0m
+[0;32mI (780) wifi_init: tcp mss: 1440[0m
+[0;32mI (790) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (790) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (910) wifi: wifi_init finished.[0m
+[0;32mI (910) uart: queue free spaces: 10[0m
+[0;32mI (910) UART: UART initialized successfully[0m
+[0;32mI (920) IOControl: IO control initialized successfully[0m
+[0;32mI (920) WS2812: Red LED should be on[0m
+[0;32mI (930) DataAnalysis: Data analysis thread started[0m
+[0;32mI (930) app_main: analysis_data_thread created successfully[0m
+[0;32mI (940) app_main: uart_thread created successfully[0m
+[0;32mI (940) UART: UART thread started[0m
+[0;32mI (940) GPIO: GPIO thread started[0m
+[0;32mI (940) app_main: gpio_thread created successfully[0m
+[0;33mW (950) UART: Unhandled UART event type: 1[0m
+[0;32mI (960) HeartLed: Heart LED thread started[0m
+[0;32mI (960) app_main: heartLed_thread created successfully[0m
+[0;32mI (970) app_main: lvgl_thread created successfully[0m
+[0;32mI (970) ili9488: lvgl_thread start[0m
+[0;32mI (980) ili9488: Initializing SPI bus[0m
+[0;32mI (990) ili9488: Initializing LVGL[0m
+[0;32mI (1000) ili9488: Configuring for BGR color order[0m
+[0;32mI (1000) ili9488: new ili9488 panel @0x3fcd029c[0m
+[0;32mI (1000) ili9488: Setting GPIO:8 to 0[0m
+[0;32mI (1010) ili9488: Setting GPIO:8 to 1[0m
+[0;32mI (1020) ili9488: Initializing ILI9488[0m
+[0;32mI (1220) ili9488: Initialization complete[0m
+[0;32mI (1320) ili9488: Initializing touch[0m
+[0;33mW (2350) UART: Unhandled UART event type: 1[0m
+[0;33mW (2370) UART: Unhandled UART event type: 1[0m
+[0;33mW (2990) UART: Unhandled UART event type: 1[0m
+[0;33mW (3010) UART: Unhandled UART event type: 1[0m
+[0;33mW (3990) UART: Unhandled UART event type: 1[0m
+[0;33mW (4010) UART: Unhandled UART event type: 1[0m
+[0;33mW (4990) UART: Unhandled UART event type: 1[0m
+[0;33mW (5010) UART: Unhandled UART event type: 1[0m
+[0;32mI (5980) UART: Received data from UART[0m
+[0;33mW (5990) UART: Unhandled UART event type: 1[0m
+[0;33mW (6010) UART: Unhandled UART event type: 1[0m
+[0;33mW (6990) UART: Unhandled UART event type: 1[0m
+[0;33mW (7010) UART: Unhandled UART event type: 1[0m
+[0;33mW (7990) UART: Unhandled UART event type: 1[0m
+[0;33mW (8010) UART: Unhandled UART event type: 1[0m
+[0;33mW (8990) UART: Unhandled UART event type: 1[0m
+[0;33mW (9010) UART: Unhandled UART event type: 1[0m
+[0;32mI (9990) UART: Received data from UART[0m
+[0;33mW (9990) UART: Unhandled UART event type: 1[0m
+[0;33mW (10000) UART: Unhandled UART event type: 1[0m
+[0;33mW (10990) UART: Unhandled UART event type: 1[0m
+[0;33mW (11000) UART: Unhandled UART event type: 1[0m
+[0;33mW (11990) UART: Unhandled UART event type: 1[0m
+[0;33mW (12000) UART: Unhandled UART event type: 1[0m
+[0;33mW (12990) UART: Unhandled UART event type: 1[0m
+[0;33mW (13000) UART: Unhandled UART event type: 1[0m
+[0;33mW (13990) UART: Unhandled UART event type: 1[0m
+[0;33mW (14000) UART: Unhandled UART event type: 1[0m
+[0;33mW (14870) UART: Unhandled UART event type: 1[0m
+[0;33mW (16010) UART: Unhandled UART event type: 1[0m
+[0;33mW (16020) UART: Unhandled UART event type: 1[0m
+[0;33mW (17420) UART: Unhandled UART event type: 1[0m
+Switch is ON
+[0;32mI (22230) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (22270) wifi:mode : sta (10:51:db:85:93:20)[0m
+[0;32mI (22270) wifi:enable tsf[0m
+[0;32mI (22380) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (22390) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (22410) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (22430) UART: Received data from UART[0m
+[0;32mI (22440) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (22460) wifi:connected with fang, aid = 8, channel 1, 40U, bssid = 3e:46:e3:93:56:7c[0m
+[0;32mI (22460) wifi:security: WPA2-PSK, phy: bgn, rssi: -18[0m
+[0;32mI (22470) wifi:pm start, type: 1[0m
+
+[0;32mI (22470) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (22470) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (22480) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (22490) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (22500) wifi: connected to AP[0m
+[0;32mI (22500) ntp: Setting up NTP...[0m
+[0;33mW (22500) UART: Unhandled UART event type: 1[0m
+[0;33mW (22520) UART: Unhandled UART event type: 1[0m
+[0;32mI (22530) wifi:<ba-add>idx:0 (ifx:0, 3e:46:e3:93:56:7c), tid:0, ssn:1, winSize:64[0m
+[0;32mI (23530) esp_netif_handlers: sta ip: 192.168.83.116, mask: 255.255.255.0, gw: 192.168.83.133[0m
+[0;32mI (23530) wifi: get ip address[0m
+[0;32mI (23530) sta_getlocal_IP: IP:192.168.83.116,netmask:255.255.255.0,gateway:192.168.83.133
+[0m
+[0;32mI (23540) wifi: STA local IP: 192.168.83.116[0m
+[0;32mI (23550) aliot: mqtt client start[0m
+[0;32mI (23550) weathre: update_weather_cb[0m
+[0;32mI (23700) WEATHER: HTTP Status = 0[0m
+[0;32mI (23810) wifi:<ba-add>idx:1 (ifx:0, 3e:46:e3:93:56:7c), tid:6, ssn:2, winSize:64[0m
+[0;32mI (23820) WEATHER: Read 990 bytes[0m
+Day 1:
+ 日期：2025-08-11
+ 白天：晴  夜晚：晴
+ 最高：33℃ 最低：23℃
+date:2025-08-11,text_day:晴
+Day 2:
+ 日期：2025-08-12
+ 白天：多云  夜晚：晴
+ 最高：33℃ 最低：23℃
+date:2025-08-12,text_day:多云
+Day 3:
+ 日期：2025-08-13
+ 白天：多云  夜晚：多云
+ 最高：33℃ 最低：24℃
+date:2025-08-13,text_day:多云
+获取完成
+[0;32mI (23860) daily0: 晴天[0m
+[0;32mI (23860) daily1: 多云[0m
+[0;32mI (23860) daily2: 多云[0m
+[0;33mW (24250) UART: Unhandled UART event type: 1[0m
+[0;32mI (24260) wifi: MQTT_EVENT_CONNECTED[0m
+[0;33mW (24580) UART: Unhandled UART event type: 1[0m
+[0;32mI (25350) aliot: ALIOT_MQTT_EVENT_CONNECTED[0m
+[0;32mI (25350) aliot: subtopic:/ota/device/upgrade/k0c11gkzMGP/mqtt[0m
+[0;32mI (25360) ver: {"id":"0","params":{"version":"1.0.0"}}[0m
+[0;33mW (26470) UART: Unhandled UART event type: 1[0m
+[0;33mW (27470) UART: Unhandled UART event type: 1[0m
+[0;33mW (28470) UART: Unhandled UART event type: 1[0m
+[0;33mW (29640) UART: Unhandled UART event type: 1[0m
+[0;33mW (30300) UART: Unhandled UART event type: 1[0m
+[0;33mW (30310) UART: Unhandled UART event type: 1[0m
+[0;33mW (30600) UART: Unhandled UART event type: 1[0m
+[0;33mW (30610) UART: Unhandled UART event type: 1[0m
+[0;33mW (31470) UART: Unhandled UART event type: 1[0m
+[0;33mW (31940) UART: Unhandled UART event type: 1[0m
+[0;33mW (31950) UART: Unhandled UART event type: 1[0m
+[0;33mW (32470) UART: Unhandled UART event type: 1[0m
+[0;33mW (33210) UART: Unhandled UART event type: 1[0m
+[0;33mW (37710) UART: Unhandled UART event type: 1[0m
+[0;33mW (37730) UART: Unhandled UART event type: 1[0m
+[0;33mW (38970) UART: Unhandled UART event type: 1[0m
+[0;33mW (40550) UART: Unhandled UART event type: 1[0m
+[0;33mW (41470) UART: Unhandled UART event type: 1[0m
+[0;33mW (41490) UART: Unhandled UART event type: 1[0m
+[0;33mW (41980) UART: Unhandled UART event type: 1[0m
+[0;33mW (42080) UART: Unhandled UART event type: 1[0m
+[0;33mW (42970) UART: Unhandled UART event type: 1[0m
+[0;33mW (42980) UART: Unhandled UART event type: 1[0m
+[0;33mW (44410) UART: Unhandled UART event type: 1[0m
+[0;33mW (44420) UART: Unhandled UART event type: 1[0m
+[0;33mW (45270) UART: Unhandled UART event type: 1[0m
+[0;33mW (45280) UART: Unhandled UART event type: 1[0m
+[0;33mW (62140) UART: Unhandled UART event type: 1[0m
+[0;33mW (63930) UART: Unhandled UART event type: 1[0m
+[0;33mW (68490) UART: Unhandled UART event type: 1[0m
+[0;33mW (68510) UART: Unhandled UART event type: 1[0m
+[0;33mW (69170) UART: Unhandled UART event type: 1[0m
+[0;33mW (69190) UART: Unhandled UART event type: 1[0m
+[0;33mW (69630) UART: Unhandled UART event type: 1[0m
+[0;33mW (69650) UART: Unhandled UART event type: 1[0m
+[0;33mW (70260) UART: Unhandled UART event type: 1[0m
+[0;33mW (70270) UART: Unhandled UART event type: 1[0m
+[0;33mW (71440) UART: Unhandled UART event type: 1[0m
+[0;33mW (71450) UART: Unhandled UART event type: 1[0m
+[0;33mW (72000) UART: Unhandled UART event type: 1[0m
+[0;33mW (72010) UART: Unhandled UART event type: 1[0m
+[0;33mW (77280) UART: Unhandled UART event type: 1[0m
+[0;33mW (77300) UART: Unhandled UART event type: 1[0m
+[0;33mW (77480) UART: Unhandled UART event type: 1[0m
+[0;33mW (83400) UART: Unhandled UART event type: 1[0m
+[0;33mW (83420) UART: Unhandled UART event type: 1[0m
+[0;33mW (83440) UART: Unhandled UART event type: 1[0m
+[0;33mW (83460) UART: Unhandled UART event type: 1[0m
+[0;33mW (83480) UART: Unhandled UART event type: 1[0m
+[0;33mW (83500) UART: Unhandled UART event type: 1[0m
+[0;33mW (83520) UART: Unhandled UART event type: 1[0m
+[0;33mW (83540) UART: Unhandled UART event type: 1[0m
+[0;33mW (83560) UART: Unhandled UART event type: 1[0m
+[0;33mW (83580) UART: Unhandled UART event type: 1[0m
+[0;33mW (83600) UART: Unhandled UART event type: 1[0m
+[0;33mW (83620) UART: Unhandled UART event type: 1[0m
+[0;33mW (83660) UART: Unhandled UART event type: 1[0m
+[0;33mW (83680) UART: Unhandled UART event type: 1[0m
+[0;33mW (83700) UART: Unhandled UART event type: 1[0m
+[0;33mW (83720) UART: Unhandled UART event type: 1[0m
+[0;33mW (83740) UART: Unhandled UART event type: 1[0m
+[0;33mW (83760) UART: Unhandled UART event type: 1[0m
+[0;33mW (83780) UART: Unhandled UART event type: 1[0m
+[0;33mW (83800) UART: Unhandled UART event type: 1[0m
+[0;33mW (83820) UART: Unhandled UART event type: 1[0m
+[0;33mW (83840) UART: Unhandled UART event type: 1[0m
+[0;33mW (83860) UART: Unhandled UART event type: 1[0m
+[0;33mW (83880) UART: Unhandled UART event type: 1[0m
+[0;33mW (83900) UART: Unhandled UART event type: 1[0m
+[0;33mW (83920) UART: Unhandled UART event type: 1[0m
+[0;33mW (83940) UART: Unhandled UART event type: 1[0m
+[0;33mW (83960) UART: Unhandled UART event type: 1[0m
+[0;33mW (83980) UART: Unhandled UART event type: 1[0m
+[0;33mW (84000) UART: Unhandled UART event type: 1[0m
+[0;33mW (84020) UART: Unhandled UART event type: 1[0m
+[0;33mW (84040) UART: Unhandled UART event type: 1[0m
+[0;33mW (84060) UART: Unhandled UART event type: 1[0m
+[0;33mW (84080) UART: Unhandled UART event type: 1[0m
+[0;33mW (84100) UART: Unhandled UART event type: 1[0m
+[0;33mW (84120) UART: Unhandled UART event type: 1[0m
+[0;32mI (84140) UART: Received data from UART[0m
+[0;33mW (84240) UART: Unhandled UART event type: 1[0m
+[0;33mW (84260) UART: Unhandled UART event type: 1[0m
+[0;33mW (84340) UART: Unhandled UART event type: 1[0m
+[0;33mW (84360) UART: Unhandled UART event type: 1[0m
+[0;33mW (84380) UART: Unhandled UART event type: 1[0m
+[0;33mW (84400) UART: Unhandled UART event type: 1[0m
+[0;33mW (84420) UART: Unhandled UART event type: 1[0m
+[0;33mW (84440) UART: Unhandled UART event type: 1[0m
+[0;33mW (84480) UART: Unhandled UART event type: 1[0m
+[0;33mW (84500) UART: Unhandled UART event type: 1[0m
+[0;33mW (84520) UART: Unhandled UART event type: 1[0m
+[0;33mW (84540) UART: Unhandled UART event type: 1[0m
+[0;33mW (84560) UART: Unhandled UART event type: 1[0m
+[0;33mW (84580) UART: Unhandled UART event type: 1[0m
+[0;33mW (84630) UART: Unhandled UART event type: 1[0m
+[0;33mW (84630) UART: Unhandled UART event type: 1[0m
+[0;33mW (84820) UART: Unhandled UART event type: 1[0m
+[0;33mW (84860) UART: Unhandled UART event type: 1[0m
+[0;33mW (86580) UART: Unhandled UART event type: 1[0m
+[0;33mW (86620) UART: Unhandled UART event type: 1[0m
+[0;33mW (86740) UART: Unhandled UART event type: 1[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x2b (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x159c
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2f48
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Aug  4 2025 08:44:06[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00005000[0m
+[0;32mI (63) boot:  1 otadata          OTA data         01 00 0000e000 00002000[0m
+[0;32mI (69) boot:  2 app0             OTA app          00 10 00010000 00200000[0m
+[0;32mI (76) boot:  3 app1             OTA app          00 11 00210000 00200000[0m
+[0;32mI (82) boot:  4 spiffs           Unknown data     01 82 00410000 00bf0000[0m
+[0;32mI (89) boot: End of partition table[0m
+[0;32mI (92) esp_image: segment 0: paddr=00010020 vaddr=3c100020 size=d3968h (866664) map[0m
+[0;32mI (252) esp_image: segment 1: paddr=000e3990 vaddr=3fc9f200 size=053d8h ( 21464) load[0m
+[0;32mI (257) esp_image: segment 2: paddr=000e8d70 vaddr=40374000 size=072a8h ( 29352) load[0m
+[0;32mI (263) esp_image: segment 3: paddr=000f0020 vaddr=42000020 size=f9888h (1022088) map[0m
+[0;32mI (444) esp_image: segment 4: paddr=001e98b0 vaddr=4037b2a8 size=13e74h ( 81524) load[0m
+[0;32mI (462) esp_image: segment 5: paddr=001fd72c vaddr=600fe000 size=00020h (    32) load[0m
+[0;32mI (473) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (473) boot: Disabling RNG early entropy source...[0m
+[0;32mI (483) cpu_start: Multicore app[0m
+[0;32mI (492) cpu_start: Pro cpu start user code[0m
+[0;32mI (492) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (492) app_init: Application information:[0m
+[0;32mI (495) app_init: Project name:     main[0m
+[0;32mI (500) app_init: App version:      1.0.0[0m
+[0;32mI (504) app_init: Compile time:     Aug  4 2025 08:40:51[0m
+[0;32mI (510) app_init: ELF file SHA256:  b01c720e4...[0m
+[0;32mI (516) app_init: ESP-IDF:          v5.5[0m
+[0;32mI (520) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (525) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (530) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (535) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (542) heap_init: At 3FCB1270 len 000384A0 (225 KiB): RAM[0m
+[0;32mI (548) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (554) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (560) heap_init: At 600FE020 len 00001FC8 (7 KiB): RTCRAM[0m
+[0;32mI (568) spi_flash: detected chip: generic[0m
+[0;32mI (571) spi_flash: flash io: dio[0m
+[0;32mI (576) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (583) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (591) main_task: Started on CPU0[0m
+[0;32mI (621) main_task: Calling app_main()[0m
+Starting application...
+[0;32mI (621) app_main: application version 1.0.0[0m
+[0;32mI (651) NVS: NVS initialized successfully[0m
+[0;32mI (651) app_main: WiFi config loaded successfully from NVS[0m
+[0;32mI (651) CONFIG: mode           : 0[0m
+[0;32mI (651) CONFIG: ssid           : fang[0m
+[0;32mI (661) CONFIG: password       : 12345678[0m
+[0;32mI (661) CONFIG: deviceIP       : 192.168.1.100[0m
+[0;32mI (661) CONFIG: deviceNetMask  : 255.255.255.0[0m
+[0;32mI (671) CONFIG: deviceGateway  : 192.168.1.1[0m
+[0;32mI (681) CONFIG: device_port    : 9547[0m
+[0;32mI (681) CONFIG: max_connection : 1[0m
+[0;32mI (681) CONFIG: dhcpEnable     : 1[0m
+[0;32mI (691) pp: pp rom version: e7ae62f[0m
+[0;32mI (691) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (711) wifi:wifi driver task: 3fcee254, prio:23, stack:6656, core=0[0m
+[0;32mI (721) wifi:wifi firmware version: f3dbad7[0m
+[0;32mI (721) wifi:wifi certification version: v7.0[0m
+[0;32mI (721) wifi:config NVS flash: enabled[0m
+[0;32mI (721) wifi:config nano formatting: disabled[0m
+[0;32mI (721) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (731) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (731) wifi:Init management short buffer num: 32[0m
+[0;32mI (741) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (741) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (741) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (751) wifi:Init static rx buffer num: 10[0m
+[0;32mI (751) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (761) wifi_init: rx ba win: 6[0m
+[0;32mI (761) wifi_init: accept mbox: 6[0m
+[0;32mI (761) wifi_init: tcpip mbox: 32[0m
+[0;32mI (771) wifi_init: udp mbox: 6[0m
+[0;32mI (771) wifi_init: tcp mbox: 6[0m
+[0;32mI (781) wifi_init: tcp tx win: 5760[0m
+[0;32mI (781) wifi_init: tcp rx win: 5760[0m
+[0;32mI (781) wifi_init: tcp mss: 1440[0m
+[0;32mI (791) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (791) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (821) wifi: wifi_init finished.[0m
+[0;32mI (821) uart: queue free spaces: 10[0m
+[0;32mI (821) UART: UART initialized successfully[0m
+[0;32mI (821) IOControl: IO control initialized successfully[0m
+[0;32mI (831) WS2812: Red LED should be on[0m
+[0;32mI (831) DataAnalysis: Data analysis thread started[0m
+[0;32mI (841) app_main: analysis_data_thread created successfully[0m
+[0;32mI (841) app_main: uart_thread created successfully[0m
+[0;32mI (841) UART: UART thread started[0m
+[0;32mI (851) GPIO: GPIO thread started[0m
+[0;32mI (851) app_main: gpio_thread created successfully[0m
+[0;33mW (861) UART: Unhandled UART event type: 1[0m
+[0;32mI (861) HeartLed: Heart LED thread started[0m
+[0;32mI (861) app_main: heartLed_thread created successfully[0m
+[0;32mI (881) app_main: lvgl_thread created successfully[0m
+[0;32mI (881) ili9488: lvgl_thread start[0m
+[0;32mI (891) ili9488: Initializing SPI bus[0m
+[0;32mI (891) ili9488: Initializing LVGL[0m
+[0;32mI (901) ili9488: Configuring for BGR color order[0m
+[0;32mI (901) ili9488: new ili9488 panel @0x3fcd029c[0m
+[0;32mI (911) ili9488: Setting GPIO:8 to 0[0m
+[0;32mI (921) ili9488: Setting GPIO:8 to 1[0m
+[0;32mI (931) ili9488: Initializing ILI9488[0m
+[0;32mI (1131) ili9488: Initialization complete[0m
+[0;32mI (1231) ili9488: Initializing touch[0m
+[0;33mW (2271) UART: Unhandled UART event type: 1[0m
+[0;33mW (3931) UART: Unhandled UART event type: 1[0m
+[0;33mW (4191) UART: Unhandled UART event type: 1[0m
+[0;33mW (4211) UART: Unhandled UART event type: 1[0m
+[0;33mW (4231) UART: Unhandled UART event type: 1[0m
+[0;33mW (4251) UART: Unhandled UART event type: 1[0m
+[0;33mW (4271) UART: Unhandled UART event type: 1[0m
+[0;33mW (4291) UART: Unhandled UART event type: 1[0m
+[0;33mW (4311) UART: Unhandled UART event type: 1[0m
+[0;33mW (4331) UART: Unhandled UART event type: 1[0m
+[0;33mW (4351) UART: Unhandled UART event type: 1[0m
+[0;33mW (4371) UART: Unhandled UART event type: 1[0m
+[0;33mW (4391) UART: Unhandled UART event type: 1[0m
+[0;33mW (4411) UART: Unhandled UART event type: 1[0m
+[0;33mW (4431) UART: Unhandled UART event type: 1[0m
+[0;33mW (4471) UART: Unhandled UART event type: 1[0m
+[0;33mW (4491) UART: Unhandled UART event type: 1[0m
+[0;33mW (4511) UART: Unhandled UART event type: 1[0m
+[0;33mW (4531) UART: Unhandled UART event type: 1[0m
+[0;33mW (4551) UART: Unhandled UART event type: 1[0m
+[0;33mW (4571) UART: Unhandled UART event type: 1[0m
+[0;33mW (4591) UART: Unhandled UART event type: 1[0m
+[0;33mW (4611) UART: Unhandled UART event type: 1[0m
+[0;33mW (4631) UART: Unhandled UART event type: 1[0m
+[0;33mW (4651) UART: Unhandled UART event type: 1[0m
+[0;33mW (4671) UART: Unhandled UART event type: 1[0m
+[0;33mW (4691) UART: Unhandled UART event type: 1[0m
+[0;33mW (4711) UART: Unhandled UART event type: 1[0m
+[0;33mW (4731) UART: Unhandled UART event type: 1[0m
+[0;33mW (4751) UART: Unhandled UART event type: 1[0m
+[0;33mW (4771) UART: Unhandled UART event type: 1[0m
+[0;33mW (4791) UART: Unhandled UART event type: 1[0m
+[0;33mW (4811) UART: Unhandled UART event type: 1[0m
+[0;33mW (4891) UART: Unhandled UART event type: 1[0m
+[0;33mW (4911) UART: Unhandled UART event type: 1[0m
+[0;33mW (4931) UART: Unhandled UART event type: 1[0m
+[0;33mW (4951) UART: Unhandled UART event type: 1[0m
+[0;33mW (5051) UART: Unhandled UART event type: 1[0m
+[0;33mW (5061) UART: Unhandled UART event type: 1[0m
+[0;33mW (5131) UART: Unhandled UART event type: 1[0m
+[0;33mW (5151) UART: Unhandled UART event type: 1[0m
+[0;33mW (5171) UART: Unhandled UART event type: 1[0m
+[0;33mW (5271) UART: Unhandled UART event type: 1[0m
+[0;33mW (5291) UART: Unhandled UART event type: 1[0m
+[0;33mW (5321) UART: Unhandled UART event type: 1[0m
+[0;33mW (5331) UART: Unhandled UART event type: 1[0m
+[0;33mW (16751) UART: Unhandled UART event type: 1[0m
+[0;33mW (17071) UART: Unhandled UART event type: 1[0m
+[0;33mW (17971) UART: Unhandled UART event type: 1[0m
+[0;33mW (18131) UART: Unhandled UART event type: 1[0m
+[0;33mW (18671) UART: Unhandled UART event type: 1[0m
+[0;33mW (19111) UART: Unhandled UART event type: 1[0m
+[0;33mW (19901) UART: Unhandled UART event type: 1[0m
+[0;33mW (21011) UART: Unhandled UART event type: 1[0m
+[0;33mW (22531) UART: Unhandled UART event type: 1[0m
+Switch is ON
+[0;32mI (26541) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (26581) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (26701) wifi:mode : sta (10:51:db:85:93:20)[0m
+[0;32mI (26701) wifi:enable tsf[0m
+[0;32mI (26811) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (26821) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (26821) wifi:state: auth -> init (0x1c0)[0m
+[0;33mW (26831) UART: Unhandled UART event type: 1[0m
+[0;32mI (26841) wifi:new:<1,0>, old:<1,1>, ap:<255,255>, sta:<1,1>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (26841) wifi: connect to the AP fail,retry now[0m
+[0;33mW (26841) UART: Unhandled UART event type: 1[0m
+[0;33mW (29221) UART: Unhandled UART event type: 1[0m
+[0;32mI (29251) wifi: connect to the AP fail,retry now[0m
+[0;32mI (29261) wifi:new:<1,1>, old:<1,0>, ap:<255,255>, sta:<1,1>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (29261) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (29281) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (29301) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (29321) wifi:connected with fang, aid = 7, channel 1, 40U, bssid = 3e:46:e3:93:56:7c[0m
+[0;32mI (29331) wifi:security: WPA2-PSK, phy: bgn, rssi: -13[0m
+[0;32mI (29341) wifi:pm start, type: 1[0m
+
+[0;32mI (29341) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (29341) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (29351) wifi: connected to AP[0m
+[0;32mI (29351) ntp: Setting up NTP...[0m
+[0;32mI (29361) wifi:<ba-add>idx:0 (ifx:0, 3e:46:e3:93:56:7c), tid:0, ssn:1, winSize:64[0m
+[0;32mI (29401) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (29401) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;33mW (30281) UART: Unhandled UART event type: 1[0m
+[0;32mI (30371) esp_netif_handlers: sta ip: 192.168.83.116, mask: 255.255.255.0, gw: 192.168.83.133[0m
+[0;32mI (30371) wifi: get ip address[0m
+[0;32mI (30371) sta_getlocal_IP: IP:192.168.83.116,netmask:255.255.255.0,gateway:192.168.83.133
+[0m
+[0;32mI (30381) wifi: STA local IP: 192.168.83.116[0m
+[0;32mI (30391) aliot: mqtt client start[0m
+[0;32mI (30391) weathre: update_weather_cb[0m
+[0;32mI (30531) wifi:<ba-add>idx:1 (ifx:0, 3e:46:e3:93:56:7c), tid:6, ssn:2, winSize:64[0m
+[0;32mI (30541) WEATHER: HTTP Status = 0[0m
+[0;33mW (30561) UART: Unhandled UART event type: 1[0m
+[0;32mI (30611) WEATHER: Read 990 bytes[0m
+Day 1:
+ 日期：2025-08-11
+ 白天：晴  夜晚：晴
+ 最高：33℃ 最低：23℃
+date:2025-08-11,text_day:晴
+Day 2:
+ 日期：2025-08-12
+ 白天：多云  夜晚：晴
+ 最高：33℃ 最低：23℃
+date:2025-08-12,text_day:多云
+Day 3:
+ 日期：2025-08-13
+ 白天：多云  夜晚：多云
+ 最高：33℃ 最低：24℃
+date:2025-08-13,text_day:多云
+获取完成
+[0;32mI (30651) daily0: 晴天[0m
+[0;32mI (30651) daily1: 多云[0m
+[0;32mI (30651) daily2: 多云[0m
+[0;32mI (31151) wifi: MQTT_EVENT_CONNECTED[0m
+[0;33mW (31281) UART: Unhandled UART event type: 1[0m
+[0;32mI (31351) aliot: ALIOT_MQTT_EVENT_CONNECTED[0m
+[0;32mI (31351) aliot: subtopic:/ota/device/upgrade/k0c11gkzMGP/mqtt[0m
+[0;32mI (31361) ver: {"id":"0","params":{"version":"1.0.0"}}[0m
+[0;33mW (32281) UART: Unhandled UART event type: 1[0m
+[0;33mW (32301) UART: Unhandled UART event type: 1[0m
+[0;33mW (33281) UART: Unhandled UART event type: 1[0m
+[0;33mW (33301) UART: Unhandled UART event type: 1[0m
+[0;33mW (34281) UART: Unhandled UART event type: 1[0m
+[0;33mW (34301) UART: Unhandled UART event type: 1[0m
+[0;33mW (35301) UART: Unhandled UART event type: 1[0m
+[0;33mW (36301) UART: Unhandled UART event type: 1[0m
+[0;33mW (37301) UART: Unhandled UART event type: 1[0m
+[0;33mW (39301) UART: Unhandled UART event type: 1[0m
+[0;33mW (40291) UART: Unhandled UART event type: 1[0m
+[0;33mW (41291) UART: Unhandled UART event type: 1[0m
+[0;33mW (42291) UART: Unhandled UART event type: 1[0m
+[0;33mW (43291) UART: Unhandled UART event type: 1[0m
+[0;33mW (44291) UART: Unhandled UART event type: 1[0m
+[0;33mW (45291) UART: Unhandled UART event type: 1[0m
+[0;33mW (46291) UART: Unhandled UART event type: 1[0m
+[0;33mW (47291) UART: Unhandled UART event type: 1[0m
+[0;33mW (48291) UART: Unhandled UART event type: 1[0m
+[0;33mW (49291) UART: Unhandled UART event type: 1[0m
+[0;33mW (50291) UART: Unhandled UART event type: 1[0m
+[0;33mW (51291) UART: Unhandled UART event type: 1[0m
+[0;33mW (52291) UART: Unhandled UART event type: 1[0m
+[0;33mW (52291) UART: Unhandled UART event type: 1[0m
+[0;33mW (53291) UART: Unhandled UART event type: 1[0m
+[0;33mW (54291) UART: Unhandled UART event type: 1[0m
+[0;33mW (55291) UART: Unhandled UART event type: 1[0m
+[0;33mW (56291) UART: Unhandled UART event type: 1[0m
+[0;33mW (57281) UART: Unhandled UART event type: 1[0m
+[0;33mW (58291) UART: Unhandled UART event type: 1[0m
+[0;33mW (59301) UART: Unhandled UART event type: 1[0m
+[0;33mW (60291) UART: Unhandled UART event type: 1[0m
+[0;33mW (60301) UART: Unhandled UART event type: 1[0m
+[0;33mW (61291) UART: Unhandled UART event type: 1[0m
+[0;33mW (61301) UART: Unhandled UART event type: 1[0m
+[0;33mW (62281) UART: Unhandled UART event type: 1[0m
+[0;33mW (62301) UART: Unhandled UART event type: 1[0m
+[0;33mW (63291) UART: Unhandled UART event type: 1[0m
+[0;33mW (63301) UART: Unhandled UART event type: 1[0m
+[0;33mW (65281) UART: Unhandled UART event type: 1[0m
+[0;33mW (65301) UART: Unhandled UART event type: 1[0m
+[0;33mW (66081) UART: Unhandled UART event type: 1[0m
+[0;33mW (66101) UART: Unhandled UART event type: 1[0m
+[0;33mW (66221) UART: Unhandled UART event type: 1[0m
+[0;33mW (66241) UART: Unhandled UART event type: 1[0m
+[0;33mW (67301) UART: Unhandled UART event type: 1[0m
+[0;33mW (68721) UART: Unhandled UART event type: 1[0m
+Slider Value: 0
+Slider Value: 9
+Slider Value: 1
+Slider Value: 11
+Slider Value: 10
+Slider Value: 11
+Slider Value: 9
+Slider Value: 10
+Slider Value: 9
+Slider Value: 7
+Slider Value: 10
+Slider Value: 9
+Slider Value: 11
+Slider Value: 9
+Slider Value: 10
+Slider Value: 9
+Slider Value: 10
+Slider Value: 9
+Slider Value: 10
+Slider Value: 9
+Slider Value: 10
+Slider Value: 9
+Slider Value: 8
+Slider Value: 9
+Slider Value: 8
+Slider Value: 3
+Slider Value: 4
+Slider Value: 0
+Slider Value: 0
+Slider Value: 0
+Slider Value: 1
+Slider Value: 3
+Slider Value: 5
+Slider Value: 8
+Slider Value: 3
+Slider Value: 5
+Slider Value: 3
+Slider Value: 0
+Slider Value: 0
+Slider Value: 4
+Slider Value: 0
+Slider Value: 6
+Slider Value: 13
+Slider Value: 14
+Slider Value: 15
+Slider Value: 13
+Slider Value: 12
+Slider Value: 13
+Slider Value: 14
+Slider Value: 15
+Slider Value: 11
+Slider Value: 7
+Slider Value: 8
+Slider Value: 0
+Slider Value: 0
+[0;33mW (71841) UART: Unhandled UART event type: 1[0m
+Slider Value: 6
+Slider Value: 4
+Slider Value: 3
+Slider Value: 2
+Slider Value: 0
+[0;33mW (72241) UART: Unhandled UART event type: 1[0m
+[0;33mW (72401) UART: Unhandled UART event type: 1[0m
+[0;33mW (72411) UART: Unhandled UART event type: 1[0m
+[0;33mW (78561) UART: Unhandled UART event type: 1[0m
+[0;33mW (78761) UART: Unhandled UART event type: 1[0m
+[0;33mW (79211) UART: Unhandled UART event type: 1[0m
+[0;33mW (80061) UART: Unhandled UART event type: 1[0m
+[0;33mW (80081) UART: Unhandled UART event type: 1[0m
+[0;33mW (80921) UART: Unhandled UART event type: 1[0m
+[0;33mW (81201) UART: Unhandled UART event type: 1[0m
+[0;33mW (81221) UART: Unhandled UART event type: 1[0m
+[0;33mW (82301) UART: Unhandled UART event type: 1[0m
+[0;33mW (82311) UART: Unhandled UART event type: 1[0m
+[0;33mW (89151) UART: Unhandled UART event type: 1[0m
+[0;33mW (89231) UART: Unhandled UART event type: 1[0m
+[0;33mW (89331) UART: Unhandled UART event type: 1[0m
+[0;33mW (90501) UART: Unhandled UART event type: 1[0m
+[0;33mW (91501) UART: Unhandled UART event type: 1[0m
+[0;33mW (92501) UART: Unhandled UART event type: 1[0m
+[0;33mW (92851) UART: Unhandled UART event type: 1[0m
+[0;33mW (92861) UART: Unhandled UART event type: 1[0m
+[0;33mW (93501) UART: Unhandled UART event type: 1[0m
+[0;33mW (94471) UART: Unhandled UART event type: 1[0m
+[0;33mW (94481) UART: Unhandled UART event type: 1[0m
+[0;33mW (95371) UART: Unhandled UART event type: 1[0m
+[0;33mW (95381) UART: Unhandled UART event type: 1[0m
+[0;33mW (95871) UART: Unhandled UART event type: 1[0m
+[0;33mW (95881) UART: Unhandled UART event type: 1[0m
+Switch is OFF
+[0;32mI (97361) wifi:state: run -> init (0x0)[0m
+[0;32mI (97371) wifi:pm stop, total sleep time: 63079074 us / 68028101 us[0m
+
+[0;32mI (97371) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (97371) wifi:<ba-del>idx:1, tid:6[0m
+[0;32mI (97371) wifi:new:<1,0>, old:<1,1>, ap:<255,255>, sta:<1,1>, prof:1, snd_ch_cfg:0x0[0m
+[0;31mE (97381) esp-tls-mbedtls: read error :-0x004C[0m
+[0;31mE (97381) transport_base: poll_write select error 113, errno = Software caused connection abort, fd = 54[0m
+[0;31mE (97381) transport_base: esp_tls_conn_read error, errno=Software caused connection abort[0m
+[0;33mW (97391) transport_base: Poll timeout or error, errno=Success, fd=54, timeout_ms=10000[0m
+[0;31mE (97411) mqtt_client: Writing failed: errno=0[0m
+[0;31mE (97401) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[0;31mE (97411) mqtt_client: Error sending disconnect message[0m
+[0;32mI (97401) wifi:[0;31mE (97421) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m[0m
+flush txq
+[0;32mI (97441) wifi:stop sw txq[0m
+[0;32mI (97441) wifi:lmac stop hw txq[0m
+[0;33mW (97611) UART: Unhandled UART event type: 1[0m
+[0;33mW (97631) UART: Unhandled UART event type: 1[0m
+[0;33mW (100491) UART: Unhandled UART event type: 1[0m
+[0;33mW (100501) UART: Unhandled UART event type: 1[0m
+[0;33mW (101401) UART: Unhandled UART event type: 1[0m
+[0;33mW (101531) UART: Unhandled UART event type: 1[0m
+[0;33mW (101551) UART: Unhandled UART event type: 1[0m
+[0;33mW (102191) UART: Unhandled UART event type: 1[0m
+[0;33mW (102211) UART: Unhandled UART event type: 1[0m
+[0;32mI (102441) wifi: connect to the AP fail,retry now[0m
+[0;33mW (102531) UART: Unhandled UART event type: 1[0m
+[0;33mW (102551) UART: Unhandled UART event type: 1[0m
+[0;33mW (103511) UART: Unhandled UART event type: 1[0m
+[0;33mW (103531) UART: Unhandled UART event type: 1[0m
+[0;33mW (104491) UART: Unhandled UART event type: 1[0m
+[0;33mW (104511) UART: Unhandled UART event type: 1[0m
+[0;33mW (105501) UART: Unhandled UART event type: 1[0m
+[0;33mW (105511) UART: Unhandled UART event type: 1[0m
+[0;33mW (106511) UART: Unhandled UART event type: 1[0m
+[0;33mW (106531) UART: Unhandled UART event type: 1[0m
+[0;33mW (107511) UART: Unhandled UART event type: 1[0m
+[0;33mW (108511) UART: Unhandled UART event type: 1[0m
+[0;33mW (109521) UART: Unhandled UART event type: 1[0m
+[0;33mW (109531) UART: Unhandled UART event type: 1[0m
+[0;33mW (110521) UART: Unhandled UART event type: 1[0m
+[0;33mW (111521) UART: Unhandled UART event type: 1[0m
+[0;33mW (112521) UART: Unhandled UART event type: 1[0m
+[0;33mW (113521) UART: Unhandled UART event type: 1[0m
+[0;33mW (114521) UART: Unhandled UART event type: 1[0m
+[0;33mW (115521) UART: Unhandled UART event type: 1[0m
+[0;33mW (116521) UART: Unhandled UART event type: 1[0m
+[0;33mW (117501) UART: Unhandled UART event type: 1[0m
+[0;33mW (117521) UART: Unhandled UART event type: 1[0m
+[0;33mW (118501) UART: Unhandled UART event type: 1[0m
+[0;33mW (118521) UART: Unhandled UART event type: 1[0m
+[0;33mW (119501) UART: Unhandled UART event type: 1[0m
+[0;33mW (119521) UART: Unhandled UART event type: 1[0m
+[0;33mW (120501) UART: Unhandled UART event type: 1[0m
+[0;33mW (120521) UART: Unhandled UART event type: 1[0m
+[0;33mW (121511) UART: Unhandled UART event type: 1[0m
+[0;33mW (121521) UART: Unhandled UART event type: 1[0m
+[0;33mW (122511) UART: Unhandled UART event type: 1[0m
+[0;33mW (122521) UART: Unhandled UART event type: 1[0m
+[0;33mW (123511) UART: Unhandled UART event type: 1[0m
+[0;33mW (123521) UART: Unhandled UART event type: 1[0m
+[0;33mW (124511) UART: Unhandled UART event type: 1[0m
+[0;33mW (124521) UART: Unhandled UART event type: 1[0m
+[0;33mW (125511) UART: Unhandled UART event type: 1[0m
+[0;33mW (125521) UART: Unhandled UART event type: 1[0m
+[0;33mW (126511) UART: Unhandled UART event type: 1[0m
+[0;33mW (126521) UART: Unhandled UART event type: 1[0m
+[0;33mW (127511) UART: Unhandled UART event type: 1[0m
+[0;33mW (128511) UART: Unhandled UART event type: 1[0m
+[0;33mW (129511) UART: Unhandled UART event type: 1[0m
+[0;33mW (130511) UART: Unhandled UART event type: 1[0m
+[0;33mW (131511) UART: Unhandled UART event type: 1[0m
+[0;33mW (132511) UART: Unhandled UART event type: 1[0m
+[0;33mW (133511) UART: Unhandled UART event type: 1[0m
+[0;33mW (134511) UART: Unhandled UART event type: 1[0m
+[0;33mW (135511) UART: Unhandled UART event type: 1[0m
+[0;33mW (136511) UART: Unhandled UART event type: 1[0m
+[0;33mW (137511) UART: Unhandled UART event type: 1[0m
+[0;33mW (138511) UART: Unhandled UART event type: 1[0m
+[0;33mW (139511) UART: Unhandled UART event type: 1[0m
+[0;33mW (140511) UART: Unhandled UART event type: 1[0m
+[0;33mW (141511) UART: Unhandled UART event type: 1[0m
+[0;33mW (142521) UART: Unhandled UART event type: 1[0m
+[0;33mW (143521) UART: Unhandled UART event type: 1[0m
+[0;33mW (144521) UART: Unhandled UART event type: 1[0m
+[0;33mW (145521) UART: Unhandled UART event type: 1[0m
+[0;33mW (146521) UART: Unhandled UART event type: 1[0m
+[0;33mW (147521) UART: Unhandled UART event type: 1[0m
+[0;33mW (148521) UART: Unhandled UART event type: 1[0m
+[0;33mW (149521) UART: Unhandled UART event type: 1[0m
+[0;33mW (150521) UART: Unhandled UART event type: 1[0m
+[0;33mW (151501) UART: Unhandled UART event type: 1[0m
+[0;33mW (151521) UART: Unhandled UART event type: 1[0m
+[0;33mW (152501) UART: Unhandled UART event type: 1[0m
+[0;33mW (152521) UART: Unhandled UART event type: 1[0m
+[0;33mW (153511) UART: Unhandled UART event type: 1[0m
+[0;33mW (153521) UART: Unhandled UART event type: 1[0m
+[0;33mW (154511) UART: Unhandled UART event type: 1[0m
+[0;33mW (154521) UART: Unhandled UART event type: 1[0m
+[0;33mW (155511) UART: Unhandled UART event type: 1[0m
+[0;33mW (155521) UART: Unhandled UART event type: 1[0m
+[0;33mW (156511) UART: Unhandled UART event type: 1[0m
+[0;33mW (156521) UART: Unhandled UART event type: 1[0m
+[0;33mW (157511) UART: Unhandled UART event type: 1[0m
+[0;33mW (157521) UART: Unhandled UART event type: 1[0m
+[0;33mW (158511) UART: Unhandled UART event type: 1[0m
+[0;33mW (158521) UART: Unhandled UART event type: 1[0m
+[0;33mW (159511) UART: Unhandled UART event type: 1[0m
+[0;33mW (159521) UART: Unhandled UART event type: 1[0m
+[0;33mW (160511) UART: Unhandled UART event type: 1[0m
+[0;33mW (160521) UART: Unhandled UART event type: 1[0m
+[0;33mW (161511) UART: Unhandled UART event type: 1[0m
+[0;33mW (161521) UART: Unhandled UART event type: 1[0m
+[0;33mW (162511) UART: Unhandled UART event type: 1[0m
+[0;33mW (163511) UART: Unhandled UART event type: 1[0m
+[0;33mW (164511) UART: Unhandled UART event type: 1[0m
+[0;33mW (165511) UART: Unhandled UART event type: 1[0m
+[0;33mW (166511) UART: Unhandled UART event type: 1[0m
+[0;33mW (167511) UART: Unhandled UART event type: 1[0m
+[0;33mW (168511) UART: Unhandled UART event type: 1[0m
+[0;33mW (169511) UART: Unhandled UART event type: 1[0m
+[0;33mW (170511) UART: Unhandled UART event type: 1[0m
+[0;33mW (171511) UART: Unhandled UART event type: 1[0m
+[0;33mW (172511) UART: Unhandled UART event type: 1[0m
+[0;33mW (173511) UART: Unhandled UART event type: 1[0m
+[0;33mW (174511) UART: Unhandled UART event type: 1[0m
+[0;33mW (175511) UART: Unhandled UART event type: 1[0m
+[0;33mW (176511) UART: Unhandled UART event type: 1[0m
+[0;33mW (177511) UART: Unhandled UART event type: 1[0m
+[0;33mW (178511) UART: Unhandled UART event type: 1[0m
+[0;33mW (179521) UART: Unhandled UART event type: 1[0m

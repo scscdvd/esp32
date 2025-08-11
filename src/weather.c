@@ -3,34 +3,10 @@
 #include "cJSON.h"
 #include "esp_log.h"
 
-// static const char aliyun_root_ca[] =
-// "-----BEGIN CERTIFICATE-----\n"
-// "MIIFUTCCBDmgAwIBAgIQB5g2A63jmQghnKAMJ7yKbDANBgkqhkiG9w0BAQsFADBh\n"
-// "MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3\n"
-// "d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD\n"
-// "QTAeFw0yMDA3MTYxMjI1MjdaFw0yMzA1MzEyMzU5NTlaMFkxCzAJBgNVBAYTAlVT\n"
-// "MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxMzAxBgNVBAMTKlJhcGlkU1NMIFRMUyBE\n"
-// "ViBSU0EgTWl4ZWQgU0hBMjU2IDIwMjAgQ0EtMTCCASIwDQYJKoZIhvcNAQEBBQAD\n"
-// "ggEPADCCAQoCggEBANpuQ1VVmXvZlaJmxGVYotAMFzoApohbJAeNpzN+49LbgkrM\n"
-// "Lv2tblII8H43vN7UFumxV7lJdPwLP22qa0sV9cwCr6QZoGEobda+4pufG0aSfHQC\n"
-// "QhulaqKpPcYYOPjTwgqJA84AFYj8l/IeQ8n01VyCurMIHA478ts2G6GGtEx0ucnE\n"
-// "fV2QHUL64EC2yh7ybboo5v8nFWV4lx/xcfxoxkFTVnAIRgHrH2vUdOiV9slOix3z\n"
-// "5KPs2rK2bbach8Sh5GSkgp2HRoS/my0tCq1vjyLJeP0aNwPd3rk5O8LiffLev9j+\n"
-// "UKZo0tt0VvTLkdGmSN4h1mVY6DnGfOwp1C5SK0MCAwEAAaOCAgswggIHMB0GA1Ud\n"
-// "DgQWBBSkjeW+fHnkcCNtLik0rSNY3PUxfzAfBgNVHSMEGDAWgBQD3lA1VtFMu2bw\n"
-// "o+IbG8OXsj3RVTAOBgNVHQ8BAf8EBAMCAYYwHQYDVR0lBBYwFAYIKwYBBQUHAwEG\n"
-// "CCsGAQUFBwMCMBIGA1UdEwEB/wQIMAYBAf8CAQAwNAYIKwYBBQUHAQEEKDAmMCQG\n"
-// "CCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2VydC5jb20wewYDVR0fBHQwcjA3\n"
-// "oDWgM4YxaHR0cDovL2NybDMuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0R2xvYmFsUm9v\n"
-// "dENBLmNybDA3oDWgM4YxaHR0cDovL2NybDQuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0\n"
-// "yPM8qvlKGxc5T5eHVzV6jpjpyzl6VEKpaxH6gdGVpQVgjkOR9yY9XAUlFnzlOCpq\n"
-// "sm7r2ZUKpDfrhUnVzX2nSM15XSj48rVBBAnGJWkLPijlACd3sWFMVUiKRz1C5PZy\n"
-// "el2l7J/W4d99KFLSYgoy5GDmARpwLc//fXfkr40nMY8ibCmxCsjXQTe0fJbtrrLL\n"
-// "yWQlk9VDV296EI/kQOJNLVEkJ54P\n"
-// "-----END CERTIFICATE-----\n";
 
+struct daily life_dailey[3] = { 0 };
 static const char *TAG = "WEATHER";
-
+static const char* url = "http://api.seniverse.com/v3/weather/daily.json?key=SYRYfV1htnRIBQ8fe&location=zhengzhou&language=zh-Hans&unit=c&start=0&days=3";
 void parse_weather_json(const char *json) 
 {
     cJSON *root = cJSON_Parse(json);
@@ -39,7 +15,22 @@ void parse_weather_json(const char *json)
         ESP_LOGE(TAG, "Fail to parse JSON");
         return;
     }
-    cJSON *daily = cJSON_GetObjectItem(root, "daily");
+    cJSON* result = cJSON_GetObjectItem(root,"results");
+    if(!cJSON_IsArray(result))
+    {
+        ESP_LOGE(TAG, "Fail to get results");
+        cJSON_Delete(root);
+        return;
+    }
+    // 取第一个 result 对象
+    cJSON *first_result = cJSON_GetArrayItem(result, 0);
+    if (!first_result) 
+    {
+        ESP_LOGE(TAG, "No first result found");
+        cJSON_Delete(root);
+        return;
+    }
+    cJSON *daily = cJSON_GetObjectItem(first_result, "daily");
     if (!cJSON_IsArray(daily)) 
     {
         ESP_LOGE(TAG, "'daily' not found");
@@ -56,6 +47,10 @@ void parse_weather_json(const char *json)
         const char* low = cJSON_GetObjectItem(day, "low")->valuestring;
         printf("Day %d:\n 日期：%s\n 白天：%s  夜晚：%s\n 最高：%s℃ 最低：%s℃\n",
                i+1, date, dayt, nightt, high, low);
+        
+        strncpy(life_dailey[i].date,date,sizeof(life_dailey[i].date));
+        strncpy(life_dailey[i].text_day,dayt,sizeof(life_dailey[i].text_day));
+        printf("date:%s,text_day:%s\r\n",life_dailey[i].date,life_dailey[i].text_day);
     }
     printf("获取完成\n");
     cJSON_Delete(root);
@@ -63,44 +58,49 @@ void parse_weather_json(const char *json)
 
 void get_weather() 
 {
+    
     esp_http_client_config_t config = 
     {
-        .url = "https://api.seniverse.com/v3/weather/daily.json?key=SYRYfV1htnRIBQ8fe&location=zhengzhou&language=zh-Hans&unit=c&start=0&days=3",
-        .transport_type = HTTP_TRANSPORT_OVER_SSL,
-        // .cert_pem = (const char*)aliyun_root_ca,
-        .disable_auto_redirect = false
+        .url = url,
+        .transport_type = HTTP_TRANSPORT_OVER_TCP, // 强制走HTTP
     };
     esp_http_client_handle_t client = esp_http_client_init(&config);
-    esp_http_client_set_header(client, "Accept-Encoding", "identity");
-    esp_err_t err = esp_http_client_perform(client);
-    if (err == ESP_OK) 
+    if(client == NULL)
+    {
+        ESP_LOGE(TAG,"esp_http_client_init failed");
+        return;
+    }
+    esp_http_client_set_method(client,HTTP_METHOD_GET);
+    esp_err_t err = esp_http_client_open(client,0);
+    if(err == ESP_OK)
     {
         int status = esp_http_client_get_status_code(client);
         ESP_LOGI(TAG, "HTTP Status = %d", status);
-        int len = esp_http_client_get_content_length(client);
-        ESP_LOGI(TAG, "Content length = %d", len);
-        if (len > 4096) 
+        int len = esp_http_client_fetch_headers(client);
+        if(len > 0)
         {
-            ESP_LOGE(TAG, "Content too large");
-            esp_http_client_cleanup(client);
-            return;
+            char *buf = malloc(len + 1);
+            if (!buf) 
+            {
+                ESP_LOGE(TAG, "malloc fail");
+                esp_http_client_cleanup(client);
+                return;
+            }
+            int r = esp_http_client_read_response(client, buf, len);
+            buf[r] = '\0';
+            ESP_LOGI(TAG, "Read %d bytes", r);
+            parse_weather_json(buf);
+            free(buf);
         }
-        char *buf = malloc(len + 1);
-        if (!buf) 
+        else
         {
-            ESP_LOGE(TAG, "malloc fail");
-            esp_http_client_cleanup(client);
-            return;
+            ESP_LOGE(TAG, "esp_http_client_fetch_headers fail");
         }
-        int r = esp_http_client_read(client, buf, len);
-        buf[r] = '\0';
-        ESP_LOGI(TAG, "Read %d bytes", r);
-        parse_weather_json(buf);
-        free(buf);
-    } 
-    else 
+        
+    }
+    else
     {
-        ESP_LOGW(TAG, "GET failed: %s", esp_err_to_name(err));
+        ESP_LOGW(TAG,"esp_http_client_open failed");
     }
     esp_http_client_cleanup(client);
 }

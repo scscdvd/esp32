@@ -25,6 +25,7 @@ void update_time_cb(lv_timer_t *timer);
 void brightness_cb(lv_event_t *e);
 void wifionOff_cb(lv_event_t* e);
 void system_runtime_cb(lv_timer_t *timer);
+void update_weather_cb(lv_timer_t *timer);
 #ifdef __cplusplus
 extern "C" }
 #endif

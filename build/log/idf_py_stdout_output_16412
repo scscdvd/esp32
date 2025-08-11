@@ -1,0 +1,19 @@
+Command: ninja flash
+[0/1] Re-running CMake...
+-- Minimal build - OFF
+-- ccache will be used for faster recompilation
+-- Building ESP-IDF components for target esp32s3
+NOTICE: 
+Following dependencies have new versions available:
+Dependency "espressif/esp_lvgl_port": "2.0.0" -> "2.6.0"
+Consider running "idf.py update-dependencies" to update your lock file.
+NOTICE: Processing 5 dependencies:
+NOTICE: [1/5] espressif/esp_lcd_touch (1.1.2)
+NOTICE: [2/5] espressif/esp_lvgl_port (2.0.0)
+NOTICE: [3/5] espressif/led_strip (3.0.1~1)
+NOTICE: [4/5] lvgl/lvgl (9.3.0)
+NOTICE: [5/5] idf (5.5.0)
+-- LVGL version: 9.3.0
+-- Configuring incomplete, errors occurred!
+FAILED: build.ninja 
+D:\.espressif\tools\cmake\3.30.2\bin\cmake.exe --regenerate-during-build -SD:\esp\project -BD:\esp\project\build
